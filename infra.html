@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>KLAB | 장비</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="demo-banner">⚠ 이 사이트는 팀 공유용 데모(예시) 화면입니다. 실제 데이터/디자인이 아니며, 폴더 구조 → 웹페이지 매핑 개념을 보여주기 위해 제작되었습니다.</div>
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a href="index.html" class="logo"><img src="img/klab-logo.png" alt="KLAB"></a>
+    <nav class="main-nav">
+      <a href="index.html">홈</a>
+      <a href="services.html">서비스</a>
+      <a href="news.html">최신정보</a>
+      <a href="infra.html" class="active">장비</a>
+      <a href="#" class="js-wip" data-wip="문의">문의</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding:56px 0 64px;">
+  <div class="wrap">
+    <span class="eyebrow">Lab Equipment</span>
+    <h1 style="font-size:32px;">장비</h1>
+    <p>연구평가팀이 보유한 평가 장비와 최근 구매한 신발·의류 테스트용품 정보를 한 곳에서 확인할 수 있습니다. 기존 "연구평가팀 서비스"에 있던 장비·구매 정보를 별도 페이지로 분리했습니다.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+
+    <div class="mapping-note">
+      💡 <b>폴더 구조 → 페이지 매핑 예시:</b> 아래 항목은 <b>연구평가팀</b> 폴더의 <b>평가 장비 리스트 및 장비 설명 / 최신 구매 신발·의류 용품 리스트</b> 하위 폴더를 기준으로 나뉩니다. "평가 장비 리스트 및 설명" 카드는 실제 상세 페이지로 연결되며, 나머지는 아직 준비 중이라 카드를 클릭하면 작업중 안내가 표시됩니다.
+    </div>
+
+    <div class="team-group">
+      <div class="team-group-head">
+        <span class="dot" style="background:#0f1f3d;"></span>
+        <h3>연구평가팀 장비</h3>
+        <span class="folder-path">/연구평가팀</span>
+      </div>
+      <div class="card-grid">
+        <a href="equipment.html" class="card">
+          <div class="icon">⚙️</div>
+          <h4>평가 장비 리스트 및 설명</h4>
+          <p>보유 중인 평가 장비 45종의 목록과 간략한 설명을 제공합니다.</p>
+          <div class="src-path">/연구평가팀/평가 장비 리스트 및 장비 설명</div>
+        </a>
+        <div class="card js-wip" data-wip="최신 구매 신발·의류 용품 리스트">
+          <div class="icon">👟</div>
+          <h4>최신 구매 신발·의류 용품 리스트</h4>
+          <p>연구평가팀이 새롭게 구매한 신발·의류 테스트용품을 소개합니다.</p>
+          <div class="src-path">/연구평가팀/최신 구매 신발·의류 용품 리스트 (신규)</div>
+          <span class="badge-soon">NEW · 준비중</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer" id="footer-contact">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <h5>KLAB</h5>
+        <p>서비스 소개 &amp; 최신정보 플랫폼 (데모)</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <p><a href="index.html">홈</a> · <a href="services.html">서비스</a> · <a href="news.html">최신정보</a> · <a href="#" class="js-wip" data-wip="문의">문의</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">이 페이지는 팀 내부 설명용 예시(데모) 화면이며 실제 서비스 화면이 아닙니다.</div>
+  </div>
+</footer>
+
+<!-- 작업중 안내 모달 -->
+<div class="modal-overlay" id="wipModal">
+  <div class="modal-box">
+    <button class="modal-close" id="wipModalClose" aria-label="닫기">×</button>
+    <span class="wip-icon">🚧</span>
+    <h3><span id="wipModalTitle">이 기능은</span> 준비 중입니다</h3>
+    <p class="modal-sub">아직 구체적인 계획이 확정되지 않아 곧 준비해서 찾아뵙겠습니다. 조금만 기다려주세요!</p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
