@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initRequestModal();
   initOpenCardToast();
   initWipModal();
+  initContactModal();
 });
 
 // ---------- 토스트 ----------
@@ -155,6 +156,48 @@ function initWipModal() {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         openModal(el.dataset.wip);
+      }
+    });
+  });
+
+  closeBtn?.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+}
+
+// ---------- 문의 안내 모달 ----------
+// class="js-contact" 를 가진 모든 요소에 공통 적용됩니다.
+function initContactModal() {
+  const modal = document.getElementById("contactModal");
+  const closeBtn = document.getElementById("contactModalClose");
+  if (!modal) return;
+
+  function openModal() {
+    modal.classList.add("is-open");
+  }
+  function closeModal() {
+    modal.classList.remove("is-open");
+  }
+
+  document.querySelectorAll(".js-contact").forEach((el) => {
+    if (!el.hasAttribute("tabindex")) el.setAttribute("tabindex", "0");
+    if (!el.hasAttribute("role") && el.tagName !== "A" && el.tagName !== "BUTTON") {
+      el.setAttribute("role", "button");
+    }
+
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openModal();
+    });
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openModal();
       }
     });
   });
