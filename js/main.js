@@ -27,16 +27,16 @@ function showToast(msg) {
 // ---------- 카테고리 필터 탭 ----------
 function initFilterTabs() {
   const tabs = document.querySelectorAll(".filter-tabs button");
-  const cards = document.querySelectorAll("[data-category]");
-  if (!tabs.length || !cards.length) return;
+  if (!tabs.length) return;
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       tabs.forEach((t) => t.classList.remove("active"));
       tab.classList.add("active");
 
+      // 매번 새로 조회한다 - fetch로 나중에 추가되는 카드(예: 리포트 뷰어)도 걸러져야 하기 때문.
       const target = tab.dataset.filter;
-      cards.forEach((card) => {
+      document.querySelectorAll("[data-category]").forEach((card) => {
         const match = target === "all" || card.dataset.category === target;
         card.style.display = match ? "" : "none";
       });
