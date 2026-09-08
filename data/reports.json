@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T16:37:51.743669+09:00",
+  "updatedAt": "2026-09-08T16:42:51.406468+09:00",
   "items": [
     {
       "title": "SCF Injection Material Guide KR",
@@ -39,7 +39,7 @@
       "categoryLabel": "신기술·신제품",
       "url": "reports/tech/Footwear_Insight_2026_7-8%EC%9B%94%ED%98%B8_%EC%9A%94%EC%95%BD%EB%B3%B4%EA%B3%A0%EC%84%9C.pdf",
       "date": "2026-09-08T07:17:15Z",
-      "fileSize": 3651404
+      "fileSize": 3648968
     },
     {
       "title": "2026 WCB(세계생체역학회) 출장 보고서",
@@ -47,7 +47,7 @@
       "categoryLabel": "해외출장",
       "url": "reports/trip/2026%20WCB%28%EC%84%B8%EA%B3%84%EC%83%9D%EC%B2%B4%EC%97%AD%ED%95%99%ED%9A%8C%29%20%EC%B6%9C%EC%9E%A5%20%EB%B3%B4%EA%B3%A0%EC%84%9C.pdf",
       "date": "2026-09-08T07:17:15Z",
-      "fileSize": 951558
+      "fileSize": 944067
     }
   ]
 }
