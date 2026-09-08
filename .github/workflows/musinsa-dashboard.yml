@@ -2,8 +2,10 @@ name: Musinsa Dashboard Data Update
 
 on:
   schedule:
-    # 매주 월요일 07:00 KST == 매주 일요일 22:00 UTC
-    - cron: "0 22 * * 0"
+    # 매일 07:00 / 13:00 / 19:00 KST == 매일 22:00(전날) / 04:00 / 10:00 UTC
+    - cron: "0 22 * * *"
+    - cron: "0 4 * * *"
+    - cron: "0 10 * * *"
   workflow_dispatch: {}
 
 permissions:

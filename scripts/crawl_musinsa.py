@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """무신사 랭킹(주간/월간) + 콘텐츠 데이터를 수집해 data/*.json으로 저장한다.
-매주 월요일 07:00 KST에 GitHub Actions(.github/workflows/musinsa-dashboard.yml)가 실행한다.
+매일 07:00 / 13:00 / 19:00 KST에 GitHub Actions(.github/workflows/musinsa-dashboard.yml)가 실행한다.
 표준 라이브러리만 사용해 별도 의존성 설치 없이 동작한다.
 """
 import json
@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 HISTORY_DIR = DATA_DIR / "history"
 KST = timezone(timedelta(hours=9))
-KEEP_SNAPSHOTS = 12
+KEEP_SNAPSHOTS = 30  # 하루 최대 3회 갱신, 파일은 날짜별 1개라 30이면 약 한 달치 보관
 
 HEADERS = {
     "User-Agent": (

@@ -64,7 +64,7 @@ function renderUpdatedAt(isoString) {
     el.textContent = "";
     return;
   }
-  el.textContent = `${formatDateTime(isoString)} 기준 · 매주 월요일 07:00 자동 갱신`;
+  el.textContent = `${formatDateTime(isoString)} 기준 · 매일 07/13/19시 자동 갱신`;
 }
 
 function renderRankingMeta(period) {
