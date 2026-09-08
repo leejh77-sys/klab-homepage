@@ -24,8 +24,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install LibreOffice
-        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libreoffice
+      - name: Install LibreOffice and Korean fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libreoffice fonts-nanum fonts-noto-cjk
+          fc-cache -f
 
       - name: Convert reports and build manifest
         run: python scripts/build_reports.py
