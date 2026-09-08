@@ -1,6 +1,7 @@
 // KLAB 무신사 트렌드 대시보드 - data/*.json을 fetch해 렌더링
 
 const DISPLAY_COUNT = 20;
+const periodUpdatedAt = { weekly: null, monthly: null };
 
 document.addEventListener("DOMContentLoaded", () => {
   initPeriodTabs();
@@ -21,6 +22,7 @@ function initPeriodTabs() {
       Object.entries(grids).forEach(([key, el]) => {
         el.hidden = key !== period;
       });
+      renderRankingMeta(period);
     });
   });
 }
@@ -33,10 +35,15 @@ async function loadDashboard() {
       fetchJson("data/content.json"),
     ]);
 
+    periodUpdatedAt.weekly = weekly.updatedAt;
+    periodUpdatedAt.monthly = monthly.updatedAt;
+
     renderRankGrid(document.getElementById("weeklyGrid"), weekly.items);
     renderRankGrid(document.getElementById("monthlyGrid"), monthly.items);
     renderContentGrid(document.getElementById("contentGrid"), content.items);
     renderUpdatedAt(weekly.updatedAt);
+    renderRankingMeta("weekly");
+    renderContentMeta(content.updatedAt, content.sortedBy);
   } catch (err) {
     document.getElementById("updatedAtLine").textContent =
       "데이터를 불러오지 못했습니다. 잠시 후 새로고침 해주세요.";
@@ -57,15 +64,30 @@ function renderUpdatedAt(isoString) {
     el.textContent = "";
     return;
   }
+  el.textContent = `${formatDateTime(isoString)} 기준 · 매주 월요일 07:00 자동 갱신`;
+}
+
+function renderRankingMeta(period) {
+  const el = document.getElementById("rankingMetaLine");
+  const iso = periodUpdatedAt[period];
+  el.textContent = iso ? `${formatDateTime(iso)} 수집` : "";
+}
+
+function renderContentMeta(isoString, sortedBy) {
+  const el = document.getElementById("contentMetaLine");
+  const sortLabel = sortedBy === "viewCount" ? "조회수 기준 정렬" : "최신순 정렬";
+  el.textContent = isoString ? `${sortLabel} · ${formatDateTime(isoString)} 수집` : sortLabel;
+}
+
+function formatDateTime(isoString) {
   const d = new Date(isoString);
-  const formatted = d.toLocaleString("ko-KR", {
+  return d.toLocaleString("ko-KR", {
     year: "numeric",
     month: "long",
     day: "numeric",
     hour: "2-digit",
     minute: "2-digit",
   });
-  el.textContent = `${formatted} 기준 · 매주 월요일 07:00 자동 갱신`;
 }
 
 function renderRankGrid(container, items) {

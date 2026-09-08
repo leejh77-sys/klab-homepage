@@ -28,6 +28,15 @@ HEADERS = {
 RANKING_URL = "https://client.musinsa.com/api/home/web/v5/pans/ranking/sections/199"
 CONTENT_URL = "https://content.musinsa.com/api2/content/musinsa-content/v1/contents"
 
+# KLAB(신발·의류 소재 평가 기관) 업무와 관련 높은 콘텐츠 소분류만 수집한다.
+# 뷰티/인터뷰 등은 제외. 코드는 content-category/filter?contentCategoryCode=019 트리 기준.
+CONTENT_CATEGORY_CODES = {
+    "019003003": "스니커즈",
+    "019003002": "트렌드",
+    "019003001": "발매소식",
+    "019002001": "스타일",
+}
+
 
 def fetch_json(url, params, retries=3):
     query = urllib.parse.urlencode(params)
@@ -81,31 +90,37 @@ def fetch_ranking(period, top_n=30):
     return items[:top_n]
 
 
-def fetch_content(top_n=10):
-    params = {
-        "contentCategoryCode": "019",
-        "sort": "LATEST",
-        "page": 1,
-        "size": top_n,
-    }
-    data = fetch_json(CONTENT_URL, params)
-    items = []
-    for c in data["data"]["list"]:
-        items.append(
-            {
+def fetch_content(display_n=10, pool_per_category=15):
+    """무신사 콘텐츠 API는 '인기순' 정렬 파라미터를 지원하지 않아(LATEST만 확인됨),
+    카테고리별 최근 발행 글 pool_per_category개씩 모은 뒤 조회수(viewCount) 기준으로
+    전체 상위 display_n개를 추린다. 신발·의류 소재 리서치와 관련 높은 소분류만 수집한다
+    (CONTENT_CATEGORY_CODES 참고, 뷰티 등은 제외).
+    """
+    items_by_id = {}
+    for code in CONTENT_CATEGORY_CODES:
+        params = {
+            "contentCategoryCode": code,
+            "sort": "LATEST",
+            "page": 1,
+            "size": pool_per_category,
+        }
+        data = fetch_json(CONTENT_URL, params)
+        for c in data["data"]["list"]:
+            items_by_id[c["id"]] = {
                 "id": c["id"],
                 "title": c.get("title"),
                 "summary": c.get("summary"),
                 "thumbnailUrl": c.get("thumbnailUrl"),
                 "url": c.get("landingUrl") or f"https://www.musinsa.com/content/{c.get('cmsIndex')}",
                 "category": c.get("attributeDictionaryName"),
-                "brands": c.get("brandNameList") or [],
+                # 시즌 캠페인성 글은 브랜드가 수백 개씩 태그되기도 해 앞 3개만 보존한다.
+                "brands": (c.get("brandNameList") or [])[:3],
                 "viewCount": c.get("viewCount", 0),
                 "commentCount": c.get("commentCount", 0),
                 "date": c.get("displayStartDate"),
             }
-        )
-    return items
+    items = sorted(items_by_id.values(), key=lambda x: x["viewCount"], reverse=True)
+    return items[:display_n]
 
 
 def compute_rank_changes(current_items, previous_items):
@@ -153,7 +168,11 @@ def main():
         save_snapshot(period_key, payload, date_str)
         print(f"[{period_key}] saved {len(items)} items")
 
-    content_payload = {"updatedAt": now_kst.isoformat(), "items": fetch_content(top_n=10)}
+    content_payload = {
+        "updatedAt": now_kst.isoformat(),
+        "sortedBy": "viewCount",
+        "items": fetch_content(display_n=10, pool_per_category=15),
+    }
     with open(DATA_DIR / "content.json", "w", encoding="utf-8") as f:
         json.dump(content_payload, f, ensure_ascii=False, indent=2)
     print(f"[content] saved {len(content_payload['items'])} items")
