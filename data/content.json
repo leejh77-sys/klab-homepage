@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T23:08:54.334187+09:00",
+  "updatedAt": "2026-09-09T08:46:04.039732+09:00",
   "sortedBy": "viewCount",
   "items": [
     {
@@ -14,7 +14,7 @@
         "무신사 스탠다드",
         "아크테릭스"
       ],
-      "viewCount": 21894,
+      "viewCount": 21904,
       "commentCount": 1,
       "date": "2026-06-12T19:00:00"
     },
@@ -30,9 +30,25 @@
         "아디다스",
         "뉴발란스"
       ],
-      "viewCount": 20151,
+      "viewCount": 20271,
       "commentCount": 0,
       "date": "2026-08-31T11:00:00"
+    },
+    {
+      "id": "166361",
+      "title": "외출이 즐거운 계절, TPO별 가을 룩북",
+      "summary": "선선한 바람이 반가운 요즘, SPA 브랜드위크로 가을 옷장을 든든하게 채울 시간. 평일부터 주말까지, TPO별 코디 추천",
+      "thumbnailUrl": "https://image.msscdn.net/cms/v2/content/file_1788429738823_885336400_fwym6w.jpg",
+      "url": "https://www.musinsa.com/content/1545007686948631392",
+      "category": "스타일",
+      "brands": [
+        "무신사 스탠다드",
+        "무신사 스탠다드 우먼",
+        "스파오"
+      ],
+      "viewCount": 16107,
+      "commentCount": 2,
+      "date": "2026-09-07T11:00:00"
     },
     {
       "id": "165289",
@@ -46,7 +62,7 @@
         "애즈유아",
         "닥터마틴"
       ],
-      "viewCount": 15447,
+      "viewCount": 15511,
       "commentCount": 0,
       "date": "2026-08-28T00:00:00"
     },
@@ -62,7 +78,7 @@
         "앤더슨벨",
         "스켈리웩"
       ],
-      "viewCount": 13904,
+      "viewCount": 14022,
       "commentCount": 0,
       "date": "2026-09-03T00:00:00"
     },
@@ -92,25 +108,9 @@
         "디미트리블랙",
         "시그니처"
       ],
-      "viewCount": 12556,
+      "viewCount": 12574,
       "commentCount": 0,
       "date": "2026-08-14T00:00:00"
-    },
-    {
-      "id": "166361",
-      "title": "외출이 즐거운 계절, TPO별 가을 룩북",
-      "summary": "선선한 바람이 반가운 요즘, SPA 브랜드위크로 가을 옷장을 든든하게 채울 시간. 평일부터 주말까지, TPO별 코디 추천",
-      "thumbnailUrl": "https://image.msscdn.net/cms/v2/content/file_1788429738823_885336400_fwym6w.jpg",
-      "url": "https://www.musinsa.com/content/1545007686948631392",
-      "category": "스타일",
-      "brands": [
-        "무신사 스탠다드",
-        "무신사 스탠다드 우먼",
-        "스파오"
-      ],
-      "viewCount": 11260,
-      "commentCount": 2,
-      "date": "2026-09-07T11:00:00"
     },
     {
       "id": "165737",
@@ -122,7 +122,7 @@
       "brands": [
         "세컨드솔트"
       ],
-      "viewCount": 10729,
+      "viewCount": 10982,
       "commentCount": 2,
       "date": "2026-08-31T15:30:00"
     },
@@ -138,25 +138,25 @@
         "아디다스",
         "마뗑킴"
       ],
-      "viewCount": 7043,
+      "viewCount": 7115,
       "commentCount": 1,
       "date": "2026-08-24T11:00:00"
     },
     {
-      "id": "163628",
-      "title": "지금 메야 할 가방과 스타일링 팁",
-      "summary": "가방이 스타일을 결정한다. 2000년대 감성부터 이제 막 떠오른 새로운 흐름까지, 마음을 사로잡는 가방 트렌드",
-      "thumbnailUrl": "https://image.msscdn.net/cms/v2/content/file_1786518541858_108776000_sditr2.jpg",
-      "url": "https://www.musinsa.com/content/1536994553422840927",
+      "id": "164735",
+      "title": "계절이 바뀔 때 필요한 환절기 캐주얼룩",
+      "summary": "여름과 가을 사이, 온도차를 극복할 시간. 오직 무신사 캠페인에서 만날 수 있는 인기 아이템으로 환절기 캐주얼룩을 완성해 보자",
+      "thumbnailUrl": "https://image.msscdn.net/cms/v2/content/file_1787548463870_2634233000_k0de33.jpg",
+      "url": "https://www.musinsa.com/content/1541303737396010701",
       "category": "스타일",
       "brands": [
-        "무신사 스탠다드",
-        "아디다스",
-        "나이키"
+        "필루미네이트",
+        "트릴리온",
+        "커버낫"
       ],
-      "viewCount": 6507,
-      "commentCount": 2,
-      "date": "2026-08-13T00:00:00"
+      "viewCount": 5522,
+      "commentCount": 0,
+      "date": "2026-08-25T00:00:00"
     }
   ]
 }
