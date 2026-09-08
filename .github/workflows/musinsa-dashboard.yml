@@ -1,0 +1,37 @@
+name: Musinsa Dashboard Data Update
+
+on:
+  schedule:
+    # 매주 월요일 07:00 KST == 매주 일요일 22:00 UTC
+    - cron: "0 22 * * 0"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run crawler
+        run: python scripts/crawl_musinsa.py
+
+      - name: Commit and push if data changed
+        run: |
+          git config user.name "musinsa-dashboard-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "chore: update musinsa dashboard data ($(date -u +%Y-%m-%d))"
+            git push
+          fi

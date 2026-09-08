@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>KLAB | 무신사 트렌드 대시보드</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<div class="demo-banner">🔒 내부 참고용 대시보드입니다. 외부 공유는 삼가주세요. 무신사 랭킹·콘텐츠 페이지를 매주 월요일 자동 수집합니다.</div>
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a href="index.html" class="logo"><img src="img/klab-logo.png" alt="KLAB"></a>
+    <nav class="main-nav">
+      <a href="index.html">홈</a>
+      <a href="services.html">서비스</a>
+      <a href="news.html">최신정보</a>
+      <a href="infra.html">장비</a>
+      <a href="#" class="js-wip" data-wip="문의">문의</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding:56px 0 40px;">
+  <div class="wrap">
+    <span class="eyebrow">Weekly Market Watch</span>
+    <h1 style="font-size:32px;">무신사 트렌드 대시보드</h1>
+    <p>무신사 랭킹·콘텐츠 페이지를 기반으로 이번 주 인기 아이템과 이슈를 정리했습니다. 신발·의류 소재 트렌드를 파악하는 참고 자료로 활용해 주세요.</p>
+    <p id="updatedAtLine" class="dash-updated">데이터 불러오는 중…</p>
+  </div>
+</section>
+
+<section class="block" id="ranking-section">
+  <div class="wrap">
+    <div class="block-head">
+      <div>
+        <span class="tag">Musinsa Ranking</span>
+        <h2>랭킹 TOP 20</h2>
+      </div>
+      <a href="https://www.musinsa.com/main/musinsa/ranking?gf=A&storeCode=musinsa&sectionId=200&contentsId=&categoryCode=000&ageBand=AGE_BAND_ALL&period=WEEKLY" target="_blank" rel="noopener" class="more-link">무신사에서 전체 랭킹 보기 →</a>
+    </div>
+
+    <div class="list-controls">
+      <div class="filter-tabs" id="periodTabs">
+        <button class="active" data-period="weekly">주간 랭킹</button>
+        <button data-period="monthly">월간 랭킹</button>
+      </div>
+    </div>
+
+    <div class="rank-grid" id="weeklyGrid"></div>
+    <div class="rank-grid" id="monthlyGrid" hidden></div>
+  </div>
+</section>
+
+<section class="block" id="content-section">
+  <div class="wrap">
+    <div class="block-head">
+      <div>
+        <span class="tag">Musinsa Content</span>
+        <h2>이번 주 핫이슈 · 트렌드 · 스타일</h2>
+      </div>
+      <a href="https://www.musinsa.com/content/list?tagList=&contentCategoryCode=019" target="_blank" rel="noopener" class="more-link">무신사 콘텐츠 더 보기 →</a>
+    </div>
+
+    <div class="news-grid" id="contentGrid"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <h5>KLAB</h5>
+        <p>서비스 소개 &amp; 최신정보 플랫폼 (데모)</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <p><a href="index.html">홈</a> · <a href="services.html">서비스</a> · <a href="news.html">최신정보</a> · <a href="infra.html">장비</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">무신사 랭킹·콘텐츠 데이터는 매주 월요일 07:00 자동 수집되며, 상표 및 상품 정보의 저작권은 ㈜무신사에 있습니다.</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+/* ===========================
+   무신사 트렌드 대시보드 전용 스타일
+   =========================== */
+
+.dash-updated {
+  margin-top: -8px;
+  font-size: 13px;
+  color: #8fa0c9;
+}
+
+/* ---------- Ranking grid ---------- */
+.rank-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.rank-grid[hidden] {
+  display: none;
+}
+
+.rank-card {
+  position: relative;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #fff;
+  overflow: hidden;
+  transition: box-shadow .18s ease, transform .18s ease;
+}
+
+.rank-card:hover {
+  box-shadow: 0 10px 24px rgba(15, 31, 61, .08);
+  transform: translateY(-3px);
+}
+
+.rank-card a {
+  display: block;
+  color: inherit;
+}
+
+.rank-thumb {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--color-bg-soft);
+  overflow: hidden;
+}
+
+.rank-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rank-number {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 6px;
+  border-radius: 7px;
+  background: rgba(15, 31, 61, .78);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rank-number.top3 {
+  background: var(--color-accent);
+}
+
+.rank-change {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.92);
+}
+
+.rank-change.up { color: #d0342c; }
+.rank-change.down { color: #2f6fed; }
+.rank-change.flat { color: #9aa4b2; }
+.rank-change.new { color: #fff; background: #d0342c; }
+
+.rank-body {
+  padding: 12px 14px 14px;
+}
+
+.rank-brand {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.rank-name {
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0 0 8px;
+  height: 2.8em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.rank-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.rank-discount {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #d0342c;
+}
+
+.rank-price {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* ---------- Content thumb (fills existing .news-thumb with an image) ---------- */
+.news-thumb.has-image {
+  padding: 0;
+  overflow: hidden;
+}
+
+.news-thumb.has-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-card.dash-content .news-meta span:first-child {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  .rank-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 860px) {
+  .rank-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .rank-grid { grid-template-columns: repeat(2, 1fr); }
+}
