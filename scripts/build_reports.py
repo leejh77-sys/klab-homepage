@@ -106,9 +106,20 @@ def main():
 
     all_items.sort(key=lambda x: x["date"], reverse=True)
 
+    manifest_path = DATA_DIR / "reports.json"
+    previous_items = None
+    if manifest_path.exists():
+        try:
+            previous_items = json.loads(manifest_path.read_text(encoding="utf-8")).get("items")
+        except (json.JSONDecodeError, OSError):
+            previous_items = None
+
+    if previous_items == all_items:
+        print(f"[reports] no changes ({len(all_items)} items) - manifest not rewritten")
+        return
+
     payload = {"updatedAt": datetime.now(KST).isoformat(), "items": all_items}
-    with open(DATA_DIR / "reports.json", "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
+    manifest_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"[reports] saved {len(all_items)} items")
 
 
