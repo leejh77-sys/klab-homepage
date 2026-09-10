@@ -1,6 +1,14 @@
 {
-  "updatedAt": "2026-09-08T16:42:51.406468+09:00",
+  "updatedAt": "2026-09-11T08:50:53.152698+09:00",
   "items": [
+    {
+      "title": "OPIS 카본인솔 비교분석 리포트 20260911",
+      "category": "tech",
+      "categoryLabel": "신기술·신제품",
+      "url": "reports/tech/OPIS_%EC%B9%B4%EB%B3%B8%EC%9D%B8%EC%86%94_%EB%B9%84%EA%B5%90%EB%B6%84%EC%84%9D_%EB%A6%AC%ED%8F%AC%ED%8A%B8%2020260911.pdf",
+      "date": "2026-09-11T08:50:09+09:00",
+      "fileSize": 694514
+    },
     {
       "title": "SCF Injection Material Guide KR",
       "category": "tech",
