@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10T08:41:47.812414+09:00",
+  "updatedAt": "2026-09-10T17:52:51.587141+09:00",
   "period": "WEEKLY",
   "items": [
     {
@@ -7,8 +7,8 @@
       "productId": "5880366",
       "brand": "아디다스",
       "name": "클래식 트랙탑 - 블랙:화이트 / KE3527",
-      "price": 109000,
-      "discountRatio": 0,
+      "price": 103550,
+      "discountRatio": 5,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260109/5880366/5880366_17681851101604_500.jpg",
       "url": "https://www.musinsa.com/products/5880366",
       "rankChange": 0,
@@ -31,8 +31,8 @@
       "productId": "3276429",
       "brand": "킨치",
       "name": "SHOWER - 808 (a) / BLACK",
-      "price": 173400,
-      "discountRatio": 40,
+      "price": 245650,
+      "discountRatio": 15,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20230504/3276429/3276429_17770163028829_500.jpg",
       "url": "https://www.musinsa.com/products/3276429",
       "rankChange": 0,
@@ -43,11 +43,11 @@
       "productId": "6928720",
       "brand": "무센트",
       "name": "포즌 믹스 레터링 후드집업 남녀공용",
-      "price": 59420,
-      "discountRatio": 51,
+      "price": 69900,
+      "discountRatio": 42,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260727/6928720/6928720_17878813907976_500.jpg",
       "url": "https://www.musinsa.com/products/6928720",
-      "rankChange": 4,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -59,7 +59,7 @@
       "discountRatio": 15,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20250326/4945148/4945148_17453139295013_500.jpg",
       "url": "https://www.musinsa.com/products/4945148",
-      "rankChange": 4,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -71,7 +71,7 @@
       "discountRatio": 0,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260821/7129026/7129026_17888279507767_500.jpg",
       "url": "https://www.musinsa.com/products/7129026",
-      "rankChange": 1,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -83,19 +83,19 @@
       "discountRatio": 0,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20250818/5331557/5331557_17574083006233_500.jpg",
       "url": "https://www.musinsa.com/products/5331557",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 8,
       "productId": "6948481",
       "brand": "트릴리온",
       "name": "[기획] 에센셜 CP 이중지 크롭 긴팔티_7color",
-      "price": 19990,
-      "discountRatio": 49,
+      "price": 23900,
+      "discountRatio": 39,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260729/6948481/6948481_17853044768380_500.jpg",
       "url": "https://www.musinsa.com/products/6948481",
-      "rankChange": 2,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -107,7 +107,7 @@
       "discountRatio": 0,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260821/7129011/7129011_17888279349108_500.jpg",
       "url": "https://www.musinsa.com/products/7129011",
-      "rankChange": -3,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -115,12 +115,12 @@
       "productId": "5260790",
       "brand": "무센트",
       "name": "시그니처 볼캡 + 뮤트 미니 백팩 SET",
-      "price": 35950,
-      "discountRatio": 73,
+      "price": 69900,
+      "discountRatio": 47,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20250721/5260790/5260790_17546333936114_500.jpg",
       "url": "https://www.musinsa.com/products/5260790",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 11,
@@ -131,7 +131,7 @@
       "discountRatio": 0,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20241212/4662556/4662556_17593638500305_500.jpg",
       "url": "https://www.musinsa.com/products/4662556",
-      "rankChange": 1,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -143,7 +143,7 @@
       "discountRatio": 0,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20250206/4762773/4762773_17514354349128_500.jpg",
       "url": "https://www.musinsa.com/products/4762773",
-      "rankChange": 1,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -151,11 +151,11 @@
       "productId": "5162178",
       "brand": "무신사 스탠다드 우먼",
       "name": "[시티 레저] 우먼즈 후디드 라이트 다운 재킷 [스톤 화이트]",
-      "price": 87870,
-      "discountRatio": 20,
+      "price": 98910,
+      "discountRatio": 10,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20250602/5162178/5162178_17888650510734_500.jpg",
       "url": "https://www.musinsa.com/products/5162178",
-      "rankChange": 4,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -167,7 +167,7 @@
       "discountRatio": 46,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20250925/5532467/5532467_17875486261088_500.jpg",
       "url": "https://www.musinsa.com/products/5532467",
-      "rankChange": 15,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -179,7 +179,7 @@
       "discountRatio": 20,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260824/7140447/7140447_17883950783764_500.jpg",
       "url": "https://www.musinsa.com/products/7140447",
-      "rankChange": -4,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -191,7 +191,7 @@
       "discountRatio": 0,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260416/6323156/6323156_17875447304246_500.jpg",
       "url": "https://www.musinsa.com/products/6323156",
-      "rankChange": -12,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -203,7 +203,7 @@
       "discountRatio": 0,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260821/7129005/7129005_17888300454570_500.jpg",
       "url": "https://www.musinsa.com/products/7129005",
-      "rankChange": -2,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -227,7 +227,7 @@
       "discountRatio": 0,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260813/7074211/7074211_17866142319698_500.jpg",
       "url": "https://www.musinsa.com/products/7074211",
-      "rankChange": 2,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -235,11 +235,11 @@
       "productId": "7220362",
       "brand": "알리스",
       "name": "데님 레이어드 크롭 니트 풀오버 [미드블루]",
-      "price": 55500,
-      "discountRatio": 25,
+      "price": 59200,
+      "discountRatio": 20,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260901/7220362/7220362_17883484507047_500.jpg",
       "url": "https://www.musinsa.com/products/7220362",
-      "rankChange": 6,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -251,7 +251,7 @@
       "discountRatio": 0,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260806/7013625/7013625_17860068898944_500.jpg",
       "url": "https://www.musinsa.com/products/7013625",
-      "rankChange": -16,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -275,7 +275,7 @@
       "discountRatio": 0,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260804/6991196/6991196_17871305055027_500.jpg",
       "url": "https://www.musinsa.com/products/6991196",
-      "rankChange": 2,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -287,7 +287,7 @@
       "discountRatio": 0,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260730/6957177/6957177_17873326337733_500.jpg",
       "url": "https://www.musinsa.com/products/6957177",
-      "rankChange": -8,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -295,12 +295,12 @@
       "productId": "7108774",
       "brand": "디미트리블랙",
       "name": "[10주년기획] © 모두의 Comfortemp® 미드웨이트 패딩_4 COLOR",
-      "price": 79900,
-      "discountRatio": 40,
+      "price": 99900,
+      "discountRatio": 25,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260819/7108774/7108774_17885055232191_500.jpg",
       "url": "https://www.musinsa.com/products/7108774",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 26,
@@ -311,8 +311,8 @@
       "discountRatio": 5,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260820/7113509/7113509_17877107900203_500.jpg",
       "url": "https://www.musinsa.com/products/7113509",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 27,
@@ -323,7 +323,7 @@
       "discountRatio": 19,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20240619/4207634/4207634_17187846410655_500.jpg",
       "url": "https://www.musinsa.com/products/4207634",
-      "rankChange": -8,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -335,19 +335,19 @@
       "discountRatio": 20,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20250818/5329361/5329361_17569461783112_500.jpg",
       "url": "https://www.musinsa.com/products/5329361",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 29,
       "productId": "6078106",
       "brand": "로맨틱무브",
       "name": "러그 더비 R26H920 / 홀스레더블랙",
-      "price": 110700,
-      "discountRatio": 41,
+      "price": 141750,
+      "discountRatio": 25,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260304/6078106/6078106_17756459199850_500.jpg",
       "url": "https://www.musinsa.com/products/6078106",
-      "rankChange": -2,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -359,8 +359,8 @@
       "discountRatio": 20,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260810/7037223/7037223_17872773444036_500.jpg",
       "url": "https://www.musinsa.com/products/7037223",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     }
   ]
 }
