@@ -1,113 +1,110 @@
-// 글로벌 산업뉴스 - data/industry-news.json을 읽어 뉴스 카드로 렌더링한다.
-// 매주 월요일 오전 7시(KST)에 예약된 리서치 루틴이 신발·의류 업계 해외 매체를 조사해
-// data/industry-news.json을 자동 갱신한다. 카드를 클릭하면 새 탭에서 원문 기사가 열린다.
-
+// Editorial cadence and sources: docs/weekly-news-policy.md.
 const INDUSTRY_CATEGORY_META = {
-  "신모델": { label: "신모델 출시", color: "#2f6fed" },
-  "신규브랜드": { label: "신규 브랜드", color: "#7a3ff2" },
-  "글로벌비즈니스": { label: "글로벌 비즈니스", color: "#0f1f3d" },
-  "신소재": { label: "신소재", color: "#3c8f6e" },
-  "유행아이템": { label: "유행 아이템", color: "#c2453d" },
-  "거시트렌드": { label: "거시 트렌드", color: "#5b6472" },
-  "미시트렌드": { label: "미시 트렌드", color: "#b3541e" },
+  '신모델': { label: '신모델 출시', color: '#2f6fed' },
+  '신규브랜드': { label: '신규 브랜드', color: '#7a3ff2' },
+  '글로벌비즈니스': { label: '글로벌 비즈니스', color: '#0f1f3d' },
+  '국내비즈니스': { label: '국내 비즈니스', color: '#0f1f3d' },
+  '신소재': { label: '신소재', color: '#3c8f6e' },
+  '생산기술': { label: '생산 기술', color: '#3c8f6e' },
+  '유행아이템': { label: '유행 아이템', color: '#c2453d' },
+  '거시트렌드': { label: '시장 동향', color: '#5b6472' },
+  '미시트렌드': { label: '소비 트렌드', color: '#b3541e' },
 };
+let industryNewsData = null;
+let industryNewsError = false;
 
-document.addEventListener("DOMContentLoaded", () => {
-  const grid = document.querySelector(".news-grid");
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.querySelector('.news-grid');
   if (!grid) return;
-  loadIndustryNews(grid);
   initGlobalNewsSubTabs();
+  loadIndustryNews(grid);
 });
 
 async function loadIndustryNews(grid) {
   try {
-    const res = await fetch("data/industry-news.json", { cache: "no-store" });
-    if (!res.ok) throw new Error(`data/industry-news.json 요청 실패 (${res.status})`);
-    const data = await res.json();
-    const items = data.items || [];
-    if (!items.length) return;
-    const cardsHtml = items.map(buildIndustryNewsCardHtml).join("");
-    grid.insertAdjacentHTML("afterbegin", cardsHtml);
-    renderIndustryNewsUpdatedAt(data.updatedAt);
+    const res = await fetch('data/industry-news.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error(`뉴스 요청 실패 (${res.status})`);
+    industryNewsData = await res.json();
+    const items = KlabNewsPolicy.select(industryNewsData);
+    grid.querySelectorAll('[data-industry-news]').forEach(card => card.remove());
+    grid.insertAdjacentHTML('afterbegin', items.map(buildIndustryNewsCardHtml).join(''));
+    document.getElementById('sortSelect')?.dispatchEvent(new Event('change'));
+    applyNewsFilters();
+    const date = formatIndustryDate(industryNewsData.updatedAt);
+    document.getElementById('industryNewsUpdatedAt').textContent = date ? `마지막 기사 선정: ${date}` : '';
   } catch (err) {
+    industryNewsError = true;
     console.error(err);
   }
+  renderIndustryNewsStatus();
 }
 
 function buildIndustryNewsCardHtml(item) {
-  const meta = INDUSTRY_CATEGORY_META[item.category] || { label: item.category || "산업뉴스", color: "#5b6472" };
-  const dateLabel = formatIndustryDate(item.date);
-  return `
-    <a class="news-card" href="${escapeHtml(item.url)}" target="_blank" rel="noopener"
-       data-category="global" data-subcat="${escapeHtml(item.category || "")}" data-date="${escapeHtml((item.date || "").slice(0, 10))}" data-views="0">
-      <div class="news-thumb" style="background:${meta.color};">${escapeHtml(meta.label)}</div>
-      <div class="news-body">
-        <span class="news-cat">${escapeHtml(meta.label)}</span>
-        <h4>${escapeHtml(item.title)}</h4>
-        <p>${escapeHtml(item.summary || "")}</p>
-        <div class="news-meta"><span>${escapeHtml(item.source || "")}</span><span>${dateLabel}</span></div>
-        <span class="btn-view">원문 보기 →</span>
-      </div>
-    </a>
-  `;
+  const meta = INDUSTRY_CATEGORY_META[item.category] || { label: item.category, color: '#5b6472' };
+  const region = item.region === 'domestic' ? '국내' : '글로벌';
+  return `<a class="news-card" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer"
+    data-industry-news data-category="${item.region}" data-subcat="${escapeHtml(item.category)}"
+    data-date="${item.date}" data-rank="${Number(item.rank) || 999}" data-views="0">
+    <div class="news-thumb" style="background:${meta.color};">${region} · ${escapeHtml(meta.label)}</div>
+    <div class="news-body">
+      <span class="news-cat">${region} 주요 이슈 ${Number(item.rank) || ''} · ${escapeHtml(meta.label)}</span>
+      <h4>${escapeHtml(item.title)}</h4><p>${escapeHtml(item.summary)}</p>
+      ${item.significance ? `<p><b>KLAB 관점</b> · ${escapeHtml(item.significance)}</p>` : ''}
+      <div class="news-meta"><span>${escapeHtml(item.source)}</span><span>${formatIndustryDate(item.date)}</span></div>
+      <span class="btn-view">원문 보기 →</span>
+    </div></a>`;
 }
 
-// ---------- 글로벌 산업뉴스 하위 카테고리 탭 ----------
-// "글로벌 산업뉴스" 메인 탭이 활성화될 때만 보여지는 2차 필터. 메인 탭 클릭은
-// main.js의 initFilterTabs가 처리하므로, 여기서는 그 결과(활성 탭)를 관찰해
-// 서브탭 표시 여부만 맞춰준다.
 function initGlobalNewsSubTabs() {
-  const subTabs = document.getElementById("globalNewsSubTabs");
-  const mainTabs = document.querySelectorAll(".filter-tabs button");
-  if (!subTabs || !mainTabs.length) return;
+  const subTabs = document.getElementById('globalNewsSubTabs');
+  document.querySelectorAll('.filter-tabs button').forEach(tab => tab.addEventListener('click', () => {
+    if (subTabs) {
+      subTabs.hidden = tab.dataset.filter !== 'global';
+      subTabs.querySelectorAll('button').forEach(btn => btn.classList.toggle('active', btn.dataset.subfilter === 'all'));
+    }
+    applyNewsFilters();
+  }));
+  subTabs?.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => {
+    subTabs.querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
+    applyNewsFilters();
+  }));
+}
 
-  mainTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const isGlobal = tab.dataset.filter === "global";
-      subTabs.hidden = !isGlobal;
-      if (isGlobal) resetGlobalSubFilter(subTabs);
-    });
+function applyNewsFilters() {
+  const target = document.querySelector('.filter-tabs button.active')?.dataset.filter || 'all';
+  const sub = document.querySelector('#globalNewsSubTabs button.active')?.dataset.subfilter || 'all';
+  document.querySelectorAll('.news-grid [data-category]').forEach(card => {
+    const match = (target === 'all' || card.dataset.category === target) &&
+      (target !== 'global' || sub === 'all' || card.dataset.subcat === sub);
+    card.style.display = match ? '' : 'none';
   });
+  renderIndustryNewsStatus();
+}
 
-  subTabs.querySelectorAll("button").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      subTabs.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      const target = btn.dataset.subfilter;
-      document.querySelectorAll('[data-category="global"]').forEach((card) => {
-        card.style.display = target === "all" || card.dataset.subcat === target ? "" : "none";
-      });
-    });
+function renderIndustryNewsStatus() {
+  const note = document.getElementById('industryNewsStatus');
+  if (!note) return;
+  const target = document.querySelector('.filter-tabs button.active')?.dataset.filter || 'all';
+  note.hidden = !['all', 'global', 'domestic'].includes(target);
+  if (industryNewsError) { note.textContent = '뉴스를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.'; return; }
+  if (!industryNewsData) { note.textContent = '이번 주 뉴스를 불러오는 중입니다.'; return; }
+  const items = KlabNewsPolicy.select(industryNewsData);
+  const domestic = items.filter(item => item.region === 'domestic').length;
+  const global = items.length - domestic;
+  const visible = [...document.querySelectorAll('[data-industry-news]')].filter(card => card.style.display !== 'none').length;
+  if (!visible) { note.textContent = '선택한 분류에 최근 7일 이내 발행이 확인된 기사가 없습니다. 다음 주간 정리를 기다려 주세요.'; return; }
+  note.textContent = target === 'domestic'
+    ? `이번 주 국내 주요 이슈 ${domestic}개 / 목표 10개${domestic < 10 ? ' · 최근 기사만 표시합니다.' : ''}`
+    : target === 'global' ? `이번 주 글로벌 주요 이슈 ${visible}개` : `이번 주 글로벌 ${global}개 · 국내 ${domestic}개`;
+}
+
+function formatIndustryDate(value) {
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? '' : date.toLocaleDateString('ko-KR', {
+    timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit'
   });
 }
 
-function resetGlobalSubFilter(subTabs) {
-  subTabs.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
-  subTabs.querySelector('[data-subfilter="all"]')?.classList.add("active");
-  document.querySelectorAll('[data-category="global"]').forEach((card) => {
-    card.style.display = "";
-  });
-}
-
-function renderIndustryNewsUpdatedAt(updatedAt) {
-  const note = document.getElementById("industryNewsUpdatedAt");
-  if (!note || !updatedAt) return;
-  const d = new Date(updatedAt);
-  if (Number.isNaN(d.getTime())) return;
-  note.textContent = `글로벌 산업뉴스 마지막 업데이트: ${d.toLocaleDateString("ko-KR", { year: "numeric", month: "2-digit", day: "2-digit" })}`;
-}
-
-function formatIndustryDate(isoString) {
-  const d = new Date(isoString);
-  if (Number.isNaN(d.getTime())) return "";
-  return d.toLocaleDateString("ko-KR", { year: "numeric", month: "2-digit", day: "2-digit" }).replace(/\. /g, ".").replace(/\.$/, "");
-}
-
-function escapeHtml(str) {
-  if (str == null) return "";
-  return String(str)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+function escapeHtml(value) {
+  return String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }

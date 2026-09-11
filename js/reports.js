@@ -20,6 +20,8 @@ async function loadReports(grid) {
     const data = await res.json();
     const cardsHtml = data.items.map(buildReportCardHtml).join("");
     grid.insertAdjacentHTML("afterbegin", cardsHtml);
+    document.getElementById("sortSelect")?.dispatchEvent(new Event("change"));
+    if (typeof applyNewsFilters === "function") applyNewsFilters();
   } catch (err) {
     console.error(err);
   }

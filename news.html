@@ -42,13 +42,14 @@
     </div>
 
     <div class="mapping-note">
-      🌐 <b>글로벌 산업뉴스</b>는 신발·의류 해외 매체(Footwear News, World Footwear, Sourcing Journal, WGSN, BoF 등)를 매주 월요일 오전 7시에 자동 조사해 신모델·신규 브랜드·글로벌 비즈니스·신소재·유행 아이템·거시/미시 트렌드 20건을 업데이트합니다. 카드를 클릭하면 새 탭에서 원문 기사가 열립니다. <span id="industryNewsUpdatedAt"></span>
+      🌐 <b>글로벌 뉴스 · 국내 뉴스</b>는 매주 최근 7일에 발행된 신발·스포츠 산업 기사를 선별합니다. 글로벌 뉴스는 주요 이슈 중심으로, 국내 뉴스는 주요 이슈 10개로 정리합니다. 원문과 발행일이 확인된 기사만 싣고 같은 이슈는 하나로 묶습니다. <span id="industryNewsUpdatedAt"></span>
     </div>
 
     <div class="list-controls">
       <div class="filter-tabs">
         <button class="active" data-filter="all">전체보기</button>
         <button data-filter="global">글로벌 산업뉴스</button>
+        <button data-filter="domestic">국내 뉴스 · 주요 10</button>
         <button data-filter="tech">신기술·신제품</button>
         <button data-filter="trip">해외출장</button>
         <button data-filter="company">신규업체정보</button>
@@ -58,6 +59,7 @@
       <div class="sort-control">
         <label for="sortSelect">정렬</label>
         <select id="sortSelect">
+          <option value="importance">주요 이슈순</option>
           <option value="latest">최신순</option>
         </select>
       </div>
@@ -69,11 +71,13 @@
       <button data-subfilter="신규브랜드">신규 브랜드</button>
       <button data-subfilter="글로벌비즈니스">글로벌 비즈니스</button>
       <button data-subfilter="신소재">신소재</button>
+      <button data-subfilter="생산기술">생산 기술</button>
       <button data-subfilter="유행아이템">유행 아이템</button>
       <button data-subfilter="거시트렌드">거시 트렌드</button>
       <button data-subfilter="미시트렌드">미시 트렌드</button>
     </div>
 
+    <p id="industryNewsStatus" role="status" aria-live="polite"></p>
     <div class="news-grid">
 
       <a href="equipment.html" class="news-card" data-category="equip" data-date="2026-08-25" data-views="0">
@@ -150,6 +154,7 @@
 
 <script src="js/main.js"></script>
 <script src="js/reports.js"></script>
+<script src="js/news-policy.js"></script>
 <script src="js/industry-news.js"></script>
 </body>
 </html>

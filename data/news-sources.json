@@ -1,0 +1,171 @@
+﻿{
+  "reviewedAt": "2026-09-11",
+  "memoPath": "C:/ai/프로젝트/트렌드 조사 레포트/[신발 글로벌 뉴스 및 비즈니스 분석 사이트].txt",
+  "memoModifiedAt": "2026-09-11T14:05:39+09:00",
+  "sources": [
+    {
+      "name": "World Footwear",
+      "domain": "worldfootwear.com",
+      "region": "global",
+      "status": "active",
+      "reason": "최근 발행 기사와 전문 확인. 신발 시장·기업·생산 중심."
+    },
+    {
+      "name": "Footwearbiz",
+      "domain": "footwearbiz.com",
+      "region": "global",
+      "status": "active",
+      "reason": "9월 10일 소재 기사 전문·발행일 확인. 공개 기사만 조사."
+    },
+    {
+      "name": "Sportstextiles",
+      "domain": "sportstextiles.com",
+      "region": "global",
+      "status": "active",
+      "reason": "9월 10일 미드솔 공정 기사 확인. 신발·기능성 소재 관련 기사만 조사."
+    },
+    {
+      "name": "테넌트뉴스",
+      "domain": "tnnews.co.kr",
+      "region": "domestic",
+      "status": "active",
+      "reason": "최근 기사 전문·발행일 확인. 신발·스포츠·관련 유통 중심, F&B·뷰티 제외."
+    },
+    {
+      "name": "패션인사이트",
+      "domain": "fi.co.kr",
+      "region": "domestic",
+      "status": "active",
+      "reason": "9월 9일 시장 기사 전문·발행일 확인. 인기 기사에 오래된 자료도 있어 개별 발행일 필수."
+    },
+    {
+      "name": "국제섬유신문",
+      "domain": "itnk.co.kr",
+      "region": "domestic",
+      "status": "paused",
+      "reason": "최신 목록은 확인했으나 일부 기사 오류·개별 발행일 확인 제한. 이번 정기 조사에서 보류."
+    },
+    {
+      "name": "Footwear News",
+      "domain": "footwearnews.com",
+      "region": "global",
+      "status": "paused",
+      "reason": "이번 점검에서 페이지 조회 오류. 게시 중단으로 단정하지 않으며 원문 확인 가능한 경우에만 재개."
+    },
+    {
+      "name": "Shoes Post",
+      "domain": "shoespost.jp",
+      "region": "global",
+      "status": "paused",
+      "reason": "이번 점검에서 페이지 조회 오류. 본문·발행일 확인 전 보류."
+    },
+    {
+      "name": "패션비즈",
+      "domain": "fashionbiz.co.kr",
+      "region": "domestic",
+      "status": "paused",
+      "reason": "이번 점검에서 접근 차단(403). 반복 접근하지 않고 보류."
+    },
+    {
+      "name": "TIN뉴스",
+      "domain": "tinnews.co.kr",
+      "region": "domestic",
+      "status": "paused",
+      "reason": "이번 점검에서 페이지 조회 오류로 보류."
+    },
+    {
+      "name": "한국섬유신문",
+      "domain": "ktnews.com",
+      "region": "domestic",
+      "status": "paused",
+      "reason": "이번 점검에서 접근 차단(403). 반복 접근하지 않고 보류."
+    },
+    {
+      "name": "패션포스트",
+      "domain": "fpost.co.kr",
+      "region": "domestic",
+      "status": "paused",
+      "reason": "이번 점검에서 본문이 비어 있고 최근 개별 기사 확인 불가. 중복 주소 통합."
+    },
+    {
+      "name": "어패럴뉴스",
+      "domain": "apparelnews.co.kr",
+      "region": "domestic",
+      "status": "paused",
+      "reason": "이번 점검에서 시간 초과. 검색에 과거 자료가 노출돼 최근 원문 확인 전 보류."
+    },
+    {
+      "name": "데일리트렌드",
+      "domain": "dailytrend.co.kr",
+      "region": "domestic",
+      "status": "excluded",
+      "reason": "일반 리테일 분석 중심. 이번 주 신발 산업 핵심 조사에서는 제외."
+    },
+    {
+      "name": "패션저널",
+      "domain": "okfashion.co.kr",
+      "region": "domestic",
+      "status": "paused",
+      "reason": "이번 점검에서 뉴스 본문·발행일 확인 불가."
+    },
+    {
+      "name": "더스쿠프",
+      "domain": "thescoop.co.kr",
+      "region": "domestic",
+      "status": "excluded",
+      "reason": "종합 경제 매체로 신발 전문성이 낮으며 이번 조회도 실패. 정기 대상 제외."
+    },
+    {
+      "name": "Running Insight",
+      "domain": "runninginsight.com",
+      "region": "global",
+      "status": "reference",
+      "reason": "러닝 유통 전문 매체. 정기 핵심 목록은 3개 해외 매체로 축소하며 추가 확인이 필요할 때만 사용."
+    },
+    {
+      "name": "Formula4 Media",
+      "domain": "formula4media.com",
+      "region": "global",
+      "status": "excluded",
+      "reason": "출판사·매체 안내 페이지. 개별 기사 조사와 중복되므로 정기 조사 제외."
+    },
+    {
+      "name": "Innovation in Textiles",
+      "domain": "innovationintextiles.com",
+      "region": "global",
+      "status": "reference",
+      "reason": "스마트섬유 전용 페이지는 신발 직접 관련성이 제한적. 신발 적용 이슈가 있을 때만 참고."
+    },
+    {
+      "name": "Running Shoes Guru",
+      "domain": "runningshoesguru.com",
+      "region": "global",
+      "status": "reference",
+      "reason": "제품 리뷰·구매 가이드. 정기 산업뉴스 조사에서는 제외, 별도 제품 평가 시 참고."
+    },
+    {
+      "name": "Believe in the Run",
+      "domain": "believeintherun.com",
+      "region": "global",
+      "status": "reference",
+      "reason": "제품 리뷰·구매 가이드. 정기 산업뉴스 조사에서는 제외, 별도 제품 평가 시 참고."
+    },
+    {
+      "name": "OutdoorGearLab",
+      "domain": "outdoorgearlab.com",
+      "region": "global",
+      "status": "reference",
+      "reason": "기어 비교·구매 가이드. 정기 산업뉴스 조사에서는 제외, 별도 제품 평가 시 참고."
+    },
+    {
+      "name": "비욘드포스트",
+      "domain": "beyondpost.co.kr",
+      "region": "domestic",
+      "status": "one-time-verification",
+      "reason": "메모장의 무브스포츠 관련 이슈를 확인하기 위한 이번 회차 단건 보완 출처. 정기 수집 사이트로 추가하지 않음.",
+      "allowedArticleUrls": [
+        "https://www.beyondpost.co.kr/view.php?ud=2026090414433543116cf2d78c68_30"
+      ]
+    }
+  ]
+}

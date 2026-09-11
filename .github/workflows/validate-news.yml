@@ -1,0 +1,20 @@
+name: Validate Weekly News
+on:
+  pull_request:
+    paths: ['data/industry-news.json', 'data/news-sources.json', 'js/news-policy.js', 'scripts/*news*']
+  push:
+    branches: [main]
+    paths: ['data/industry-news.json', 'data/news-sources.json', 'js/news-policy.js', 'scripts/*news*']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test scripts/news-policy.test.cjs
+      - run: node scripts/validate-news.cjs

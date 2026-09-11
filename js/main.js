@@ -55,6 +55,10 @@ function initSort() {
     const key = sortSelect.value;
 
     cards.sort((a, b) => {
+      if (key === "importance") {
+        return Number(a.dataset.rank || 999) - Number(b.dataset.rank || 999) ||
+          new Date(b.dataset.date) - new Date(a.dataset.date);
+      }
       if (key === "popular") {
         return Number(b.dataset.views) - Number(a.dataset.views);
       }
