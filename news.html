@@ -38,7 +38,7 @@
   <div class="wrap">
 
     <div class="mapping-note">
-      💡 <b>신기술·신제품 / 산업 트렌드 / 해외출장 / 신규업체정보</b> 카드는 저장소의 <b>reports/tech·trend·trip·company</b> 폴더에 파일을 올리면 자동으로 생성됩니다. PDF는 그대로, 워드·파워포인트는 자동으로 PDF 변환 후 게시됩니다.
+      💡 <b>신기술·신제품 / 해외출장 / 신규업체정보</b> 카드는 저장소의 <b>reports/tech·trip·company</b> 폴더에 파일을 올리면 자동으로 생성됩니다. PDF는 그대로, 워드·파워포인트는 자동으로 PDF 변환 후 게시됩니다.
     </div>
 
     <div class="mapping-note">
@@ -50,7 +50,6 @@
         <button class="active" data-filter="all">전체보기</button>
         <button data-filter="global">글로벌 산업뉴스</button>
         <button data-filter="tech">신기술·신제품</button>
-        <button data-filter="trend">산업 트렌드</button>
         <button data-filter="trip">해외출장</button>
         <button data-filter="company">신규업체정보</button>
         <button data-filter="equip">평가장비</button>
@@ -62,6 +61,17 @@
           <option value="latest">최신순</option>
         </select>
       </div>
+    </div>
+
+    <div class="sub-filter-tabs" id="globalNewsSubTabs" hidden>
+      <button class="active" data-subfilter="all">전체</button>
+      <button data-subfilter="신모델">신모델</button>
+      <button data-subfilter="신규브랜드">신규 브랜드</button>
+      <button data-subfilter="글로벌비즈니스">글로벌 비즈니스</button>
+      <button data-subfilter="신소재">신소재</button>
+      <button data-subfilter="유행아이템">유행 아이템</button>
+      <button data-subfilter="거시트렌드">거시 트렌드</button>
+      <button data-subfilter="미시트렌드">미시 트렌드</button>
     </div>
 
     <div class="news-grid">

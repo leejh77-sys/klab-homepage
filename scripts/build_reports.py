@@ -20,7 +20,6 @@ KST = timezone(timedelta(hours=9))
 
 CATEGORIES = {
     "tech": "신기술·신제품",
-    "trend": "산업 트렌드",
     "trip": "해외출장",
     "company": "신규업체정보",
 }

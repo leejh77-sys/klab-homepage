@@ -3,7 +3,6 @@
 
 const REPORT_CATEGORY_COLORS = {
   tech: "#2f6fed",
-  trend: "#0f1f3d",
   trip: "#5b6472",
   company: "#3c8f6e",
 };

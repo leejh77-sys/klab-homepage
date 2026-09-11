@@ -366,6 +366,31 @@ section.block {
   flex-wrap: wrap;
 }
 
+.sub-filter-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: -20px 0 32px;
+}
+
+.sub-filter-tabs button {
+  border: 1px dashed var(--color-border);
+  background: #fff;
+  padding: 6px 13px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.sub-filter-tabs button.active {
+  background: #eef2fb;
+  border-color: var(--color-navy);
+  border-style: solid;
+  color: var(--color-navy);
+}
+
 .filter-tabs button {
   border: 1px solid var(--color-border);
   background: #fff;

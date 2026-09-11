@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".news-grid");
   if (!grid) return;
   loadIndustryNews(grid);
+  initGlobalNewsSubTabs();
 });
 
 async function loadIndustryNews(grid) {
@@ -38,7 +39,7 @@ function buildIndustryNewsCardHtml(item) {
   const dateLabel = formatIndustryDate(item.date);
   return `
     <a class="news-card" href="${escapeHtml(item.url)}" target="_blank" rel="noopener"
-       data-category="global" data-date="${escapeHtml((item.date || "").slice(0, 10))}" data-views="0">
+       data-category="global" data-subcat="${escapeHtml(item.category || "")}" data-date="${escapeHtml((item.date || "").slice(0, 10))}" data-views="0">
       <div class="news-thumb" style="background:${meta.color};">${escapeHtml(meta.label)}</div>
       <div class="news-body">
         <span class="news-cat">${escapeHtml(meta.label)}</span>
@@ -49,6 +50,43 @@ function buildIndustryNewsCardHtml(item) {
       </div>
     </a>
   `;
+}
+
+// ---------- 글로벌 산업뉴스 하위 카테고리 탭 ----------
+// "글로벌 산업뉴스" 메인 탭이 활성화될 때만 보여지는 2차 필터. 메인 탭 클릭은
+// main.js의 initFilterTabs가 처리하므로, 여기서는 그 결과(활성 탭)를 관찰해
+// 서브탭 표시 여부만 맞춰준다.
+function initGlobalNewsSubTabs() {
+  const subTabs = document.getElementById("globalNewsSubTabs");
+  const mainTabs = document.querySelectorAll(".filter-tabs button");
+  if (!subTabs || !mainTabs.length) return;
+
+  mainTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const isGlobal = tab.dataset.filter === "global";
+      subTabs.hidden = !isGlobal;
+      if (isGlobal) resetGlobalSubFilter(subTabs);
+    });
+  });
+
+  subTabs.querySelectorAll("button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      subTabs.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      const target = btn.dataset.subfilter;
+      document.querySelectorAll('[data-category="global"]').forEach((card) => {
+        card.style.display = target === "all" || card.dataset.subcat === target ? "" : "none";
+      });
+    });
+  });
+}
+
+function resetGlobalSubFilter(subTabs) {
+  subTabs.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
+  subTabs.querySelector('[data-subfilter="all"]')?.classList.add("active");
+  document.querySelectorAll('[data-category="global"]').forEach((card) => {
+    card.style.display = "";
+  });
 }
 
 function renderIndustryNewsUpdatedAt(updatedAt) {
