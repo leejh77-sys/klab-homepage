@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """무신사 랭킹(주간/월간) + 콘텐츠 데이터를 수집해 data/*.json으로 저장한다.
-매일 07:00 / 13:00 / 19:00 KST에 GitHub Actions(.github/workflows/musinsa-dashboard.yml)가 실행한다.
+매주 월요일 08:00 KST에 GitHub Actions(.github/workflows/musinsa-dashboard.yml)가 실행한다.
 표준 라이브러리만 사용해 별도 의존성 설치 없이 동작한다.
 """
 import json
