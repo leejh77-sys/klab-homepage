@@ -373,6 +373,10 @@ section.block {
   margin: -20px 0 32px;
 }
 
+.sub-filter-tabs[hidden] {
+  display: none;
+}
+
 .sub-filter-tabs button {
   border: 1px dashed var(--color-border);
   background: #fff;
