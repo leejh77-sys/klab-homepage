@@ -31,7 +31,7 @@ async function loadIndustryNews(grid) {
     document.getElementById('sortSelect')?.dispatchEvent(new Event('change'));
     applyNewsFilters();
     const date = formatIndustryDate(industryNewsData.updatedAt);
-    document.getElementById('industryNewsUpdatedAt').textContent = date ? `마지막 기사 선정: ${date}` : '';
+    document.getElementById('industryNewsUpdatedAt').textContent = date ? `기사 선정 기준일: ${date} · 기준일 포함 최근 7일` : '';
   } catch (err) {
     industryNewsError = true;
     console.error(err);
@@ -92,7 +92,7 @@ function renderIndustryNewsStatus() {
   const domestic = items.filter(item => item.region === 'domestic').length;
   const global = items.length - domestic;
   const visible = [...document.querySelectorAll('[data-industry-news]')].filter(card => card.style.display !== 'none').length;
-  if (!visible) { note.textContent = '선택한 분류에 최근 7일 이내 발행이 확인된 기사가 없습니다. 다음 주간 정리를 기다려 주세요.'; return; }
+  if (!visible) { note.textContent = '선택한 분류에 이번 주 선정 기사가 없습니다. 다음 주간 정리를 기다려 주세요.'; return; }
   note.textContent = target === 'domestic'
     ? `이번 주 국내 주요 이슈 ${domestic}개 / 목표 10개${domestic < 10 ? ' · 최근 기사만 표시합니다.' : ''}`
     : target === 'global' ? `이번 주 글로벌 주요 이슈 ${visible}개` : `이번 주 글로벌 ${global}개 · 국내 ${domestic}개`;
