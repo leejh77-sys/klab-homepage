@@ -1,23 +1,7 @@
 {
-  "updatedAt": "2026-09-14T09:44:27.389996+09:00",
+  "updatedAt": "2026-09-21T09:50:45.328953+09:00",
   "sortedBy": "viewCount",
   "items": [
-    {
-      "id": "159066",
-      "title": "다시 돌아온 쇼핑 명절, 무신사 무진장",
-      "summary": "무신사의 가장 큰 이벤트, 무신사 무진장 26 여름 블랙프라이데이가 6월 14일 오후 7시 오픈을 앞두고 있다",
-      "thumbnailUrl": "https://image.msscdn.net/cms/v2/content/file_1781238011879_2836229199_51yalc.jpg",
-      "url": "https://www.musinsa.com/content/1508715586819381034",
-      "category": "뉴스",
-      "brands": [
-        "무신사",
-        "무신사 스탠다드",
-        "아크테릭스"
-      ],
-      "viewCount": 22068,
-      "commentCount": 1,
-      "date": "2026-06-12T19:00:00"
-    },
     {
       "id": "165530",
       "title": "가을 옷장을 가득 채울 FW 26 신상 코디",
@@ -30,9 +14,25 @@
         "아디다스",
         "뉴발란스"
       ],
-      "viewCount": 21893,
+      "viewCount": 23563,
       "commentCount": 0,
       "date": "2026-08-31T11:00:00"
+    },
+    {
+      "id": "166916",
+      "title": "지금 입어야 할 2026 트렌드 컬러룩",
+      "summary": "강렬한 레드와 매혹적인 로열 퍼플. 2026년 트렌드 컬러를 일상 속 스타일에 센스 있게 녹여보자",
+      "thumbnailUrl": "https://image.msscdn.net/thumbnails/ocmp/contents/content/file_1788920318024_4030cd271d2d.jpg",
+      "url": "https://www.musinsa.com/content/1547057639358494785",
+      "category": "스타일",
+      "brands": [
+        "무신사 스탠다드 우먼",
+        "무신사 스탠다드",
+        "론론"
+      ],
+      "viewCount": 22939,
+      "commentCount": 3,
+      "date": "2026-09-10T00:00:00"
     },
     {
       "id": "166361",
@@ -46,7 +46,7 @@
         "무신사 스탠다드 우먼",
         "스파오"
       ],
-      "viewCount": 20670,
+      "viewCount": 22887,
       "commentCount": 2,
       "date": "2026-09-07T11:00:00"
     },
@@ -60,9 +60,25 @@
       "brands": [
         "세컨드솔트"
       ],
-      "viewCount": 19773,
+      "viewCount": 22811,
       "commentCount": 2,
       "date": "2026-08-31T15:30:00"
+    },
+    {
+      "id": "159066",
+      "title": "다시 돌아온 쇼핑 명절, 무신사 무진장",
+      "summary": "무신사의 가장 큰 이벤트, 무신사 무진장 26 여름 블랙프라이데이가 6월 14일 오후 7시 오픈을 앞두고 있다",
+      "thumbnailUrl": "https://image.msscdn.net/cms/v2/content/file_1781238011879_2836229199_51yalc.jpg",
+      "url": "https://www.musinsa.com/content/1508715586819381034",
+      "category": "뉴스",
+      "brands": [
+        "무신사",
+        "무신사 스탠다드",
+        "아크테릭스"
+      ],
+      "viewCount": 22192,
+      "commentCount": 1,
+      "date": "2026-06-12T19:00:00"
     },
     {
       "id": "165289",
@@ -76,7 +92,7 @@
         "애즈유아",
         "닥터마틴"
       ],
-      "viewCount": 16010,
+      "viewCount": 16528,
       "commentCount": 0,
       "date": "2026-08-28T00:00:00"
     },
@@ -92,9 +108,25 @@
         "앤더슨벨",
         "스켈리웩"
       ],
-      "viewCount": 15337,
+      "viewCount": 16449,
       "commentCount": 0,
       "date": "2026-09-03T00:00:00"
+    },
+    {
+      "id": "166773",
+      "title": "강렬함을 입는 6가지 방법 #떠그클럽출근룩",
+      "summary": "강렬함을 소화하는 데 정답은 없다. 메탈 디테일과 스트릿 무드를 각자의 방식으로 풀어낸 떠그클럽 직원 6명의 출근룩을 공개한다",
+      "thumbnailUrl": "https://image.msscdn.net/thumbnails/ocmp/contents/content/file_1788845486372_898a8e6d02a1.jpg",
+      "url": "https://www.musinsa.com/content/1546723732779280983",
+      "category": "스타일",
+      "brands": [
+        "디젤",
+        "나이키",
+        "디키즈"
+      ],
+      "viewCount": 14696,
+      "commentCount": 0,
+      "date": "2026-09-09T00:00:00"
     },
     {
       "id": "154200",
@@ -106,57 +138,25 @@
       "brands": [
         "로타입"
       ],
-      "viewCount": 13556,
+      "viewCount": 13587,
       "commentCount": 1,
       "date": "2026-04-29T11:00:00"
     },
     {
-      "id": "164569",
-      "title": "FW 26 시즌을 이끌 3가지 트렌드 키워드",
-      "summary": "한발 앞서 새로운 계절을 준비할 때. 오직 무신사 캠페인 & 이달의 브랜드 기획전에서 확인하는 FW 26 우먼즈 트렌드 키워드",
-      "thumbnailUrl": "https://image.msscdn.net/cms/v2/content/file_1787295026921_5296370800_6qnbxg.jpg",
-      "url": "https://www.musinsa.com/content/1540229559259535835",
+      "id": "166804",
+      "title": "이번 시즌에도 대세, 경량 패딩 코디",
+      "summary": "출근부터 일상, 여행까지 다채롭게 즐기는 가을 스타일링. 경량 패딩 페스티벌에서 때와 장소에 맞는 아우터 활용법을 확인해 보자",
+      "thumbnailUrl": "https://image.msscdn.net/thumbnails/ocmp/contents/content/file_1788846742425_983f200e7409.jpg",
+      "url": "https://www.musinsa.com/content/1544616336377919868",
       "category": "스타일",
       "brands": [
-        "무신사 스탠다드 우먼",
-        "아디다스",
-        "마뗑킴"
-      ],
-      "viewCount": 8140,
-      "commentCount": 1,
-      "date": "2026-08-24T11:00:00"
-    },
-    {
-      "id": "164735",
-      "title": "계절이 바뀔 때 필요한 환절기 캐주얼룩",
-      "summary": "여름과 가을 사이, 온도차를 극복할 시간. 오직 무신사 캠페인에서 만날 수 있는 인기 아이템으로 환절기 캐주얼룩을 완성해 보자",
-      "thumbnailUrl": "https://image.msscdn.net/cms/v2/content/file_1787548463870_2634233000_k0de33.jpg",
-      "url": "https://www.musinsa.com/content/1541303737396010701",
-      "category": "스타일",
-      "brands": [
-        "필루미네이트",
-        "트릴리온",
-        "커버낫"
-      ],
-      "viewCount": 6235,
-      "commentCount": 0,
-      "date": "2026-08-25T00:00:00"
-    },
-    {
-      "id": "164345",
-      "title": "믹스 매치의 새 공식, 패러독스 드레싱",
-      "summary": "어울리지 않을 것 같던 조합이 만드는 의외의 감각, 지금 가장 트렌디한 스타일 공식을 소개한다",
-      "thumbnailUrl": "https://image.msscdn.net/cms/v2/content/file_1787196191292_5319960000_tnxw3a.jpg",
-      "url": "https://www.musinsa.com/content/1539814946453453888",
-      "category": "스타일",
-      "brands": [
-        "무신사 스탠다드 우먼",
         "무신사 스탠다드",
-        "미치코런던 코시노"
+        "아디다스",
+        "나이키"
       ],
-      "viewCount": 4738,
-      "commentCount": 0,
-      "date": "2026-08-21T00:00:00"
+      "viewCount": 5428,
+      "commentCount": 2,
+      "date": "2026-09-09T11:00:00"
     }
   ]
 }
