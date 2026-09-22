@@ -41,8 +41,20 @@
 - 국내 적격 이슈가 목표보다 적으면 확인된 수량만 게시하고 `shortfallReason`에 사유를 기록한다.
   과거·미확인 기사로 채우지 않는다.
 - 요약과 편집자의 해석(`significance`, 화면의 KLAB 관점)을 구분한다.
-- `verified: true`는 에이전트가 원문을 실제로 열어 발행일·본문을 확인했다는 뜻이다. 확인하지 못한
-  항목은 절대 `verified: true`로 기록하지 않는다.
+- `verified: true`는 아래 중 하나의 방법으로 발행일·핵심 사실을 확인했다는 뜻이다. 어느 방법으로도
+  확인할 수 없으면 절대 `verified: true`로 기록하지 않고, 항목 자체를 추가하지 않는다.
+  1. **WebFetch로 원문을 직접 열어 확인**(가능할 때 우선 사용).
+  2. **WebFetch가 막혀 있을 때의 대체 방법** — 2026-09-23 첫 실행에서 이 클라우드 환경의 네트워크
+     egress 정책이 WebFetch를 모든 외부 도메인에 대해 차단하는 것이 확인됐다(구글·위키피디아 등
+     무관한 도메인까지 차단됨). WebFetch가 막혀 있으면:
+     - 국내 기사: `mcp__PlayMCP__NaverSearch-search_news`(네이버 뉴스 검색)의 구조화된 결과(원문
+       링크, `pubDate`)로 확인한다.
+     - 해외 기사: 서로 다른 독립된 WebSearch 결과 2건 이상이 같은 제목·날짜·핵심 사실에 일치할
+       때만 확인된 것으로 간주한다. 스니펫에 정확한 날짜가 없거나 결과들끼리 날짜가 어긋나면
+       포함하지 않는다.
+  - WebFetch가 1~2회 차단되면 그 실행 안에서는 더 재시도하지 말고 즉시 대체 방법으로 전환한다.
+    여러 하위 에이전트를 병렬로 띄워 각각 같은 차단을 반복 확인하지 않는다(시간·비용 낭비).
+  - WebFetch 접근이 복구되면(다음 실행에서 성공적으로 열리면) 다시 1번 방법을 우선한다.
 
 ## 조사 사이트
 
@@ -64,8 +76,9 @@
 2. 직전 실행(`data/industry-news.json`의 `updatedAt`) 이후 새로 발행된 기사를 우선 조사하되,
    놓친 기사가 없도록 최근 4~7일 범위까지 확인한다. 미래 발행일·날짜 미확인 기사는 제외한다.
 3. 중복 이슈(같은 사건)는 `issueKey`로 병합하고, 이미 저장된 `issueKey`/URL과 겹치면 건너뛴다.
-4. 원문을 확인한 항목만 `rank, region, issueKey, category, title, summary, significance, source,
-   url, date, verified`를 채워 `data/industry-news.json`의 `items`에 추가한다.
+4. 위 '선정과 분류'의 `verified` 정의(WebFetch 직접 확인, 또는 막혀 있을 때 Naver 뉴스API/WebSearch
+   교차검증)에 따라 확인한 항목만 `rank, region, issueKey, category, title, summary, significance,
+   source, url, date, verified`를 채워 `data/industry-news.json`의 `items`에 추가한다.
 5. `date` 기준 28일이 지난 기존 항목을 삭제한다.
 6. `updatedAt`을 실행 완료 시각으로 갱신한다.
 7. `node --test scripts/news-policy.test.cjs`와 `node scripts/validate-news.cjs`를 실행해 통과를
@@ -89,3 +102,7 @@
   이름으로 확인 가능: "KLAB 산업뉴스 자동발행", "KLAB 메일링 브리프 자동발행").
 - 검증기는 발행일·중복·분류·출처·보관기간(28일)을 기계적으로 검사한다. `verified` 값은 에이전트가
   원문을 확인했다는 편집 기록이며, 검증기가 사실관계를 판정한다는 뜻은 아니다.
+- 2026-09-23 첫 테스트 실행 결과: 메일링 브리프는 정상 작동(Gmail 10건 반영, 커밋·푸시 완료).
+  산업뉴스는 이 클라우드 환경의 네트워크 egress 정책이 WebFetch를 모든 외부 도메인에 차단하는 것을
+  발견해 원문을 열 수 없었고, 미검증 스니펫으로 채우는 대신 0건 발행·미커밋으로 안전하게 종료했다.
+  이후 '선정과 분류'의 대체 검증 방법(Naver 뉴스API/WebSearch 교차검증)을 정책에 추가했다.
