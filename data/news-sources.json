@@ -42,8 +42,8 @@
       "name": "국제섬유신문",
       "domain": "itnk.co.kr",
       "region": "domestic",
-      "status": "paused",
-      "reason": "최신 목록은 확인했으나 일부 기사 오류·개별 발행일 확인 제한. 이번 정기 조사에서 보류."
+      "status": "active",
+      "reason": "2026-09-22 재점검: 정상 접속되며 9/22자 최신 기사·발행일 확인됨."
     },
     {
       "name": "Footwear News",
@@ -70,8 +70,8 @@
       "name": "TIN뉴스",
       "domain": "tinnews.co.kr",
       "region": "domestic",
-      "status": "paused",
-      "reason": "이번 점검에서 페이지 조회 오류로 보류."
+      "status": "active",
+      "reason": "2026-09-22 재점검: 정상 접속되며 9/18~9/22 최신 기사·발행일 확인됨."
     },
     {
       "name": "한국섬유신문",
@@ -84,15 +84,15 @@
       "name": "패션포스트",
       "domain": "fpost.co.kr",
       "region": "domestic",
-      "status": "paused",
-      "reason": "이번 점검에서 본문이 비어 있고 최근 개별 기사 확인 불가. 중복 주소 통합."
+      "status": "active",
+      "reason": "2026-09-22 재점검: 정상 접속되며 9/16~9/21 최신 기사·발행일 확인됨."
     },
     {
       "name": "어패럴뉴스",
       "domain": "apparelnews.co.kr",
       "region": "domestic",
-      "status": "paused",
-      "reason": "이번 점검에서 시간 초과. 검색에 과거 자료가 노출돼 최근 원문 확인 전 보류."
+      "status": "active",
+      "reason": "2026-09-22 재점검: 정상 접속되며 2026년 9월 최신 기사·발행일 확인됨."
     },
     {
       "name": "데일리트렌드",
@@ -105,8 +105,8 @@
       "name": "패션저널",
       "domain": "okfashion.co.kr",
       "region": "domestic",
-      "status": "paused",
-      "reason": "이번 점검에서 뉴스 본문·발행일 확인 불가."
+      "status": "active",
+      "reason": "2026-09-22 재점검: 정상 접속되며 9/22자 최신 기사·발행일 확인됨. 신발 카테고리도 별도로 있음."
     },
     {
       "name": "더스쿠프",
@@ -156,6 +156,62 @@
       "region": "global",
       "status": "reference",
       "reason": "기어 비교·구매 가이드. 정기 산업뉴스 조사에서는 제외, 별도 제품 평가 시 참고."
+    },
+    {
+      "name": "SGB Media",
+      "domain": "sgbonline.com",
+      "region": "global",
+      "status": "active",
+      "reason": "2026-09-22 신규 확인: 정상 접속, 9/21자 최신 기사·발행일 확인됨. 스포츠용품·아웃도어·신발 업계 B2B 매체(Salomon, Nike, Puma 등 업계 동향 다수)."
+    },
+    {
+      "name": "Hypebeast",
+      "domain": "hypebeast.com",
+      "region": "global",
+      "status": "active",
+      "reason": "2026-09-22 신규 확인: 정상 접속, 신발(Footwear) 섹션에서 실시간 발행 기사·시각 확인됨. 스니커즈·스트리트웨어 분야 트래픽 최상위 매체."
+    },
+    {
+      "name": "Highsnobiety",
+      "domain": "highsnobiety.com",
+      "region": "global",
+      "status": "active",
+      "reason": "2026-09-22 신규 확인: 정상 접속, 스니커즈 태그 페이지에서 최신 기사·발행 시각 확인됨. 스니커즈·패션 컬처 분야 트래픽 최상위 매체."
+    },
+    {
+      "name": "Just Style",
+      "domain": "just-style.com",
+      "region": "global",
+      "status": "active",
+      "reason": "2026-09-22 신규 확인: 정상 접속, 로그인 없이 최신 기사 확인됨(일부 기사만 유료). 의류·섬유 공급망 전문 매체."
+    },
+    {
+      "name": "Retail Dive",
+      "domain": "retaildive.com",
+      "region": "global",
+      "status": "active",
+      "reason": "2026-09-22 신규 확인: 정상 접속, 최신 기사 확인됨(발행일은 기사 상세페이지에서 확인 필요). 미국 리테일 업계 최다 구독 매체 중 하나, 패션·신발 리테일 뉴스 포함."
+    },
+    {
+      "name": "Sourcing Journal",
+      "domain": "sourcingjournal.com",
+      "region": "global",
+      "status": "excluded",
+      "reason": "2026-09-22 확인: sourcingjournal.com -> wwd.com -> tollbit.wwd.com으로 리다이렉트됨. Footwear News와 동일하게 유료 봇 게이트로 막혀 무료 조사 불가."
+    },
+    {
+      "name": "Outside Business Journal",
+      "domain": "outsidebusinessjournal.com",
+      "region": "global",
+      "status": "excluded",
+      "reason": "2026-09-22 확인: outsideonline.com/business-journal/으로 리다이렉트된 뒤 다시 로그인 페이지(OIDC 인증)로 리다이렉트됨. 계정 로그인 없이는 접근 불가."
+    },
+    {
+      "name": "Sneaker News",
+      "domain": "sneakernews.com",
+      "region": "global",
+      "status": "excluded",
+      "reason": "2026-09-22 확인: HTTP 403 Forbidden. 봇 차단으로 추정, 접근 불가."
     },
     {
       "name": "비욘드포스트",
