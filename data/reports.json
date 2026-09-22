@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-09-22T12:54:33.505639+09:00",
+  "updatedAt": "2026-09-22T14:51:30.963669+09:00",
   "items": [
     {
-      "title": "중국출장보고 (2026.05.22)",
-      "category": "trip",
-      "categoryLabel": "해외출장",
-      "url": "reports/trip/%EC%A4%91%EA%B5%AD%EC%B6%9C%EC%9E%A5%EB%B3%B4%EA%B3%A0_%282026.05.22%29.pdf",
-      "date": "2026-09-22T12:54:33.467531+09:00",
-      "fileSize": 3636680
+      "title": "MoveSport 국내런칭 조사 보고서 20260922",
+      "category": "tech",
+      "categoryLabel": "신기술·신제품",
+      "url": "reports/tech/MoveSport_%EA%B5%AD%EB%82%B4%EB%9F%B0%EC%B9%AD%20%EC%A1%B0%EC%82%AC%20%EB%B3%B4%EA%B3%A0%EC%84%9C_20260922.pdf",
+      "date": "2026-09-22T14:50:35+09:00",
+      "fileSize": 5025561
     },
     {
       "title": "자료 아웃솔 패턴 디자인 가이드라인 2026",
@@ -16,6 +16,14 @@
       "url": "reports/tech/%EC%9E%90%EB%A3%8C_%EC%95%84%EC%9B%83%EC%86%94%20%ED%8C%A8%ED%84%B4%20%EB%94%94%EC%9E%90%EC%9D%B8%20%EA%B0%80%EC%9D%B4%EB%93%9C%EB%9D%BC%EC%9D%B8_2026.pdf",
       "date": "2026-09-22T12:51:42+09:00",
       "fileSize": 609486
+    },
+    {
+      "title": "중국출장보고 (2026.05.22)",
+      "category": "trip",
+      "categoryLabel": "해외출장",
+      "url": "reports/trip/%EC%A4%91%EA%B5%AD%EC%B6%9C%EC%9E%A5%EB%B3%B4%EA%B3%A0_%282026.05.22%29.pdf",
+      "date": "2026-09-22T03:54:33Z",
+      "fileSize": 3636680
     },
     {
       "title": "OPIS 카본인솔 비교분석 리포트 20260911",
