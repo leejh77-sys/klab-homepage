@@ -1,5 +1,5 @@
 ﻿{
-  "reviewedAt": "2026-09-11",
+  "reviewedAt": "2026-09-22",
   "memoPath": "C:/ai/프로젝트/트렌드 조사 레포트/[신발 글로벌 뉴스 및 비즈니스 분석 사이트].txt",
   "memoModifiedAt": "2026-09-11T14:05:39+09:00",
   "sources": [
@@ -49,22 +49,22 @@
       "name": "Footwear News",
       "domain": "footwearnews.com",
       "region": "global",
-      "status": "paused",
-      "reason": "이번 점검에서 페이지 조회 오류. 게시 중단으로 단정하지 않으며 원문 확인 가능한 경우에만 재개."
+      "status": "excluded",
+      "reason": "2026-09-22 재점검: footwearnews.com -> wwd.com -> tollbit.wwd.com으로 리다이렉트됨. TollBit은 AI 봇 접근에 과금하는 유료 게이트로, 무료 자동 조사로는 원문에 접근할 수 없는 구조로 바뀜. 재개하려면 별도 유료 계약이 필요."
     },
     {
       "name": "Shoes Post",
       "domain": "shoespost.jp",
       "region": "global",
-      "status": "paused",
-      "reason": "이번 점검에서 페이지 조회 오류. 본문·발행일 확인 전 보류."
+      "status": "active",
+      "reason": "2026-09-22 재점검: 정상 접속되며 최신 기사(9/22자)·발행일 확인됨. 일본 신발 업계 전문 B2B 매체(기업뉴스·업계동향·상품정보·시장데이터 등)."
     },
     {
       "name": "패션비즈",
       "domain": "fashionbiz.co.kr",
       "region": "domestic",
       "status": "paused",
-      "reason": "이번 점검에서 접근 차단(403). 반복 접근하지 않고 보류."
+      "reason": "2026-09-22 재점검: 이전 403은 아니지만 페이지 본문(기사 목록)이 로드되지 않고 푸터·메뉴만 확인됨(자바스크립트 렌더링 의존 추정). 계속 보류."
     },
     {
       "name": "TIN뉴스",
@@ -77,8 +77,8 @@
       "name": "한국섬유신문",
       "domain": "ktnews.com",
       "region": "domestic",
-      "status": "paused",
-      "reason": "이번 점검에서 접근 차단(403). 반복 접근하지 않고 보류."
+      "status": "active",
+      "reason": "2026-09-22 재점검: 정상 접속되며 최신 기사·발행일 확인됨(9/11 점검 때의 403은 일시적 오류였던 것으로 보임)."
     },
     {
       "name": "패션포스트",
