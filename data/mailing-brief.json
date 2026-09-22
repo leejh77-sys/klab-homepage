@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-23T08:30:00+09:00",
+  "updatedAt": "2026-09-23T08:43:48+09:00",
   "period": "ROLLING",
   "windowDays": 28,
   "note": "이정호 이사 개인 구독 메일함(Gmail) 기준. 원문 링크는 발신처 홈페이지로 연결되며 개별 기사 링크가 아닙니다. 공식 검증 절차를 거치는 data/industry-news.json과는 별도 운영됩니다. 매주 월요일 08시 자동 갱신되며 발행일 기준 28일이 지난 항목은 자동 삭제됩니다.",
@@ -65,6 +65,19 @@
 
     { "category": "gear", "title": "'세계기록 깨는 법' 가이드 특집", "summary": "버피 브로드점프 마라톤 세계신기록 소식도 함께 실렸습니다.", "source": "Canadian Running", "sourceUrl": "https://runningmagazine.ca", "date": "2026-09-11" },
     { "category": "gear", "title": "\"홀로그램 기어와 쇼핑의 미래\" 특집", "summary": "", "source": "GearJunkie", "sourceUrl": "https://gearjunkie.com", "date": "2026-09-11" },
-    { "category": "gear", "title": "PCT(퍼시픽크레스트트레일) 종점 복원 소식", "summary": "", "source": "GearJunkie", "sourceUrl": "https://gearjunkie.com", "date": "2026-09-14" }
+    { "category": "gear", "title": "PCT(퍼시픽크레스트트레일) 종점 복원 소식", "summary": "", "source": "GearJunkie", "sourceUrl": "https://gearjunkie.com", "date": "2026-09-14" },
+
+    { "category": "industry", "title": "딕스 스포팅 굿즈, 풋라커 인수 25억 달러 규모로 완료", "summary": "현금과 보통주를 합쳐 25억 달러 규모로 거래가 마무리됐으며, 대형 매장 중심이던 딕스가 풋라커의 소형 매장망을 활용한 해외 진출 시너지를 기대하고 있습니다.", "source": "ShoeTalk", "sourceUrl": "https://shoetalk.xyz", "date": "2026-09-21" },
+    { "category": "shoe", "title": "아디다스, 아디제로 아디오스 프로 5 공개", "summary": "전작보다 23g 가벼운 약 177g에 에너지 리턴을 9% 개선한 레이스데이 슈퍼슈로, 국내 소비자가는 33만 9천원입니다.", "source": "ShoeTalk", "sourceUrl": "https://shoetalk.xyz", "date": "2026-09-22" },
+    { "category": "industry", "title": "부산 신발산업 글로벌 파트너십 테크 Meet-up Day 참가기업 모집", "summary": "부산테크노파크가 데상트·온러닝 등 글로벌 브랜드를 초청해 부산 지역 신발·소재 기업과의 매칭을 주선하는 행사로, 10월 29일 벡스코에서 열립니다.", "source": "ShoeTalk", "sourceUrl": "https://shoetalk.xyz", "date": "2026-09-22" },
+    { "category": "industry", "title": "LF의 리복 사업, 추가 인력 감축 예고", "summary": "2022년 국내 판권을 확보한 LF가 시장에서 기대만큼의 반응을 얻지 못하며 리복 사업 인력을 추가로 줄일 예정인 것으로 전해졌습니다.", "source": "ShoeTalk", "sourceUrl": "https://shoetalk.xyz", "date": "2026-09-22" },
+    { "category": "fashion", "title": "프로스펙스, 서촌에 브랜드 중심 플래그십 매장 오픈", "summary": "1990년대 매장이 있던 자리에 새 플래그십을 열며 유통 중심에서 브랜드 중심 전략으로 전환하고 있습니다.", "source": "ShoeTalk", "sourceUrl": "https://shoetalk.xyz", "date": "2026-09-22" },
+    { "category": "design", "title": "나이키 '문 슈' 기획전 'Version 0: Prototype' 서울대서 열려", "summary": "지난 주말 서울대학교에서 열린 나이키 문 슈 기획전이 호평을 받았습니다.", "source": "ShoeTalk", "sourceUrl": "https://shoetalk.xyz", "date": "2026-09-21" },
+
+    { "category": "industry", "title": "Christy Sports, 신임 CEO에 린지 고줄락 선임", "summary": "콜로라도 기반 아웃도어 전문 리테일러의 CEO가 피트 라보어에서 린지 고줄락으로 교체됐습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-22" },
+    { "category": "industry", "title": "Backcountry, Velofix 모바일 자전거 정비 네트워크 자산 인수", "summary": "온라인 아웃도어 전문 리테일러가 방문형 자전거 정비 서비스 자산을 인수해 오프라인 접점을 확대합니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-22" },
+    { "category": "industry", "title": "Dick's Sporting Goods, 10억 달러 시니어노트에 BBB 등급", "summary": "S&P가 딕스의 신규 무담보 시니어노트 발행에 BBB 등급을 부여했습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-22" },
+
+    { "category": "industry", "title": "JD Sports, 멕시코 프랜차이즈 계약으로 시장 진출", "summary": "스포츠 의류·신발·용품 그룹 JD Sports가 Axo Grupo와 손잡고 처음으로 멕시코 시장에 진출합니다.", "source": "Sportstextiles", "sourceUrl": "https://www.sportstextiles.com", "date": "2026-09-21" }
   ]
 }
