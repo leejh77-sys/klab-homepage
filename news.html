@@ -17,8 +17,6 @@
       <a href="index.html">홈</a>
       <a href="services.html">서비스</a>
       <a href="news.html" class="active">최신정보</a>
-      <a href="dashboard.html">트렌드</a>
-      <a href="https://klab-shoe-research.pages.dev/" target="_blank" rel="noopener">신규 신발 브랜드</a>
       <a href="infra.html">장비</a>
       <a href="#" class="js-contact">문의</a>
     </nav>
@@ -29,7 +27,7 @@
   <div class="wrap">
     <span class="eyebrow">Latest Update</span>
     <h1 style="font-size:32px;">최신정보</h1>
-    <p>신기술·신제품, 산업 트렌드, 해외출장, 신규업체 정보에 더해 보유 평가 장비 소식까지 카드뉴스 형태로 소개합니다. 카드를 클릭하면 새 탭에서 보고서 PDF가 바로 열립니다.</p>
+    <p>무신사 판매 트렌드, 글로벌·국내 산업뉴스, KLAB 레포트, 신규 신발 브랜드, 해외출장, 신규업체 정보까지 카드뉴스 형태로 한 곳에서 확인하세요.</p>
   </div>
 </section>
 
@@ -41,12 +39,13 @@
     <div class="list-controls">
       <div class="filter-tabs">
         <button class="active" data-filter="all">전체보기</button>
+        <button data-filter="trend">트렌드</button>
         <button data-filter="global">글로벌 산업뉴스</button>
         <button data-filter="domestic">국내 뉴스 · 주요 10</button>
-        <button data-filter="tech">신기술·신제품</button>
+        <button data-filter="tech">KLAB 레포트</button>
+        <button data-filter="brand">신규 신발 브랜드</button>
         <button data-filter="trip">해외출장</button>
         <button data-filter="company">신규업체정보</button>
-        <button data-filter="equip">평가장비</button>
       </div>
       <div class="sort-control">
         <label for="sortSelect">정렬</label>
@@ -72,13 +71,68 @@
     <p id="industryNewsStatus" role="status" aria-live="polite"></p>
     <div class="news-grid">
 
-      <a href="equipment.html" class="news-card" data-category="equip" data-date="2026-08-25" data-views="0">
-        <div class="news-thumb" style="background:#3c8f6e;">평가장비</div>
+      <a href="dashboard.html" class="news-card" data-category="trend" data-date="2026-09-21" data-views="0">
+        <div class="news-thumb" style="background:#0f1f3d;">주간 랭킹</div>
         <div class="news-body">
-          <span class="news-cat">평가장비</span>
-          <h4>보유 평가 장비 리스트 &amp; 설명</h4>
-          <p>KLAB이 보유한 평가 장비 45종의 목록과 간략한 설명을 확인할 수 있습니다.</p>
-          <div class="news-meta"><span>연구평가팀</span><span>2026.08.25</span></div>
+          <span class="news-cat">주간 랭킹</span>
+          <h4>무신사 주간 랭킹 TOP 20</h4>
+          <p>이번 주 무신사에서 가장 많이 팔린 신발·의류 아이템을 한눈에 확인하세요.</p>
+          <div class="news-meta"><span>무신사 트렌드</span><span>매주 월요일 08시 갱신</span></div>
+          <span class="btn-view">자세히 보기 →</span>
+        </div>
+      </a>
+
+      <a href="dashboard.html" class="news-card" data-category="trend" data-date="2026-09-21" data-views="0">
+        <div class="news-thumb" style="background:#2f6fed;">월간 랭킹</div>
+        <div class="news-body">
+          <span class="news-cat">월간 랭킹</span>
+          <h4>무신사 월간 랭킹 TOP 20</h4>
+          <p>한 달간의 누적 판매 데이터로 보는 스테디셀러 아이템 랭킹입니다.</p>
+          <div class="news-meta"><span>무신사 트렌드</span><span>매주 월요일 08시 갱신</span></div>
+          <span class="btn-view">자세히 보기 →</span>
+        </div>
+      </a>
+
+      <a href="dashboard.html" class="news-card" data-category="trend" data-date="2026-09-21" data-views="0">
+        <div class="news-thumb" style="background:#3c8f6e;">핫이슈·스타일</div>
+        <div class="news-body">
+          <span class="news-cat">핫이슈·스타일</span>
+          <h4>스니커즈·트렌드 핫이슈</h4>
+          <p>스니커즈, 트렌드, 발매소식, 스타일 콘텐츠를 조회수 기준으로 모아봅니다.</p>
+          <div class="news-meta"><span>무신사 트렌드</span><span>조회수 기준</span></div>
+          <span class="btn-view">자세히 보기 →</span>
+        </div>
+      </a>
+
+      <a href="https://klab-shoe-research.pages.dev/" target="_blank" rel="noopener" class="news-card" data-category="brand" data-date="2026-09-01" data-views="0">
+        <div class="news-thumb" style="background:#7a3ff2;">브랜드 목록</div>
+        <div class="news-body">
+          <span class="news-cat">신규 신발 브랜드</span>
+          <h4>KLAB BRANDS</h4>
+          <p>리서치팀이 수집한 신규 신발 브랜드 목록을 한눈에 확인할 수 있습니다.</p>
+          <div class="news-meta"><span>리서치팀</span><span>상시 업데이트</span></div>
+          <span class="btn-view">자세히 보기 →</span>
+        </div>
+      </a>
+
+      <a href="https://klab-shoe-research.pages.dev/" target="_blank" rel="noopener" class="news-card" data-category="brand" data-date="2026-09-01" data-views="0">
+        <div class="news-thumb" style="background:#2f6fed;">리서치 자료</div>
+        <div class="news-body">
+          <span class="news-cat">신규 신발 브랜드</span>
+          <h4>KLAB SHOE RESEARCH</h4>
+          <p>해외 신흥 브랜드부터 국내 신규 브랜드까지, 신발 시장 리서치 자료를 살펴보세요.</p>
+          <div class="news-meta"><span>리서치팀</span><span>상시 업데이트</span></div>
+          <span class="btn-view">자세히 보기 →</span>
+        </div>
+      </a>
+
+      <a href="https://klab-shoe-research.pages.dev/" target="_blank" rel="noopener" class="news-card" data-category="brand" data-date="2026-09-01" data-views="0">
+        <div class="news-thumb" style="background:#3c8f6e;">브랜드 등록</div>
+        <div class="news-body">
+          <span class="news-cat">신규 신발 브랜드</span>
+          <h4>ADD BRAND WEBSITE</h4>
+          <p>브랜드 홈페이지 URL을 입력하면 리서치 목록에 자동으로 저장됩니다.</p>
+          <div class="news-meta"><span>리서치팀</span><span>상시 업데이트</span></div>
           <span class="btn-view">자세히 보기 →</span>
         </div>
       </a>
