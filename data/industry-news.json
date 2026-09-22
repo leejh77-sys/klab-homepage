@@ -1,7 +1,7 @@
 {
   "updatedAt": "2026-09-22T12:00:00+09:00",
-  "period": "WEEKLY",
-  "windowDays": 7,
+  "period": "ROLLING",
+  "windowDays": 28,
   "timeZone": "Asia/Seoul",
   "domesticTarget": 10,
   "shortfallReason": "정기 조사 대상 해외 매체(World Footwear, Footwearbiz, Sportstextiles)에서는 최근 7일(9/16~9/22) 이내 발행일이 확인되는 신발·스포츠 산업 기사를 찾지 못해 국내 매체(테넌트뉴스)가 다룬 국내 브랜드의 해외 시장 진출 기사만 글로벌 항목에 반영했다. 국내 항목도 같은 기간 발행일이 확인된 신발·스포츠 산업 관련 기사가 6건에 그쳐 목표치(10건)에 미달했으며, 날짜 미확인 기사로 채우지 않았다.",

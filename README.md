@@ -54,12 +54,12 @@ KLAB 홈페이지 제작/
 - 디자인은 회사 로고(`K LAB LOGO.ai`)의 톤에 맞춰 다시 다듬어야 합니다.
 
 
-## 주간 산업뉴스 운영
+## 산업뉴스 자동 발행 (Mon/Thu)
 
-글로벌 주요 뉴스와 국내 주요 이슈 10개는 `data/industry-news.json`에서 관리합니다. 최근 7일 발행 기사만 선정합니다. 전체 출처 분류 및 다음 조사 지침은 [주간 뉴스 운영 기준](docs/weekly-news-policy.md)을 참고하세요.
+글로벌 주요 뉴스와 국내 주요 이슈는 `data/industry-news.json`에서 관리하며, 예약된 Claude 클라우드 에이전트(routine)가 매주 월·목 08:00 KST에 자동으로 조사·작성·커밋·푸시합니다. 발행일 기준 28일이 지난 항목은 자동으로 삭제됩니다. 전체 출처 분류 및 실행 절차는 [산업뉴스·메일링 브리프 자동 발행 운영 기준](docs/news-automation-policy.md)을 참고하세요.
 
-게시 전 `node --test scripts/news-policy.test.cjs`와 `node scripts/validate-news.cjs`로 검증합니다. GitHub Actions에도 동일한 검증을 추가했습니다. 예약 자동 조사 실행은 아직 활성화하지 않았습니다.
+게시 전 `node --test scripts/news-policy.test.cjs`와 `node scripts/validate-news.cjs`로 검증합니다. GitHub Actions에도 동일한 검증을 추가했습니다.
 
-## 메일링 브리프 (별도 운영)
+## 메일링 브리프 자동 발행 (Mon, 별도 운영)
 
-`news.html`의 "메일링 브리프" 탭은 이정호 이사가 개인적으로 구독 중인 신발·패션·디자인·산업트렌드·연구·기어리뷰 뉴스레터(Gmail)를 2주 단위로 훑어 정리한 콘텐츠입니다. `data/mailing-brief.json`에서 관리하며, `data/industry-news.json`이 따르는 `docs/weekly-news-policy.md`의 엄격한 검증(verified, issueKey 중복제거, 공개 기사 URL 등)은 적용하지 않는 가벼운 소스입니다. 각 카드의 링크는 개별 기사가 아니라 발신처 홈페이지로 연결됩니다.
+`news.html`의 "메일링 브리프" 탭은 이정호 이사가 개인적으로 구독 중인 신발·패션·디자인·산업트렌드·연구·기어리뷰 뉴스레터(Gmail)를 예약된 Claude 클라우드 에이전트가 매주 월요일 08:00 KST에 자동으로 훑어 정리하는 콘텐츠입니다. `data/mailing-brief.json`에서 관리하며, `data/industry-news.json`이 따르는 `docs/news-automation-policy.md`의 엄격한 검증(verified, issueKey 중복제거, 공개 기사 URL 등)은 적용하지 않는 가벼운 소스입니다. 게시 전 `node scripts/validate-mailing-brief.cjs`로 검증하며, 발행일 기준 28일이 지난 항목은 자동으로 삭제됩니다. 각 카드의 링크는 개별 기사가 아니라 발신처 홈페이지로 연결됩니다.

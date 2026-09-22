@@ -1,10 +1,10 @@
-name: Validate Weekly News
+name: Validate Automated News & Mailing Brief
 on:
   pull_request:
-    paths: ['data/industry-news.json', 'data/news-sources.json', 'js/news-policy.js', 'scripts/*news*']
+    paths: ['data/industry-news.json', 'data/news-sources.json', 'data/mailing-brief.json', 'js/news-policy.js', 'scripts/*news*', 'scripts/validate-mailing-brief.cjs']
   push:
     branches: [main]
-    paths: ['data/industry-news.json', 'data/news-sources.json', 'js/news-policy.js', 'scripts/*news*']
+    paths: ['data/industry-news.json', 'data/news-sources.json', 'data/mailing-brief.json', 'js/news-policy.js', 'scripts/*news*', 'scripts/validate-mailing-brief.cjs']
   workflow_dispatch: {}
 permissions:
   contents: read
@@ -18,3 +18,4 @@ jobs:
           node-version: '22'
       - run: node --test scripts/news-policy.test.cjs
       - run: node scripts/validate-news.cjs
+      - run: node scripts/validate-mailing-brief.cjs

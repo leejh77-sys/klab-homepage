@@ -1,5 +1,5 @@
-// 메일링 브리프: 이정호 이사 개인 구독 뉴스레터함(Gmail) 요약.
-// data/industry-news.json(docs/weekly-news-policy.md 검증 절차)과는 별도로 운영되는 가벼운 소스.
+// 메일링 브리프: 이정호 이사 개인 구독 뉴스레터함(Gmail) 요약, 매주 월요일 08시 자동 갱신.
+// data/industry-news.json(docs/news-automation-policy.md 검증 절차)과는 별도로 운영되는 가벼운 소스.
 const MAILING_CATEGORY_COLOR = {
   shoe: '#a8552e',
   fashion: '#7c4568',
@@ -36,14 +36,12 @@ async function loadMailingBrief(grid) {
 
 function buildMailingCardHtml(item) {
   const categoryMeta = (mailingBriefData.categories || []).find((c) => c.key === item.category);
-  const weekMeta = (mailingBriefData.weeks || []).find((w) => w.key === item.week);
   const color = MAILING_CATEGORY_COLOR[item.category] || '#5b6472';
   const catLabel = categoryMeta ? categoryMeta.label : item.category;
-  const weekLabel = weekMeta ? weekMeta.label : item.week;
   return `<a class="news-card" href="${escapeMailingHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer"
     data-mailing-brief data-category="mailing" data-subcat="${escapeMailingHtml(item.category)}"
-    data-week="${escapeMailingHtml(item.week)}" data-date="${item.date}" data-views="0">
-    <div class="news-thumb" style="background:${color};">${escapeMailingHtml(catLabel)} · ${escapeMailingHtml(weekLabel)}</div>
+    data-date="${item.date}" data-views="0">
+    <div class="news-thumb" style="background:${color};">${escapeMailingHtml(catLabel)}</div>
     <div class="news-body">
       <span class="news-cat">${escapeMailingHtml(catLabel)}</span>
       <h4>${escapeMailingHtml(item.title)}</h4>
@@ -88,7 +86,7 @@ function renderMailingStatus() {
   if (!mailingBriefData) { note.textContent = '메일링 브리프를 불러오는 중입니다.'; return; }
   const visible = [...document.querySelectorAll('[data-mailing-brief]')].filter((card) => card.style.display !== 'none').length;
   note.hidden = false;
-  note.textContent = `구독 메일함 기준 ${visible}건 · 이번 주/지난 주 2주 커버 · 공식 검증 뉴스(글로벌/국내 산업뉴스)와는 별도 운영`;
+  note.textContent = `구독 메일함 기준 ${visible}건 · 매주 월요일 자동 갱신 · 최근 28일 커버 · 공식 검증 뉴스(글로벌/국내 산업뉴스)와는 별도 운영`;
 }
 
 function formatMailingDate(value) {

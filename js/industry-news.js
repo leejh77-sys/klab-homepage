@@ -1,4 +1,4 @@
-// Editorial cadence and sources: docs/weekly-news-policy.md.
+// Editorial cadence and sources: docs/news-automation-policy.md.
 const INDUSTRY_CATEGORY_META = {
   '신모델': { label: '신모델 출시', color: '#2f6fed' },
   '신규브랜드': { label: '신규 브랜드', color: '#7a3ff2' },
@@ -31,7 +31,7 @@ async function loadIndustryNews(grid) {
     document.getElementById('sortSelect')?.dispatchEvent(new Event('change'));
     applyNewsFilters();
     const date = formatIndustryDate(industryNewsData.updatedAt);
-    document.getElementById('industryNewsUpdatedAt').textContent = date ? `기사 선정 기준일: ${date} · 기준일 포함 최근 7일` : '';
+    document.getElementById('industryNewsUpdatedAt').textContent = date ? `최근 갱신: ${date} · 매주 월/목 자동 갱신 · 최근 28일 발행 기사만 표시` : '';
   } catch (err) {
     industryNewsError = true;
     console.error(err);
@@ -87,15 +87,15 @@ function renderIndustryNewsStatus() {
   const target = document.querySelector('.filter-tabs button.active')?.dataset.filter || 'all';
   note.hidden = !['all', 'global', 'domestic'].includes(target);
   if (industryNewsError) { note.textContent = '뉴스를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.'; return; }
-  if (!industryNewsData) { note.textContent = '이번 주 뉴스를 불러오는 중입니다.'; return; }
+  if (!industryNewsData) { note.textContent = '뉴스를 불러오는 중입니다.'; return; }
   const items = KlabNewsPolicy.select(industryNewsData);
   const domestic = items.filter(item => item.region === 'domestic').length;
   const global = items.length - domestic;
   const visible = [...document.querySelectorAll('[data-industry-news]')].filter(card => card.style.display !== 'none').length;
-  if (!visible) { note.textContent = '선택한 분류에 이번 주 선정 기사가 없습니다. 다음 주간 정리를 기다려 주세요.'; return; }
+  if (!visible) { note.textContent = '선택한 분류에 최근 28일 내 선정 기사가 없습니다. 다음 갱신(월/목)을 기다려 주세요.'; return; }
   note.textContent = target === 'domestic'
-    ? `이번 주 국내 주요 이슈 ${domestic}개 / 목표 10개${domestic < 10 ? ' · 최근 기사만 표시합니다.' : ''}`
-    : target === 'global' ? `이번 주 글로벌 주요 이슈 ${visible}개` : `이번 주 글로벌 ${global}개 · 국내 ${domestic}개`;
+    ? `최근 28일 국내 주요 이슈 ${domestic}개`
+    : target === 'global' ? `최근 28일 글로벌 주요 이슈 ${visible}개` : `최근 28일 글로벌 ${global}개 · 국내 ${domestic}개`;
 }
 
 function formatIndustryDate(value) {

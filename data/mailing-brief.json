@@ -1,11 +1,8 @@
 {
-  "updatedAt": "2026-09-23T09:00:00+09:00",
-  "period": "WEEKLY",
-  "note": "이정호 이사 개인 구독 메일함(Gmail) 기준. 원문 링크는 발신처 홈페이지로 연결되며 개별 기사 링크가 아닙니다. 공식 검증 절차를 거치는 data/industry-news.json과는 별도 운영됩니다.",
-  "weeks": [
-    { "key": "current", "label": "이번 주", "range": "09.16 - 09.22" },
-    { "key": "previous", "label": "지난 주", "range": "09.09 - 09.15" }
-  ],
+  "updatedAt": "2026-09-23T08:30:00+09:00",
+  "period": "ROLLING",
+  "windowDays": 28,
+  "note": "이정호 이사 개인 구독 메일함(Gmail) 기준. 원문 링크는 발신처 홈페이지로 연결되며 개별 기사 링크가 아닙니다. 공식 검증 절차를 거치는 data/industry-news.json과는 별도 운영됩니다. 매주 월요일 08시 자동 갱신되며 발행일 기준 28일이 지난 항목은 자동 삭제됩니다.",
   "categories": [
     { "key": "shoe", "label": "신발" },
     { "key": "fashion", "label": "패션" },
@@ -15,59 +12,59 @@
     { "key": "gear", "label": "기어리뷰" }
   ],
   "items": [
-    { "week": "current", "category": "shoe", "title": "뉴발란스 2010 정식 발매", "summary": "Nike x One Piece 콜라보 라운지, Air Max Plus SP \"Ope Ope\"도 함께 공개됐습니다.", "source": "Sneakersnstuff", "sourceUrl": "https://www.sneakersnstuff.com", "date": "2026-09-21" },
-    { "week": "current", "category": "shoe", "title": "Zellerfeld, 3D프린팅 에어맥스 1000.3 래플 오픈", "summary": "ZellerMESH 소재를 업데이트해 경량화·쿠셔닝을 개선했습니다.", "source": "Zellerfeld", "sourceUrl": "https://zellerfeld.com", "date": "2026-09-22" },
-    { "week": "current", "category": "shoe", "title": "Dick's SG 회장 Ed Stack, \"운동화 사이클 아직 안 끝났다\" 재확인", "summary": "월가의 하향 전망에 정면으로 반박하는 발언이 이번 주에도 반복됐습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-18" },
-    { "week": "current", "category": "shoe", "title": "Supreme x Nike 2026 가을 컬렉션, Supreme x Timberland \"Diamond Plate\" 리이슈", "summary": "스트리트웨어 협업이 가을 시즌 본격 공개됐습니다.", "source": "Hypebeast", "sourceUrl": "https://hypebeast.com", "date": "2026-09-22" },
-    { "week": "current", "category": "shoe", "title": "Kylian Mbappé, 레알 마드리드 훈련에서 On의 첫 축구화 착용", "summary": "러닝 브랜드의 축구화 카테고리 진출 신호로 읽힙니다.", "source": "Hypebeast", "sourceUrl": "https://hypebeast.com", "date": "2026-09-22" },
+    { "category": "shoe", "title": "뉴발란스 2010 정식 발매", "summary": "Nike x One Piece 콜라보 라운지, Air Max Plus SP \"Ope Ope\"도 함께 공개됐습니다.", "source": "Sneakersnstuff", "sourceUrl": "https://www.sneakersnstuff.com", "date": "2026-09-21" },
+    { "category": "shoe", "title": "Zellerfeld, 3D프린팅 에어맥스 1000.3 래플 오픈", "summary": "ZellerMESH 소재를 업데이트해 경량화·쿠셔닝을 개선했습니다.", "source": "Zellerfeld", "sourceUrl": "https://zellerfeld.com", "date": "2026-09-22" },
+    { "category": "shoe", "title": "Dick's SG 회장 Ed Stack, \"운동화 사이클 아직 안 끝났다\" 재확인", "summary": "월가의 하향 전망에 정면으로 반박하는 발언이 이번 주에도 반복됐습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-18" },
+    { "category": "shoe", "title": "Supreme x Nike 2026 가을 컬렉션, Supreme x Timberland \"Diamond Plate\" 리이슈", "summary": "스트리트웨어 협업이 가을 시즌 본격 공개됐습니다.", "source": "Hypebeast", "sourceUrl": "https://hypebeast.com", "date": "2026-09-22" },
+    { "category": "shoe", "title": "Kylian Mbappé, 레알 마드리드 훈련에서 On의 첫 축구화 착용", "summary": "러닝 브랜드의 축구화 카테고리 진출 신호로 읽힙니다.", "source": "Hypebeast", "sourceUrl": "https://hypebeast.com", "date": "2026-09-22" },
 
-    { "week": "current", "category": "fashion", "title": "Supreme 협업 시즌 본격화", "summary": "Nike, Timberland와 잇단 컬래버로 가을 스트리트웨어 라인업이 공개됐습니다.", "source": "Hypebeast", "sourceUrl": "https://hypebeast.com", "date": "2026-09-22" },
-    { "week": "current", "category": "fashion", "title": "AAFA, 가을 첫날 맞아 'Heat Stress Toolkit' 발표", "summary": "의류 제조 현장의 폭염 대응 가이드라인입니다.", "source": "AAFA", "sourceUrl": "https://www.aafaglobal.org", "date": "2026-09-22" },
+    { "category": "fashion", "title": "Supreme 협업 시즌 본격화", "summary": "Nike, Timberland와 잇단 컬래버로 가을 스트리트웨어 라인업이 공개됐습니다.", "source": "Hypebeast", "sourceUrl": "https://hypebeast.com", "date": "2026-09-22" },
+    { "category": "fashion", "title": "AAFA, 가을 첫날 맞아 'Heat Stress Toolkit' 발표", "summary": "의류 제조 현장의 폭염 대응 가이드라인입니다.", "source": "AAFA", "sourceUrl": "https://www.aafaglobal.org", "date": "2026-09-22" },
 
-    { "week": "current", "category": "industry", "title": "Nike·Lululemon, 미러(홈짐) 특허소송 합의", "summary": "웨어러블 피트니스 IP 분쟁이 일단락됐습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-21" },
-    { "week": "current", "category": "industry", "title": "New Balance, Decathlon을 상표권 침해로 제소", "summary": "", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-16" },
-    { "week": "current", "category": "industry", "title": "On Holding, \"프리미엄 플레이북\"과 2029년 목표 공개", "summary": "Mbappé와 계약하며 축구 카테고리 확장도 병행합니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-22" },
-    { "week": "current", "category": "industry", "title": "Wolverine Worldwide, 액티브 그룹 사장직 폐지", "summary": "Susie Kuhn 퇴사 등 임원 이탈이 이어지고 있습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-22" },
-    { "week": "current", "category": "industry", "title": "Authentic Brands, 2027년 상반기 IPO 가능성 재부상", "summary": "Oura는 $15.62B 밸류에이션을 목표로 거론됩니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-16" },
-    { "week": "current", "category": "industry", "title": "H&M 후원 하이드로포닉(수경) 면화 프로젝트 확장", "summary": "지속가능 원료 조달 실험이 규모를 키우고 있습니다.", "source": "Sportstextiles", "sourceUrl": "https://www.sportstextiles.com", "date": "2026-09-22" },
+    { "category": "industry", "title": "Nike·Lululemon, 미러(홈짐) 특허소송 합의", "summary": "웨어러블 피트니스 IP 분쟁이 일단락됐습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-21" },
+    { "category": "industry", "title": "New Balance, Decathlon을 상표권 침해로 제소", "summary": "", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-16" },
+    { "category": "industry", "title": "On Holding, \"프리미엄 플레이북\"과 2029년 목표 공개", "summary": "Mbappé와 계약하며 축구 카테고리 확장도 병행합니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-22" },
+    { "category": "industry", "title": "Wolverine Worldwide, 액티브 그룹 사장직 폐지", "summary": "Susie Kuhn 퇴사 등 임원 이탈이 이어지고 있습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-22" },
+    { "category": "industry", "title": "Authentic Brands, 2027년 상반기 IPO 가능성 재부상", "summary": "Oura는 $15.62B 밸류에이션을 목표로 거론됩니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-16" },
+    { "category": "industry", "title": "H&M 후원 하이드로포닉(수경) 면화 프로젝트 확장", "summary": "지속가능 원료 조달 실험이 규모를 키우고 있습니다.", "source": "Sportstextiles", "sourceUrl": "https://www.sportstextiles.com", "date": "2026-09-22" },
 
-    { "week": "current", "category": "research", "title": "WGSN Korea, 'IFA 2026 트렌드 리포트' 발행", "summary": "스펙 경쟁이 끝난 가전 시장의 다음 돌파구를 'AI 라이프스타일'로 짚었습니다. 가전 리포트지만 트렌드 분석 방법론은 참고할 만합니다.", "source": "WGSN Korea", "sourceUrl": "https://www.wgsn.com", "date": "2026-09-22" },
-    { "week": "current", "category": "research", "title": "팝마트 '라부부'의 월드컵 개막식 등장으로 본 아트토이 마케팅 현상", "summary": "", "source": "Designdb(KIDP)", "sourceUrl": "https://www.designdb.com", "date": "2026-09-22" },
-    { "week": "current", "category": "research", "title": "영국 Design Council, 'Design Economy 2026' 보고서", "summary": "디자인 산업의 경제적 가치를 정량화한 리포트입니다.", "source": "Designdb(KIDP)", "sourceUrl": "https://www.designdb.com", "date": "2026-09-20" },
+    { "category": "research", "title": "WGSN Korea, 'IFA 2026 트렌드 리포트' 발행", "summary": "스펙 경쟁이 끝난 가전 시장의 다음 돌파구를 'AI 라이프스타일'로 짚었습니다. 가전 리포트지만 트렌드 분석 방법론은 참고할 만합니다.", "source": "WGSN Korea", "sourceUrl": "https://www.wgsn.com", "date": "2026-09-22" },
+    { "category": "research", "title": "팝마트 '라부부'의 월드컵 개막식 등장으로 본 아트토이 마케팅 현상", "summary": "", "source": "Designdb(KIDP)", "sourceUrl": "https://www.designdb.com", "date": "2026-09-22" },
+    { "category": "research", "title": "영국 Design Council, 'Design Economy 2026' 보고서", "summary": "디자인 산업의 경제적 가치를 정량화한 리포트입니다.", "source": "Designdb(KIDP)", "sourceUrl": "https://www.designdb.com", "date": "2026-09-20" },
 
-    { "week": "current", "category": "design", "title": "Dezeen, 이주의 가장 논쟁적인 기사 모음(Weekly Debate)", "summary": "9·11 추모 드론아트 등이 화제가 됐습니다.", "source": "Dezeen", "sourceUrl": "https://www.dezeen.com", "date": "2026-09-22" },
-    { "week": "current", "category": "design", "title": "designboom, 데일리 하이라이트 6일 발행 + 일요판 별도 편성", "summary": "", "source": "designboom", "sourceUrl": "https://www.designboom.com", "date": "2026-09-22" },
-    { "week": "current", "category": "design", "title": "Yanko Design, 데일리 프로덕트 리뷰 지속", "summary": "골프 런치모니터, 미니LED TV, 배터리 없는 휴대용 분무기 등을 다뤘습니다.", "source": "Yanko Design", "sourceUrl": "https://www.yankodesign.com", "date": "2026-09-21" },
+    { "category": "design", "title": "Dezeen, 이주의 가장 논쟁적인 기사 모음(Weekly Debate)", "summary": "9·11 추모 드론아트 등이 화제가 됐습니다.", "source": "Dezeen", "sourceUrl": "https://www.dezeen.com", "date": "2026-09-22" },
+    { "category": "design", "title": "designboom, 데일리 하이라이트 6일 발행 + 일요판 별도 편성", "summary": "", "source": "designboom", "sourceUrl": "https://www.designboom.com", "date": "2026-09-22" },
+    { "category": "design", "title": "Yanko Design, 데일리 프로덕트 리뷰 지속", "summary": "골프 런치모니터, 미니LED TV, 배터리 없는 휴대용 분무기 등을 다뤘습니다.", "source": "Yanko Design", "sourceUrl": "https://www.yankodesign.com", "date": "2026-09-21" },
 
-    { "week": "current", "category": "gear", "title": "탄소 플레이트 인솔 리뷰", "summary": "러닝화 고마일리지 인솔의 신기술을 점검했습니다.", "source": "Canadian Running", "sourceUrl": "https://runningmagazine.ca", "date": "2026-09-22" },
-    { "week": "current", "category": "gear", "title": "캐나다 Jadyn Keeler, 코펜하겐 하프마라톤 내셔널 신기록", "summary": "", "source": "Canadian Running", "sourceUrl": "https://runningmagazine.ca", "date": "2026-09-21" },
-    { "week": "current", "category": "gear", "title": "러닝화 브랜드간 소송 확산", "summary": "특허·디자인 분쟁이 잇따르고 있습니다.", "source": "GearJunkie", "sourceUrl": "https://gearjunkie.com", "date": "2026-09-21" },
-    { "week": "current", "category": "gear", "title": "콜로라도 명소 소실(기후변화), 국립공원 예산 삭감 특집", "summary": "", "source": "GearJunkie", "sourceUrl": "https://gearjunkie.com", "date": "2026-09-18" },
+    { "category": "gear", "title": "탄소 플레이트 인솔 리뷰", "summary": "러닝화 고마일리지 인솔의 신기술을 점검했습니다.", "source": "Canadian Running", "sourceUrl": "https://runningmagazine.ca", "date": "2026-09-22" },
+    { "category": "gear", "title": "캐나다 Jadyn Keeler, 코펜하겐 하프마라톤 내셔널 신기록", "summary": "", "source": "Canadian Running", "sourceUrl": "https://runningmagazine.ca", "date": "2026-09-21" },
+    { "category": "gear", "title": "러닝화 브랜드간 소송 확산", "summary": "특허·디자인 분쟁이 잇따르고 있습니다.", "source": "GearJunkie", "sourceUrl": "https://gearjunkie.com", "date": "2026-09-21" },
+    { "category": "gear", "title": "콜로라도 명소 소실(기후변화), 국립공원 예산 삭감 특집", "summary": "", "source": "GearJunkie", "sourceUrl": "https://gearjunkie.com", "date": "2026-09-18" },
 
-    { "week": "previous", "category": "shoe", "title": "Baird·Morgan Stanley, 스포츠웨어 투자의견 하향", "summary": "Ed Stack은 \"Not So Fast\"로 반박했습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-14" },
-    { "week": "previous", "category": "shoe", "title": "Topo Designs, Gart Capital 투자 유치", "summary": "모회사 DBI의 Topo 매출이 $100M 목표에 근접했습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-10" },
-    { "week": "previous", "category": "shoe", "title": "패밀리 신발체인 2분기 부진, 3분기는 개선 전망", "summary": "Shoe Station 등 실적이 엇갈렸습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-10" },
-    { "week": "previous", "category": "shoe", "title": "Hibbett 직원 데이터 유출, Dr. Martens 임원 영입", "summary": "", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-10" },
+    { "category": "shoe", "title": "Baird·Morgan Stanley, 스포츠웨어 투자의견 하향", "summary": "Ed Stack은 \"Not So Fast\"로 반박했습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-14" },
+    { "category": "shoe", "title": "Topo Designs, Gart Capital 투자 유치", "summary": "모회사 DBI의 Topo 매출이 $100M 목표에 근접했습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-10" },
+    { "category": "shoe", "title": "패밀리 신발체인 2분기 부진, 3분기는 개선 전망", "summary": "Shoe Station 등 실적이 엇갈렸습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-10" },
+    { "category": "shoe", "title": "Hibbett 직원 데이터 유출, Dr. Martens 임원 영입", "summary": "", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-10" },
 
-    { "week": "previous", "category": "fashion", "title": "Balenciaga x SEGA(소닉) 캡슐 컬렉션", "summary": "일본 한정 배포 재킷과 플레이 가능한 오락기 캐비닛을 공개했습니다.", "source": "Hypebeast", "sourceUrl": "https://hypebeast.com", "date": "2026-09-15" },
-    { "week": "previous", "category": "fashion", "title": "AAFA, 러시아 제재법안 추적 업데이트 + 신규 ApparelStats·ShoeStats 발표", "summary": "", "source": "AAFA", "sourceUrl": "https://www.aafaglobal.org", "date": "2026-09-15" },
+    { "category": "fashion", "title": "Balenciaga x SEGA(소닉) 캡슐 컬렉션", "summary": "일본 한정 배포 재킷과 플레이 가능한 오락기 캐비닛을 공개했습니다.", "source": "Hypebeast", "sourceUrl": "https://hypebeast.com", "date": "2026-09-15" },
+    { "category": "fashion", "title": "AAFA, 러시아 제재법안 추적 업데이트 + 신규 ApparelStats·ShoeStats 발표", "summary": "", "source": "AAFA", "sourceUrl": "https://www.aafaglobal.org", "date": "2026-09-15" },
 
-    { "week": "previous", "category": "industry", "title": "Feng Tay·Yue Yuen(나이키 등 OEM 생산업체), 8월 생산량 감소", "summary": "공급망 둔화 신호로 주목할 만합니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-11" },
-    { "week": "previous", "category": "industry", "title": "Puma 상업총괄 퇴임, Columbia는 Mountain Hardwear 신임 사장 임명", "summary": "", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-11" },
-    { "week": "previous", "category": "industry", "title": "Cone Denim, 전략적 사업 전환 발표", "summary": "글로벌 데님 시장 대응 방향을 제시했습니다.", "source": "Textile World", "sourceUrl": "https://www.textileworld.com", "date": "2026-09-15" },
-    { "week": "previous", "category": "industry", "title": "재활용 고무 밑창 소재 'Oktara'(8 Impact) 출시, Pangaia-Fulgar 파트너십", "summary": "", "source": "Sportstextiles", "sourceUrl": "https://www.sportstextiles.com", "date": "2026-09-10" },
-    { "week": "previous", "category": "industry", "title": "Cotton Works 레깅스·쉐이프웨어 디자인 공모전, 'Beyond Bodywear' 웨비나 예고", "summary": "", "source": "Sportstextiles", "sourceUrl": "https://www.sportstextiles.com", "date": "2026-09-15" },
+    { "category": "industry", "title": "Feng Tay·Yue Yuen(나이키 등 OEM 생산업체), 8월 생산량 감소", "summary": "공급망 둔화 신호로 주목할 만합니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-11" },
+    { "category": "industry", "title": "Puma 상업총괄 퇴임, Columbia는 Mountain Hardwear 신임 사장 임명", "summary": "", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-11" },
+    { "category": "industry", "title": "Cone Denim, 전략적 사업 전환 발표", "summary": "글로벌 데님 시장 대응 방향을 제시했습니다.", "source": "Textile World", "sourceUrl": "https://www.textileworld.com", "date": "2026-09-15" },
+    { "category": "industry", "title": "재활용 고무 밑창 소재 'Oktara'(8 Impact) 출시, Pangaia-Fulgar 파트너십", "summary": "", "source": "Sportstextiles", "sourceUrl": "https://www.sportstextiles.com", "date": "2026-09-10" },
+    { "category": "industry", "title": "Cotton Works 레깅스·쉐이프웨어 디자인 공모전, 'Beyond Bodywear' 웨비나 예고", "summary": "", "source": "Sportstextiles", "sourceUrl": "https://www.sportstextiles.com", "date": "2026-09-15" },
 
-    { "week": "previous", "category": "research", "title": "OpenAI 'GPT-6 아스트라' 출시 관련 AI 기술 트렌드 브리핑", "summary": "", "source": "Designdb(KIDP)", "sourceUrl": "https://www.designdb.com", "date": "2026-09-15" },
-    { "week": "previous", "category": "research", "title": "'인간 중심 AX' 기획 시리즈 4편", "summary": "AI 시대 기획자의 역할을 재정의합니다.", "source": "Designdb(KIDP)", "sourceUrl": "https://www.designdb.com", "date": "2026-09-15" },
+    { "category": "research", "title": "OpenAI 'GPT-6 아스트라' 출시 관련 AI 기술 트렌드 브리핑", "summary": "", "source": "Designdb(KIDP)", "sourceUrl": "https://www.designdb.com", "date": "2026-09-15" },
+    { "category": "research", "title": "'인간 중심 AX' 기획 시리즈 4편", "summary": "AI 시대 기획자의 역할을 재정의합니다.", "source": "Designdb(KIDP)", "sourceUrl": "https://www.designdb.com", "date": "2026-09-15" },
 
-    { "week": "previous", "category": "design", "title": "\"Arc de Trump\" 건설 착수 임박 논란, 케네디센터 철거 가능성", "summary": "건축계 화두가 이어졌습니다.", "source": "Dezeen", "sourceUrl": "https://www.dezeen.com", "date": "2026-09-11" },
-    { "week": "previous", "category": "design", "title": "Dezeen Awards 2026 지역전(Regional Showcase) 발표", "summary": "", "source": "Dezeen", "sourceUrl": "https://www.dezeen.com", "date": "2026-09-14" },
-    { "week": "previous", "category": "design", "title": "designboom, 데일리 하이라이트 지속 + 일요판 별도 편성", "summary": "", "source": "designboom", "sourceUrl": "https://www.designboom.com", "date": "2026-09-13" },
-    { "week": "previous", "category": "design", "title": "Yanko Design, 데일리 프로덕트 리뷰 지속", "summary": "이어폰, E-Ink 아트 프레임, 유틸리티 나이프 등을 다뤘습니다.", "source": "Yanko Design", "sourceUrl": "https://www.yankodesign.com", "date": "2026-09-10" },
+    { "category": "design", "title": "\"Arc de Trump\" 건설 착수 임박 논란, 케네디센터 철거 가능성", "summary": "건축계 화두가 이어졌습니다.", "source": "Dezeen", "sourceUrl": "https://www.dezeen.com", "date": "2026-09-11" },
+    { "category": "design", "title": "Dezeen Awards 2026 지역전(Regional Showcase) 발표", "summary": "", "source": "Dezeen", "sourceUrl": "https://www.dezeen.com", "date": "2026-09-14" },
+    { "category": "design", "title": "designboom, 데일리 하이라이트 지속 + 일요판 별도 편성", "summary": "", "source": "designboom", "sourceUrl": "https://www.designboom.com", "date": "2026-09-13" },
+    { "category": "design", "title": "Yanko Design, 데일리 프로덕트 리뷰 지속", "summary": "이어폰, E-Ink 아트 프레임, 유틸리티 나이프 등을 다뤘습니다.", "source": "Yanko Design", "sourceUrl": "https://www.yankodesign.com", "date": "2026-09-10" },
 
-    { "week": "previous", "category": "gear", "title": "'세계기록 깨는 법' 가이드 특집", "summary": "버피 브로드점프 마라톤 세계신기록 소식도 함께 실렸습니다.", "source": "Canadian Running", "sourceUrl": "https://runningmagazine.ca", "date": "2026-09-11" },
-    { "week": "previous", "category": "gear", "title": "\"홀로그램 기어와 쇼핑의 미래\" 특집", "summary": "", "source": "GearJunkie", "sourceUrl": "https://gearjunkie.com", "date": "2026-09-11" },
-    { "week": "previous", "category": "gear", "title": "PCT(퍼시픽크레스트트레일) 종점 복원 소식", "summary": "", "source": "GearJunkie", "sourceUrl": "https://gearjunkie.com", "date": "2026-09-14" }
+    { "category": "gear", "title": "'세계기록 깨는 법' 가이드 특집", "summary": "버피 브로드점프 마라톤 세계신기록 소식도 함께 실렸습니다.", "source": "Canadian Running", "sourceUrl": "https://runningmagazine.ca", "date": "2026-09-11" },
+    { "category": "gear", "title": "\"홀로그램 기어와 쇼핑의 미래\" 특집", "summary": "", "source": "GearJunkie", "sourceUrl": "https://gearjunkie.com", "date": "2026-09-11" },
+    { "category": "gear", "title": "PCT(퍼시픽크레스트트레일) 종점 복원 소식", "summary": "", "source": "GearJunkie", "sourceUrl": "https://gearjunkie.com", "date": "2026-09-14" }
   ]
 }

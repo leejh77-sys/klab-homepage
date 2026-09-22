@@ -10,28 +10,29 @@
     const parsed = new Date(value).getTime();
     return Number.isFinite(parsed) ? day(new Date(parsed + 9 * 3600000).toISOString().slice(0, 10)) : NaN;
   }
+  // Rolling window: items accumulate across editions (Mon/Thu updates) and stay visible
+  // for data.windowDays (default 28) from their own publish date, independent of updatedAt.
+  // The publishing automation is responsible for actually deleting items past the window;
+  // this filter is a display-time safety net, not the retention mechanism.
   function select(data, now = new Date()) {
-    const end = kstDay(data.updatedAt);
+    const windowDays = Number(data.windowDays) > 0 ? Number(data.windowDays) : 28;
     const today = kstDay(now);
-    if (!Number.isFinite(end) || Date.parse(data.updatedAt) > new Date(now).getTime() || today - end >= 7 * DAY) return [];
-    const start = end - 6 * DAY;
+    if (!Number.isFinite(today)) return [];
+    const start = today - (windowDays - 1) * DAY;
     const seen = new Set();
-    let domesticCount = 0;
     return (Array.isArray(data.items) ? data.items : [])
       .filter(item => item && ['global', 'domestic'].includes(item.region))
-      .sort((a, b) => (a.rank || 999) - (b.rank || 999))
+      .sort((a, b) => (a.rank || 999) - (b.rank || 999) || day(b.date) - day(a.date))
       .filter(item => {
         const published = day(item.date);
         let url;
         try { url = new URL(item.url); } catch { return false; }
         if (!['https:', 'http:'].includes(url.protocol) || url.username || url.password) return false;
-        if (!(published >= start && published <= end) || item.verified !== true || !item.issueKey ||
+        if (!(published >= start && published <= today) || item.verified !== true || !item.issueKey ||
             !item.title || !item.summary || !item.source) return false;
         url.hash = '';
         if (seen.has(item.issueKey) || seen.has(url.href)) return false;
-        if (item.region === 'domestic' && domesticCount >= 10) return false;
         seen.add(item.issueKey); seen.add(url.href);
-        if (item.region === 'domestic') domesticCount++;
         return true;
       });
   }
