@@ -158,7 +158,7 @@ function buildContentCard(item) {
       <span class="news-cat">${escapeHtml(item.category || "무신사 콘텐츠")}</span>
       <h4>${escapeHtml(item.title)}</h4>
       <p>${escapeHtml(item.summary || "")}</p>
-      <div class="news-meta"><span>👁 ${item.viewCount ?? 0}</span><span>${dateLabel}</span></div>
+      <div class="news-meta"><span>조회수 ${item.viewCount ?? 0}</span><span>${dateLabel}</span></div>
     </div>
   `;
   return a;

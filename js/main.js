@@ -1,12 +1,11 @@
-// KLAB 홈페이지 데모 - 공통 스크립트
+// KLAB 홈페이지 - 공통 스크립트
 
 document.addEventListener("DOMContentLoaded", () => {
   initFilterTabs();
   initSort();
   initRequestModal();
-  initOpenCardToast();
-  initWipModal();
   initContactModal();
+  initUpdateBadges();
 });
 
 // ---------- 토스트 ----------
@@ -109,68 +108,60 @@ function initRequestModal() {
   });
 }
 
-// ---------- 바로보기(오픈) 카드 클릭 시 데모 안내 ----------
-function initOpenCardToast() {
-  document.querySelectorAll('.news-card[data-gated="false"]').forEach((card) => {
-    card.addEventListener("click", (e) => {
-      e.preventDefault();
-      showToast("데모 화면입니다 — 실제 서비스에서는 상세 페이지로 연결됩니다.");
-    });
-  });
-}
 
-// ---------- 작업중(WIP) 안내 모달 ----------
-// class="js-wip" data-wip="안내 문구에 쓸 이름" 을 가진 모든 요소에 공통 적용됩니다.
+// ---------- 콘텐츠 업데이트 표시 (nav 메뉴 위 빨간 점) ----------
+// data/*.json 의 updatedAt 을 localStorage에 저장된 "마지막으로 확인한 시각"과 비교해
+// 새 콘텐츠가 있으면 상단 메뉴(최신정보/트렌드)에 점을 표시한다.
+// 해당 페이지를 직접 방문하면 그 시점 값으로 "확인함" 처리되어 점이 사라진다.
+const UPDATE_SECTIONS = [
+  { navHref: "news.html", storageKey: "klab_seen_news", sources: ["data/reports.json", "data/industry-news.json"] },
+  { navHref: "dashboard.html", storageKey: "klab_seen_dashboard", sources: ["data/weekly.json", "data/monthly.json", "data/content.json"] },
+];
 
-// 한글 단어의 마지막 글자 받침 유무에 따라 "은/는" 조사를 붙여줍니다.
-function withTopicParticle(word) {
-  const lastChar = word[word.length - 1];
-  const code = lastChar.charCodeAt(0);
-  if (code < 0xac00 || code > 0xd7a3) return `${word}는`; // 한글이 아니면 기본값
-  const hasBatchim = (code - 0xac00) % 28 !== 0;
-  return `${word}${hasBatchim ? "은" : "는"}`;
-}
+function initUpdateBadges() {
+  const nav = document.querySelector(".main-nav");
+  if (!nav) return;
+  const currentPage = location.pathname.split("/").pop() || "index.html";
 
-function initWipModal() {
-  const modal = document.getElementById("wipModal");
-  const titleEl = document.getElementById("wipModalTitle");
-  const closeBtn = document.getElementById("wipModalClose");
-  if (!modal) return;
+  UPDATE_SECTIONS.forEach(async (section) => {
+    const latest = await fetchLatestUpdatedAt(section.sources);
+    if (!latest) return;
 
-  function openModal(label) {
-    titleEl.textContent = withTopicParticle(label || "이 기능");
-    modal.classList.add("is-open");
-  }
-  function closeModal() {
-    modal.classList.remove("is-open");
-  }
-
-  document.querySelectorAll(".js-wip").forEach((el) => {
-    if (!el.hasAttribute("tabindex")) el.setAttribute("tabindex", "0");
-    if (!el.hasAttribute("role") && el.tagName !== "A" && el.tagName !== "BUTTON") {
-      el.setAttribute("role", "button");
+    if (currentPage === section.navHref) {
+      localStorage.setItem(section.storageKey, latest);
+      return;
     }
 
-    el.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      openModal(el.dataset.wip);
-    });
-    el.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        openModal(el.dataset.wip);
-      }
-    });
-  });
+    const seen = localStorage.getItem(section.storageKey);
+    if (seen && new Date(seen) >= new Date(latest)) return;
 
-  closeBtn?.addEventListener("click", closeModal);
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
+    const link = nav.querySelector(`a[href="${section.navHref}"]`);
+    if (link && !link.querySelector(".nav-update-dot")) {
+      const dot = document.createElement("span");
+      dot.className = "nav-update-dot";
+      dot.title = "새 콘텐츠가 업데이트되었습니다";
+      link.appendChild(dot);
+    }
   });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
-  });
+}
+
+async function fetchLatestUpdatedAt(sources) {
+  const dates = await Promise.all(sources.map(async (src) => {
+    try {
+      const res = await fetch(src, { cache: "no-store" });
+      if (!res.ok) return null;
+      const data = await res.json();
+      return data.updatedAt || null;
+    } catch {
+      return null;
+    }
+  }));
+  const valid = dates
+    .filter(Boolean)
+    .map((d) => new Date(d))
+    .filter((d) => !Number.isNaN(d.getTime()));
+  if (!valid.length) return null;
+  return new Date(Math.max(...valid.map((d) => d.getTime()))).toISOString();
 }
 
 // ---------- 문의 안내 모달 ----------

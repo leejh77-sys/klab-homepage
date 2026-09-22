@@ -85,6 +85,7 @@ nav.main-nav {
 }
 
 nav.main-nav a {
+  position: relative;
   font-size: 15px;
   font-weight: 600;
   color: var(--color-text-muted);
@@ -97,6 +98,28 @@ nav.main-nav a:hover,
 nav.main-nav a.active {
   color: var(--color-navy);
   border-bottom-color: var(--color-accent);
+}
+
+/* ---------- 콘텐츠 업데이트 표시 (nav dot) ---------- */
+.nav-update-dot {
+  position: absolute;
+  top: 4px;
+  right: -9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e5484d;
+  box-shadow: 0 0 0 2px var(--color-bg);
+  animation: nav-update-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes nav-update-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .55; transform: scale(1.25); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-update-dot { animation: none; }
 }
 
 /* ---------- Hero ---------- */
@@ -225,16 +248,6 @@ section.block {
   margin: 0;
 }
 
-.team-group-head .folder-path {
-  font-size: 12.5px;
-  color: var(--color-text-muted);
-  background: var(--color-bg-soft);
-  border: 1px solid var(--color-border);
-  padding: 3px 10px;
-  border-radius: 6px;
-  font-family: Consolas, "SF Mono", monospace;
-}
-
 /* ---------- Card grids ---------- */
 .card-grid {
   display: grid;
@@ -277,15 +290,6 @@ section.block {
   margin: 0;
   font-size: 13.5px;
   color: var(--color-text-muted);
-}
-
-.card .src-path {
-  margin-top: 14px;
-  font-size: 11.5px;
-  color: #9aa4b2;
-  font-family: Consolas, "SF Mono", monospace;
-  border-top: 1px dashed var(--color-border);
-  padding-top: 10px;
 }
 
 /* ---------- News grid ---------- */
@@ -629,19 +633,6 @@ section.block {
   display: block;
 }
 
-/* ---------- Mapping note box ---------- */
-.mapping-note {
-  background: var(--color-bg-soft);
-  border: 1px dashed #c7d1e0;
-  border-radius: var(--radius);
-  padding: 18px 22px;
-  font-size: 13.5px;
-  color: var(--color-text-muted);
-  margin-bottom: 40px;
-}
-
-.mapping-note b { color: var(--color-navy); }
-
 /* ---------- Footer ---------- */
 footer.site-footer {
   background: var(--color-navy);
@@ -702,17 +693,12 @@ footer.site-footer .foot-bottom {
   object-fit: cover;
 }
 
-.equip-thumb-fallback .icon {
-  width: 56px;
-  height: 56px;
-  margin-bottom: 0;
-  font-size: 26px;
+.equip-thumb-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #9aa4b2;
+  letter-spacing: .02em;
 }
-
-.equip-card .icon-mech { background: var(--color-accent-light); color: var(--color-accent); }
-.equip-card .icon-user { background: #e5f5ee; color: #1f7a53; }
-.equip-card .icon-field { background: #fff1e6; color: #b3541e; }
-.equip-card .icon-common { background: #eef0f4; color: #5b6472; }
 
 .equip-body {
   padding: 20px 22px 22px;
@@ -775,8 +761,10 @@ footer.site-footer .foot-bottom {
   object-fit: cover;
 }
 
-.equip-modal-icon {
-  font-size: 56px;
+.equip-modal-fallback {
+  font-size: 14px;
+  font-weight: 600;
+  color: #9aa4b2;
 }
 
 .equip-modal-box .news-cat {

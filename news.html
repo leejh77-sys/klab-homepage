@@ -9,7 +9,6 @@
 </head>
 <body>
 
-<div class="demo-banner">⚠ 이 사이트는 팀 공유용 데모(예시) 화면입니다. 실제 데이터/디자인이 아니며, 폴더 구조 → 웹페이지 매핑 개념을 보여주기 위해 제작되었습니다.</div>
 
 <header class="site-header">
   <div class="wrap nav-row">
@@ -30,20 +29,14 @@
   <div class="wrap">
     <span class="eyebrow">Latest Update</span>
     <h1 style="font-size:32px;">최신정보</h1>
-    <p>신기술·신제품, 산업 트렌드, 해외출장, 신규업체 정보에 더해 보유 평가 장비와 최신 구매 신발·의류 용품 소식까지 카드뉴스 형태로 소개합니다. 카드를 클릭하면 새 탭에서 보고서 PDF가 바로 열립니다.</p>
+    <p>신기술·신제품, 산업 트렌드, 해외출장, 신규업체 정보에 더해 보유 평가 장비 소식까지 카드뉴스 형태로 소개합니다. 카드를 클릭하면 새 탭에서 보고서 PDF가 바로 열립니다.</p>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
 
-    <div class="mapping-note">
-      💡 <b>신기술·신제품 / 해외출장 / 신규업체정보</b> 카드는 저장소의 <b>reports/tech·trip·company</b> 폴더에 파일을 올리면 자동으로 생성됩니다. PDF는 그대로, 워드·파워포인트는 자동으로 PDF 변환 후 게시됩니다.
-    </div>
-
-    <div class="mapping-note">
-      🌐 <b>글로벌 뉴스 · 국내 뉴스</b>는 매주 최근 7일에 발행된 신발·스포츠 산업 기사를 선별합니다. 글로벌 뉴스는 주요 이슈 중심으로, 국내 뉴스는 주요 이슈 10개로 정리합니다. 원문과 발행일이 확인된 기사만 싣고 같은 이슈는 하나로 묶습니다. <span id="industryNewsUpdatedAt"></span>
-    </div>
+    <p id="industryNewsUpdatedAt" class="modal-sub" style="margin:-8px 0 24px;"></p>
 
     <div class="list-controls">
       <div class="filter-tabs">
@@ -54,7 +47,6 @@
         <button data-filter="trip">해외출장</button>
         <button data-filter="company">신규업체정보</button>
         <button data-filter="equip">평가장비</button>
-        <button data-filter="item">신상품</button>
       </div>
       <div class="sort-control">
         <label for="sortSelect">정렬</label>
@@ -91,20 +83,6 @@
         </div>
       </a>
 
-      <div class="news-card js-wip" data-category="item" data-wip="최신 구매 신발·의류 용품 리스트" data-date="2026-08-28" data-views="0">
-        <div class="news-thumb gated" style="background:#b3541e;">
-          <span class="lock-badge">🚧 준비중</span>
-          신상품
-        </div>
-        <div class="news-body">
-          <span class="news-cat">신상품</span>
-          <h4>최신 구매 신발·의류 용품 리스트</h4>
-          <p>연구평가팀이 새롭게 구매한 신발·의류 테스트용품을 소개할 예정입니다.</p>
-          <div class="news-meta"><span>연구평가팀</span><span>준비중</span></div>
-          <span class="btn-view">자세히 보기 →</span>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -114,7 +92,7 @@
     <div class="foot-top">
       <div>
         <h5>KLAB</h5>
-        <p>서비스 소개 &amp; 최신정보 플랫폼 (데모)</p>
+        <p>서비스 소개 &amp; 최신정보 플랫폼</p>
       </div>
       <div>
         <h5>Quick Links</h5>
@@ -125,7 +103,7 @@
         <p><a href="https://www.instagram.com/klab_3d/" target="_blank" rel="noopener">KLAB 3D(디지털 자료)</a> · <a href="https://www.instagram.com/klab.signature/" target="_blank" rel="noopener">KLAB 시그니처</a> · <a href="https://www.k-village.co.kr/k-lab/is" target="_blank" rel="noopener">K-Village 내 KLAB</a></p>
       </div>
     </div>
-    <div class="foot-bottom">이 페이지는 팀 내부 설명용 예시(데모) 화면이며 실제 서비스 화면이 아닙니다. 기사 내용은 폴더명을 참고해 임의로 작성한 예시입니다.</div>
+    <div class="foot-bottom">본 페이지는 K2코리아 KLAB 임직원을 위한 내부 공유용 자료입니다. 외부 유출 및 무단 배포를 금지합니다.</div>
   </div>
 </footer>
 
@@ -142,15 +120,6 @@
   </div>
 </div>
 
-<!-- 작업중 안내 모달 -->
-<div class="modal-overlay" id="wipModal">
-  <div class="modal-box">
-    <button class="modal-close" id="wipModalClose" aria-label="닫기">×</button>
-    <span class="wip-icon">🚧</span>
-    <h3><span id="wipModalTitle">이 기능은</span> 준비 중입니다</h3>
-    <p class="modal-sub">아직 구체적인 계획이 확정되지 않아 곧 준비해서 찾아뵙겠습니다. 조금만 기다려주세요!</p>
-  </div>
-</div>
 
 <script src="js/main.js"></script>
 <script src="js/reports.js"></script>
