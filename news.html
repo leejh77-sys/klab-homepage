@@ -41,7 +41,7 @@
         <button class="active" data-filter="all">전체보기</button>
         <button data-filter="trend">트렌드</button>
         <button data-filter="global">글로벌 산업뉴스</button>
-        <button data-filter="domestic">국내 뉴스 · 주요 10</button>
+        <button data-filter="domestic">국내 뉴스</button>
         <button data-filter="tech">KLAB 레포트</button>
         <button data-filter="brand">신규 신발 브랜드</button>
         <button data-filter="trip">해외출장</button>
@@ -179,5 +179,51 @@
 <script src="js/reports.js"></script>
 <script src="js/news-policy.js"></script>
 <script src="js/industry-news.js"></script>
+<script>
+// ---------- 필터 탭 업데이트 표시(빨간 점) ----------
+// 탭이 참조하는 데이터 소스의 updatedAt이 마지막으로 본 시각보다 최신이면 점을 표시한다.
+// 탭을 클릭하면 그 시각을 "확인함"으로 저장해 점이 사라진다.
+(function () {
+  var TAB_SOURCES = {
+    trend: ["data/weekly.json", "data/monthly.json", "data/content.json"],
+    global: ["data/industry-news.json"],
+    domestic: ["data/industry-news.json"],
+    tech: ["data/reports.json"],
+    trip: ["data/reports.json"],
+    company: ["data/reports.json"]
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var tabs = document.querySelectorAll(".filter-tabs button[data-filter]");
+    if (!tabs.length || typeof fetchLatestUpdatedAt !== "function") return;
+
+    tabs.forEach(function (btn) {
+      var key = btn.dataset.filter;
+      var sources = TAB_SOURCES[key];
+      if (!sources) return;
+      var storageKey = "klab_seen_tab_" + key;
+
+      fetchLatestUpdatedAt(sources).then(function (latest) {
+        if (!latest) return;
+        var seen = localStorage.getItem(storageKey);
+        if (seen && new Date(seen) >= new Date(latest)) return;
+        if (btn.querySelector(".tab-update-dot")) return;
+        var dot = document.createElement("span");
+        dot.className = "tab-update-dot";
+        dot.title = "새 콘텐츠가 업데이트되었습니다";
+        btn.appendChild(dot);
+      });
+
+      btn.addEventListener("click", function () {
+        fetchLatestUpdatedAt(sources).then(function (latest) {
+          if (latest) localStorage.setItem(storageKey, latest);
+        });
+        var dot = btn.querySelector(".tab-update-dot");
+        if (dot) dot.remove();
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>

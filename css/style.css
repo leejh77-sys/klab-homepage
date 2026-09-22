@@ -400,6 +400,7 @@ section.block {
 }
 
 .filter-tabs button {
+  position: relative;
   border: 1px solid var(--color-border);
   background: #fff;
   padding: 9px 16px;
@@ -408,6 +409,17 @@ section.block {
   font-weight: 600;
   color: var(--color-text-muted);
   cursor: pointer;
+}
+
+.tab-update-dot {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e5484d;
+  box-shadow: 0 0 0 2px #fff;
 }
 
 .filter-tabs button.active {
