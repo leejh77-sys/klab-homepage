@@ -27,7 +27,7 @@
   <div class="wrap">
     <span class="eyebrow">Latest Update</span>
     <h1 style="font-size:32px;">최신정보</h1>
-    <p>무신사 판매 트렌드, 글로벌·국내 산업뉴스, KLAB 레포트, 신규 신발 브랜드, 해외출장, 신규업체 정보까지 카드뉴스 형태로 한 곳에서 확인하세요.</p>
+    <p>무신사 판매 트렌드, 글로벌·국내 산업뉴스, KLAB 레포트, 신규 신발 브랜드, 해외출장, 신규업체 정보, 구독 메일링 브리프까지 카드뉴스 형태로 한 곳에서 확인하세요.</p>
   </div>
 </section>
 
@@ -46,6 +46,7 @@
         <button data-filter="brand">신규 신발 브랜드</button>
         <button data-filter="trip">해외출장</button>
         <button data-filter="company">신규업체정보</button>
+        <button data-filter="mailing">메일링 브리프</button>
       </div>
       <div class="sort-control">
         <label for="sortSelect">정렬</label>
@@ -66,6 +67,16 @@
       <button data-subfilter="유행아이템">유행 아이템</button>
       <button data-subfilter="거시트렌드">거시 트렌드</button>
       <button data-subfilter="미시트렌드">미시 트렌드</button>
+    </div>
+
+    <div class="sub-filter-tabs" id="mailingSubTabs" hidden>
+      <button class="active" data-subfilter="all">전체</button>
+      <button data-subfilter="shoe">신발</button>
+      <button data-subfilter="fashion">패션</button>
+      <button data-subfilter="industry">산업트렌드</button>
+      <button data-subfilter="research">연구</button>
+      <button data-subfilter="design">디자인</button>
+      <button data-subfilter="gear">기어리뷰</button>
     </div>
 
     <p id="industryNewsStatus" role="status" aria-live="polite"></p>
@@ -179,6 +190,7 @@
 <script src="js/reports.js"></script>
 <script src="js/news-policy.js"></script>
 <script src="js/industry-news.js"></script>
+<script src="js/mailing-brief.js"></script>
 <script>
 // ---------- 필터 탭 업데이트 표시(빨간 점) ----------
 // 탭이 참조하는 데이터 소스의 updatedAt이 마지막으로 본 시각보다 최신이면 점을 표시한다.
@@ -190,7 +202,8 @@
     domestic: ["data/industry-news.json"],
     tech: ["data/reports.json"],
     trip: ["data/reports.json"],
-    company: ["data/reports.json"]
+    company: ["data/reports.json"],
+    mailing: ["data/mailing-brief.json"]
   };
 
   document.addEventListener("DOMContentLoaded", function () {

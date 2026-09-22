@@ -114,7 +114,7 @@ function initRequestModal() {
 // 새 콘텐츠가 있으면 상단 메뉴(최신정보/트렌드)에 점을 표시한다.
 // 해당 페이지를 직접 방문하면 그 시점 값으로 "확인함" 처리되어 점이 사라진다.
 const UPDATE_SECTIONS = [
-  { navHref: "news.html", storageKey: "klab_seen_news", sources: ["data/reports.json", "data/industry-news.json"] },
+  { navHref: "news.html", storageKey: "klab_seen_news", sources: ["data/reports.json", "data/industry-news.json", "data/mailing-brief.json"] },
   { navHref: "dashboard.html", storageKey: "klab_seen_dashboard", sources: ["data/weekly.json", "data/monthly.json", "data/content.json"] },
 ];
 

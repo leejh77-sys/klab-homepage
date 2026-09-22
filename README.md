@@ -59,3 +59,7 @@ KLAB 홈페이지 제작/
 글로벌 주요 뉴스와 국내 주요 이슈 10개는 `data/industry-news.json`에서 관리합니다. 최근 7일 발행 기사만 선정합니다. 전체 출처 분류 및 다음 조사 지침은 [주간 뉴스 운영 기준](docs/weekly-news-policy.md)을 참고하세요.
 
 게시 전 `node --test scripts/news-policy.test.cjs`와 `node scripts/validate-news.cjs`로 검증합니다. GitHub Actions에도 동일한 검증을 추가했습니다. 예약 자동 조사 실행은 아직 활성화하지 않았습니다.
+
+## 메일링 브리프 (별도 운영)
+
+`news.html`의 "메일링 브리프" 탭은 이정호 이사가 개인적으로 구독 중인 신발·패션·디자인·산업트렌드·연구·기어리뷰 뉴스레터(Gmail)를 2주 단위로 훑어 정리한 콘텐츠입니다. `data/mailing-brief.json`에서 관리하며, `data/industry-news.json`이 따르는 `docs/weekly-news-policy.md`의 엄격한 검증(verified, issueKey 중복제거, 공개 기사 URL 등)은 적용하지 않는 가벼운 소스입니다. 각 카드의 링크는 개별 기사가 아니라 발신처 홈페이지로 연결됩니다.
