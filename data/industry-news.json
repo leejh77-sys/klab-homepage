@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-23T09:03:00+09:00",
+  "updatedAt": "2026-09-23T09:36:10+09:00",
   "period": "ROLLING",
   "windowDays": 28,
   "timeZone": "Asia/Seoul",
@@ -263,6 +263,71 @@
       "source": "어패럴뉴스",
       "url": "http://www.apparelnews.co.kr/news/news_view/?idx=227797",
       "date": "2026-09-21",
+      "verified": true
+    },
+    {
+      "rank": 5,
+      "region": "global",
+      "issueKey": "8impact-oktara-recycled-rubber-2026",
+      "category": "신소재",
+      "title": "8 임팩트, 폐신발 재활용한 아웃솔 소재 '옥타라' 출시",
+      "summary": "지속가능 소재 기업 8 임팩트(The 8 Impact)가 폐운동화와 폐테니스공을 분쇄·가공해 만든 재활용 고무 아웃솔 컴파운드 '옥타라(Oktara)'를 출시했다. 기존 신발 생산 공정과 호환되도록 설계돼 브랜드의 아웃솔 라인에 그대로 적용할 수 있다.",
+      "significance": "폐신발을 원료로 한 재활용 아웃솔 소재는 KLAB의 소재 내구성·마모 시험 대상으로 삼을 만한 신소재 사례다.",
+      "source": "Footwearbiz",
+      "url": "https://www.footwearbiz.com/News/176185",
+      "date": "2026-09-10",
+      "verified": true
+    },
+    {
+      "rank": 6,
+      "region": "global",
+      "issueKey": "faist-amf-direct-injection-2026",
+      "category": "생산기술",
+      "title": "포르투갈 FAIST 프로젝트, 안전화 아웃솔 다이렉트 인젝션 자동화 라인 개발",
+      "summary": "포르투갈 기술·안전화 제조사 AMF 세이프티 슈즈가 FAIST 컨소시엄과 함께 아웃솔 다이렉트 인젝션 공정을 하나의 자동화 셀로 통합한 생산 라인을 개발했다. 접착·트리밍 등 수작업 공정을 줄이고 하루 생산량과 품질 균일성을 크게 높였다.",
+      "significance": "다이렉트 인젝션 기반 자동화 생산 라인은 KLAB의 신발 생산 공정·품질관리 벤치마킹에 참고할 수 있는 사례다.",
+      "source": "World Footwear",
+      "url": "https://www.worldfootwear.com/news/faist-voices-meet-amf-safety-shoes/11767.html",
+      "date": "2026-09-21",
+      "verified": true
+    },
+    {
+      "rank": 7,
+      "region": "global",
+      "issueKey": "worldfootwear-retail-flash-2026-09",
+      "category": "거시트렌드",
+      "title": "주요 7개국 신발 소매판매, 전체 리테일 대비 부진 지속",
+      "summary": "월드풋웨어(World Footwear) 분석에 따르면 프랑스·독일·네덜란드·영국·미국·스페인·일본 등 주요국 신발 소매판매가 전체 리테일·패션 카테고리 대비 부진한 흐름을 이어가고 있다. 소비심리 위축과 재고관리 보수화, 온라인 판매 성장이 겹치며 국가별로 엇갈린 물가·수입 동향을 보였다.",
+      "significance": "선진 소비국의 신발 판매 둔화·수입 위축 데이터는 브랜드사의 생산·소재 발주 물량 전망을 가늠하는 참고 지표가 된다.",
+      "source": "World Footwear",
+      "url": "https://www.worldfootwear.com/news/retail-flash-footwear-trails-broader-retail-across-key-markets/11770.html",
+      "date": "2026-09-22",
+      "verified": true
+    },
+    {
+      "rank": 8,
+      "region": "global",
+      "issueKey": "germanfashion-consumer-panel-2026",
+      "category": "미시트렌드",
+      "title": "獨 소비자, 신발·의류 구매 시 '핏과 가성비' 최우선",
+      "summary": "독일 패션협회 저먼패션(GermanFashion)의 2026 소비자 패널 조사에서 응답자의 96%가 '핏(착용감)'을, 95%가 편안함과 가성비를 구매 결정의 최우선 기준으로 꼽았다. 평균 쇼핑 채널 수는 2022년 4.3개에서 2026년 3.4개로 줄어 소비 위축 흐름도 함께 나타났다.",
+      "significance": "핏·편안함을 최우선하는 소비자 조사 결과는 신발 라스트·사이징 설계와 사용성평가 우선순위를 정하는 데 참고할 수 있다.",
+      "source": "World Footwear",
+      "url": "https://www.worldfootwear.com/news/german-fashion-consumers-prioritise-fit-and-value-as-spending-slows/11768.html",
+      "date": "2026-09-22",
+      "verified": true
+    },
+    {
+      "rank": 9,
+      "region": "global",
+      "issueKey": "twistedx-built-in-usa-2026",
+      "category": "신모델",
+      "title": "트위스티드 X, 미국산 워크화 컬렉션에 신규 7종 추가",
+      "summary": "미국 워크웨어 브랜드 트위스티드 X(Twisted X)가 '빌트 인 더 USA' 컬렉션에 나노 토우, 방수 구조, 내전기·내천공 아웃솔을 적용한 워크화 7종을 추가했다. 올해 7월 첫 출시한 9종에 이은 확장으로, 12월 매장에 입고될 예정이다.",
+      "significance": "미국 현지 조립 생산 기반의 안전화 라인업 확장은 기능성 워크화의 보호 스펙·소재 구성을 비교하는 데 참고할 수 있다.",
+      "source": "SGB Media",
+      "url": "https://sgbonline.com/twisted-x-expands-built-in-the-usa-collection-with-seven-new-work-styles/",
+      "date": "2026-09-18",
       "verified": true
     }
   ]
