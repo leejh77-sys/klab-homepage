@@ -569,6 +569,10 @@ section.block {
   max-width: 360px;
 }
 
+.contact-card + .contact-card {
+  margin-top: 10px;
+}
+
 .contact-name {
   font-size: 14.5px;
   font-weight: 700;
