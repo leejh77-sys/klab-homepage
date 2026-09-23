@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-23T09:36:10+09:00",
+  "updatedAt": "2026-09-24T08:11:20+09:00",
   "period": "ROLLING",
   "windowDays": 28,
   "timeZone": "Asia/Seoul",
@@ -328,6 +328,45 @@
       "source": "SGB Media",
       "url": "https://sgbonline.com/twisted-x-expands-built-in-the-usa-collection-with-seven-new-work-styles/",
       "date": "2026-09-18",
+      "verified": true
+    },
+    {
+      "rank": 1,
+      "region": "domestic",
+      "issueKey": "sympatex-40th-anniversary-2026",
+      "category": "신소재",
+      "title": "심파텍스, 창립 40주년 맞아 기능성 멤브레인 기술 혁신 성과 공개",
+      "summary": "독일 친환경 기능성 소재 브랜드 심파텍스가 창립 40주년을 맞아 9월 15~17일 이탈리아 밀라노에서 열린 국제 소재 박람회 '리네아펠레 2026'에 참가해 지난 40년간의 멤브레인 기술 발전 과정과 순환경제 기반 소재 개발 성과를 공개했다. 의류·신발·기업용 유니폼·개인보호장비에 쓰이는 기능성 멤브레인 및 라미네이트 시스템을 중점적으로 선보였다.",
+      "significance": "방수·투습 멤브레인 소재의 장기 기술 축적과 재활용성 강화 방향은 KLAB의 신발용 기능성 소재 시험·인증 기준을 점검하는 데 참고할 수 있다.",
+      "source": "패션저널",
+      "url": "http://okfashion.co.kr/detail.php?number=64126&thread=81r47r03",
+      "date": "2026-09-17",
+      "verified": true
+    },
+    {
+      "rank": 2,
+      "region": "domestic",
+      "issueKey": "woz-italy-comfort-shoes-korea-launch-2026",
+      "category": "신규브랜드",
+      "title": "이탈리아 컴포트 슈즈 브랜드 '워즈', 26FW 컬렉션으로 국내 공식 런칭",
+      "summary": "포스팀(대표 박정훈)이 이탈리아 토스카나 지역 기반의 컴포트 슈즈 브랜드 '워즈(Woz?)'의 2026 FW 컬렉션을 공개하며 국내 시장에 공식 론칭했다. 워즈는 이탈리아 피렌체 인근 시냐(Signa) 소재 신발 제조사를 기반으로 한 브랜드다.",
+      "significance": "해외 컴포트 슈즈 브랜드의 국내 진출은 편안함 중심 신발 카테고리의 국내 수요·경쟁 구도를 살펴보는 참고 사례가 된다.",
+      "source": "어패럴뉴스",
+      "url": "http://www.apparelnews.co.kr/news/news_view/?idx=227769",
+      "date": "2026-09-18",
+      "verified": true
+    },
+    {
+      "rank": 3,
+      "region": "domestic",
+      "issueKey": "archiclassic-wool-sneakers-apma-2026",
+      "category": "신모델",
+      "title": "아키클래식, 천연 울 스니커즈 '코지스텝 아치핏' 美 APMA 공식 인증 획득",
+      "summary": "올위메이크이즈의 라이프스타일 스포츠 브랜드 아키클래식이 새롭게 출시한 천연 울 스니커즈 '코지스텝 아치핏'이 미국 족부의학협회(APMA)로부터 공식 인증(Seal of Acceptance)을 받았다. 신발의 구조와 소재, 안정성, 기능성 등을 엄격히 심사해 발 건강에 도움이 된다고 인정한 결과다.",
+      "significance": "해외 의료 전문기관의 발 건강 인증 심사 기준은 KLAB의 착화감·인체공학적 신발 평가 항목을 벤치마킹하는 데 참고할 수 있다.",
+      "source": "어패럴뉴스",
+      "url": "http://www.apparelnews.co.kr/news/news_view/?idx=227900",
+      "date": "2026-09-23",
       "verified": true
     }
   ]
