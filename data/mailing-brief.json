@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-23T08:43:48+09:00",
+  "updatedAt": "2026-09-28T08:15:00+09:00",
   "period": "ROLLING",
   "windowDays": 28,
   "note": "이정호 이사 개인 구독 메일함(Gmail) 기준. 원문 링크는 발신처 홈페이지로 연결되며 개별 기사 링크가 아닙니다. 공식 검증 절차를 거치는 data/industry-news.json과는 별도 운영됩니다. 매주 월요일 08시 자동 갱신되며 발행일 기준 28일이 지난 항목은 자동 삭제됩니다.",
@@ -78,6 +78,37 @@
     { "category": "industry", "title": "Backcountry, Velofix 모바일 자전거 정비 네트워크 자산 인수", "summary": "온라인 아웃도어 전문 리테일러가 방문형 자전거 정비 서비스 자산을 인수해 오프라인 접점을 확대합니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-22" },
     { "category": "industry", "title": "Dick's Sporting Goods, 10억 달러 시니어노트에 BBB 등급", "summary": "S&P가 딕스의 신규 무담보 시니어노트 발행에 BBB 등급을 부여했습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-22" },
 
-    { "category": "industry", "title": "JD Sports, 멕시코 프랜차이즈 계약으로 시장 진출", "summary": "스포츠 의류·신발·용품 그룹 JD Sports가 Axo Grupo와 손잡고 처음으로 멕시코 시장에 진출합니다.", "source": "Sportstextiles", "sourceUrl": "https://www.sportstextiles.com", "date": "2026-09-21" }
+    { "category": "industry", "title": "JD Sports, 멕시코 프랜차이즈 계약으로 시장 진출", "summary": "스포츠 의류·신발·용품 그룹 JD Sports가 Axo Grupo와 손잡고 처음으로 멕시코 시장에 진출합니다.", "source": "Sportstextiles", "sourceUrl": "https://www.sportstextiles.com", "date": "2026-09-21" },
+
+    { "category": "shoe", "title": "adidas BW Army, 스니커즈앤스터프 재입고", "summary": "독일 군용 훈련화로 개발된 오리지널스 클래식이 매장에 다시 들어왔습니다.", "source": "Sneakersnstuff", "sourceUrl": "https://www.sneakersnstuff.com", "date": "2026-09-27" },
+    { "category": "shoe", "title": "나이키 르브론 시그니처 24년史, '르브론 24' 출시 예고", "summary": "르브론 제임스가 NBA 24번째 시즌을 맞아 24번째 시그니처 모델을 앞두고 있어 스니커프리커가 역대 모델을 정리했습니다.", "source": "Sneaker Freaker", "sourceUrl": "https://www.sneakerfreaker.com", "date": "2026-09-26" },
+    { "category": "shoe", "title": "미즈노, 96g 초경량 레이스화 '하이퍼워프 96' 12월 출시", "summary": "ENERZY XP+ 쿠셔닝과 풀렝스 스무스 스피드 플레이트를 탑재한 초경량 레이스데이화가 12월 4일 발매됩니다.", "source": "Mizuno", "sourceUrl": "https://www.mizunousa.com", "date": "2026-09-25" },
+    { "category": "shoe", "title": "미즈노 웨이브라이더10 '주얼팩', 2006년 클래식 러너 메탈릭 리뉴얼", "summary": "체인과 메달리온 디테일을 더해 헤리티지 러닝화를 주얼리풍으로 재해석했습니다.", "source": "Mizuno", "sourceUrl": "https://www.mizunousa.com", "date": "2026-09-25" },
+    { "category": "shoe", "title": "제이콜, 스포츠웨어 브랜드 계약 없이 첫 자체 스니커 'Indie 5000' 공개", "summary": "퓨마 드리머 라인 이후 처음으로 메이저 브랜드 계약 없이 이탈리아 협업진과 독자 개발한 신발입니다.", "source": "Hypebeast", "sourceUrl": "https://hypebeast.com", "date": "2026-09-24" },
+    { "category": "shoe", "title": "엘엘빈 x 던킨, 부트모빌 콜라보 로드트립 공개", "summary": "뉴잉글랜드 대표 브랜드 두 곳이 한정판 공동 상품과 함께 부트모빌 로드트립을 진행합니다.", "source": "Footwear Plus", "sourceUrl": "https://footwearplusmagazine.com", "date": "2026-09-24" },
+    { "category": "shoe", "title": "버켄스탁, 말리부에 미국 24번째 직영매장 오픈", "summary": "", "source": "Footwear Plus", "sourceUrl": "https://footwearplusmagazine.com", "date": "2026-09-24" },
+
+    { "category": "fashion", "title": "Capri Holdings 투자유치설·발렌시아가 피콜리와 결별설 동시 제기", "summary": "24시간 안에 나온 두 소문으로, 확인될 경우 패션업계 구조조정 신호로 해석됩니다.", "source": "La Conceria", "sourceUrl": "https://www.laconceria.it", "date": "2026-09-24" },
+    { "category": "fashion", "title": "글렌 마르텐스, 6년 만에 디젤 떠난다", "summary": "", "source": "La Conceria", "sourceUrl": "https://www.laconceria.it", "date": "2026-09-24" },
+    { "category": "fashion", "title": "아크테릭스 x 빔스, 파트너십 25주년·빔스 50주년 기념 'KOYO' 컬렉션", "summary": "2026 가을·겨울 컬렉션으로 두 브랜드의 협업 역사를 기념합니다.", "source": "Hypebeast", "sourceUrl": "https://hypebeast.com", "date": "2026-09-24" },
+
+    { "category": "industry", "title": "라파 CEO 프란 밀러, 2년 만에 사임", "summary": "9년 연속 적자를 낸 영국 사이클 의류 브랜드가 비용 절감을 위한 조직개편에 나섭니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-24" },
+    { "category": "industry", "title": "리들, 네덜란드 법원서 버켄스탁 짝퉁 판매 금지 판결", "summary": "", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-24" },
+    { "category": "industry", "title": "피닉스 풋웨어그룹(트로터스·소프트워크), 60일 내 폐업", "summary": "2025년 매출이 28% 감소하며 410만 달러 손실을 기록했습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-23" },
+    { "category": "industry", "title": "미국 팀스포츠 참여, 9230만명으로 역대 최고치", "summary": "SFIA 조사 결과 5년 연속 증가했으며 야외축구·농구 등이 두 자릿수 성장을 이끌었습니다.", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-25" },
+    { "category": "industry", "title": "아식스, 스페인에 오니츠카타이거 법인 설립", "summary": "", "source": "SGB Online", "sourceUrl": "https://sgbonline.com", "date": "2026-09-25" },
+    { "category": "industry", "title": "JD 스포츠, 고물가 속에도 상반기 매출 59억 파운드 선방", "summary": "생활비 부담이라는 어려운 환경에서도 견조한 실적을 냈습니다.", "source": "Sportstextiles", "sourceUrl": "https://www.sportstextiles.com", "date": "2026-09-23" },
+
+    { "category": "research", "title": "55년 만에 사라진 컵라면의 '뜨거운 물' 조리법", "summary": "즉석 컵라면에서 뜨거운 물 없이 조리하는 해외 사례를 소개하는 해외 디자인리포트입니다.", "source": "Designdb(KIDP)", "sourceUrl": "https://www.designdb.com", "date": "2026-09-27" },
+    { "category": "research", "title": "가을·겨울 신발 소비자 335명 설문, 러닝화·스니커즈 선호 1위", "summary": "가격이 오르면 세일을 기다리거나 구매량을 줄이겠다는 응답이 많아 오프라인 매장의 전문성·핏 상담 역할이 부각됐습니다.", "source": "Footwear Insight", "sourceUrl": "https://www.footwearinsight.com", "date": "2026-09-24" },
+
+    { "category": "gear", "title": "나이키 베이퍼플라이 10주년, 슈퍼슈 비밀은 '카본 플레이트'보다 '폼 탄성'", "summary": "최신 연구에 따르면 미드솔 폼의 회복탄성률이 카본 플레이트보다 성능 향상에 크게 기여하며, 아디다스 아디제로 아디오스 프로 에보3(97g)는 카본 플레이트 없이도 11% 에너지 리턴을 개선했습니다.", "source": "Canadian Running", "sourceUrl": "https://runningmagazine.ca", "date": "2026-09-25" },
+    { "category": "gear", "title": "미국 최오지 지역까지 관광객 몰려 붐빔", "summary": "", "source": "GearJunkie", "sourceUrl": "https://gearjunkie.com", "date": "2026-09-25" },
+    { "category": "gear", "title": "4T2, 울트라트레일화 '사요나라' 출시", "summary": "9mm 드롭에 비브람 젝갈라이트 5mm 아웃솔을 적용했으며 무게는 363g(EU42.5)입니다.", "source": "4T2", "sourceUrl": "https://4t2.run", "date": "2026-09-26" },
+
+    { "category": "design", "title": "Dezeen Awards 2026 인테리어 부문 쇼트리스트 발표", "summary": "", "source": "Dezeen", "sourceUrl": "https://www.dezeen.com", "date": "2026-09-22" },
+    { "category": "design", "title": "이번 주 미국판 아젠다: 뉴욕시 신규 자치구 교도소 디자인 조명", "summary": "버닝맨 2026 페스티벌의 기묘한 건축물 사진도 함께 다뤘습니다.", "source": "Dezeen", "sourceUrl": "https://www.dezeen.com", "date": "2026-09-26" },
+    { "category": "design", "title": "designboom, 데일리 하이라이트 지속 + 일요판 별도 편성", "summary": "마드리드에 샤키라를 위해 지어진 임시 도시 등 이주의 인기 게시물을 정리했습니다.", "source": "designboom", "sourceUrl": "https://www.designboom.com", "date": "2026-09-26" },
+    { "category": "design", "title": "Yanko Design, 데일리 프로덕트 리뷰 지속", "summary": "모듈형 스포츠 GPS 컴퓨터 'REACH', 이어폰형 귀마개 등을 다뤘습니다.", "source": "Yanko Design", "sourceUrl": "https://www.yankodesign.com", "date": "2026-09-26" }
   ]
 }
