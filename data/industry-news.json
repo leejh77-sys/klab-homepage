@@ -1,9 +1,10 @@
 {
-  "updatedAt": "2026-09-24T08:11:20+09:00",
+  "updatedAt": "2026-09-28T08:10:24+09:00",
   "period": "ROLLING",
   "windowDays": 28,
   "timeZone": "Asia/Seoul",
   "domesticTarget": 10,
+  "shortfallReason": "이번 회차는 WebFetch가 다시 네트워크 egress 정책에 막혀 WebSearch 교차검증(2건 이상 독립 출처가 같은 제목·날짜·핵심 사실에 일치)만 사용했다. 여러 활성 국내 출처(테넌트뉴스·패션인사이트·국제섬유신문·TIN뉴스·한국섬유신문·패션포스트·어패럴뉴스·패션저널)를 확인했으나, 최근 4~7일 범위에서 신발·스포츠 산업에 직접 관련되고 교차 검증까지 통과한 신규 이슈는 2건에 그쳐 억지로 채우지 않았다.",
   "items": [
     {
       "rank": 1,
@@ -367,6 +368,45 @@
       "source": "어패럴뉴스",
       "url": "http://www.apparelnews.co.kr/news/news_view/?idx=227900",
       "date": "2026-09-23",
+      "verified": true
+    },
+    {
+      "rank": 1,
+      "region": "global",
+      "issueKey": "genesco-wrangler-footwear-launch-2026",
+      "category": "신규브랜드",
+      "title": "제네스코, 데님 브랜드 랭글러의 풋웨어 컬렉션 정식 출시",
+      "summary": "미국 신발기업 제네스코(Genesco)가 데님·라이프스타일 브랜드 랭글러(Wrangler)와의 다년 라이선스 계약에 따라 9월 15일 랭글러닷컴을 통해 풋웨어 컬렉션을 정식 출시했다. 남성·여성·아동을 아우르는 웨스턴·워크·캐주얼 3개 카테고리로 구성되며, 풀그레인 가죽과 데님 텍스타일을 적용하고 일부 워크 스타일은 ASTM 안전 기준을 충족한다.",
+      "significance": "데님 라이프스타일 브랜드의 신발 카테고리 진출은 이종 소재(데님·가죽) 조합 풋웨어의 내구성·안전 인증 기준을 검토하는 참고 사례가 된다.",
+      "source": "World Footwear",
+      "url": "https://www.worldfootwear.com/news/genesco-unveils-wrangler-footwear-collection/11775.html",
+      "date": "2026-09-15",
+      "verified": true
+    },
+    {
+      "rank": 1,
+      "region": "domestic",
+      "issueKey": "mount-to-coast-korea-launch-2026",
+      "category": "신규브랜드",
+      "title": "울트라러닝화 브랜드 '마운트투코스트', 한국 공식 론칭",
+      "summary": "홍콩 기반 퍼포먼스 러닝화 브랜드 마운트투코스트(Mount to Coast)가 9월 10일 온라인몰 오픈에 이어 18일 서울 종로구 서촌에 국내 첫 쇼룸을 열며 한국 시장에 공식 론칭했다. 국내에는 장거리 로드용 'C1', 로드·트레일 겸용 'H1', 트레일 전용 'T1' 등 3개 라인이 우선 출시됐다.",
+      "significance": "울트라마라톤에 특화된 미드솔 설계를 내세운 해외 러닝화 브랜드의 국내 진입은 장거리 러닝화의 쿠셔닝 내구성·부종 대응 설계를 비교 평가하는 참고 사례가 된다.",
+      "source": "테넌트뉴스",
+      "url": "https://tnnews.co.kr/archives/294255",
+      "date": "2026-09-18",
+      "verified": true
+    },
+    {
+      "rank": 2,
+      "region": "domestic",
+      "issueKey": "29cm-nike-skims-sellout-2026",
+      "category": "유행아이템",
+      "title": "29CM 단독 '나이키 스킴스' 슈즈, 출시 10분 만에 완판",
+      "summary": "무신사 29CM이 9월 17일 단독 출시한 '나이키 스킴스(Nike SKIMS)' 2026 가을 컬렉션 중 '스킴스 리프트 메쉬' 슈즈 등 핵심 상품이 판매 시작 10분 만에 품절됐다. 2539세대 여성 소비자층을 겨냥한 협업으로, 주요 제품이 당일 플랫폼 인기 순위 상위권에 진입했다.",
+      "significance": "특정 실루엣·소재 조합의 신발이 단시간에 완판되는 소비 패턴은 인기 착화감·디자인 요소를 파악해 신제품 기획에 참고할 수 있다.",
+      "source": "테넌트뉴스",
+      "url": "https://tnnews.co.kr/archives/294154",
+      "date": "2026-09-17",
       "verified": true
     }
   ]
