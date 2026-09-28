@@ -40,7 +40,6 @@ for (const item of data.items) {
   const host = new URL(item.url).hostname.replace(/^www\./, '');
   assert.ok(sources.sources.some(source => source.domain === host &&
     (source.status === 'active' || source.allowedArticleUrls?.includes(item.url))), `Source is not approved: ${host}`);
-  assert.ok(item.significance, 'Each issue needs an editorial significance note');
   assert.ok(Number.isInteger(item.rank) && item.rank > 0, 'rank must be a positive integer (importance order within its own edition)');
 }
 console.log(`Validated ${data.items.length} stored issues (${eligible.filter(i => i.region === 'global').length} global / ${eligible.filter(i => i.region === 'domestic').length} domestic within ${data.windowDays}-day window).`);

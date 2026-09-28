@@ -47,7 +47,6 @@
 - 단순 할인, 색상 추가, 연예인 화보, 광고성 구매 가이드, 신발과 무관한 일반 소식은 제외한다.
 - 국내 적격 이슈가 목표보다 적으면 확인된 수량만 게시하고 `shortfallReason`에 사유를 기록한다.
   과거·미확인 기사로 채우지 않는다.
-- 요약과 편집자의 해석(`significance`, 화면의 KLAB 관점)을 구분한다.
 - `verified: true`는 아래 중 하나의 방법으로 발행일·핵심 사실을 확인했다는 뜻이다. 어느 방법으로도
   확인할 수 없으면 절대 `verified: true`로 기록하지 않고, 항목 자체를 추가하지 않는다.
   1. **WebFetch로 원문을 직접 열어 확인**(가능할 때 우선 사용).
@@ -95,8 +94,9 @@
 3. 중복 이슈(같은 사건)는 `issueKey`로 병합하고, 이미 저장된 `issueKey`/URL과 겹치면 건너뛴다.
 4. 위 '선정과 분류'의 `verified` 정의(WebFetch 직접 확인, 또는 막혀 있을 때 WebSearch 2건 이상
    교차검증 — Naver 뉴스API 아님, 존재하지 않는 도구이니 시도하지 말 것)에 따라 확인한 항목만
-   `rank, region, issueKey, category, title, summary, significance, source, url, date, verified`를
-   채워 `data/industry-news.json`의 `items`에 추가한다.
+   `rank, region, issueKey, category, title, summary, source, url, date, verified`를
+   채워 `data/industry-news.json`의 `items`에 추가한다. (2026-09-28부로 `significance`/KLAB 관점
+   필드는 폐지 — 더 이상 채우지 않는다.)
 5. `date` 기준 28일이 지난 기존 항목을 삭제한다.
 6. `updatedAt`을 실행 완료 시각으로 갱신한다.
 7. `node --test scripts/news-policy.test.cjs`와 `node scripts/validate-news.cjs`를 실행해 통과를

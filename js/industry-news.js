@@ -49,7 +49,6 @@ function buildIndustryNewsCardHtml(item) {
     <div class="news-body">
       <span class="news-cat">${region} 주요 이슈 ${Number(item.rank) || ''} · ${escapeHtml(meta.label)}</span>
       <h4>${escapeHtml(item.title)}</h4><p>${escapeHtml(item.summary)}</p>
-      ${item.significance ? `<p><b>KLAB 관점</b> · ${escapeHtml(item.significance)}</p>` : ''}
       <div class="news-meta"><span>${escapeHtml(item.source)}</span><span>${formatIndustryDate(item.date)}</span></div>
       <span class="btn-view">원문 보기 →</span>
     </div></a>`;
