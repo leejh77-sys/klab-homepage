@@ -1,6 +1,14 @@
 {
-  "updatedAt": "2026-09-22T14:51:30.963669+09:00",
+  "updatedAt": "2026-09-28T10:20:50.873875+09:00",
   "items": [
+    {
+      "title": "KLAB Adidas Innovation Deep Report v2",
+      "category": "tech",
+      "categoryLabel": "신기술·신제품",
+      "url": "reports/tech/KLAB_Adidas_Innovation_Deep_Report_v2.pdf",
+      "date": "2026-09-28T10:19:33+09:00",
+      "fileSize": 12072750
+    },
     {
       "title": "MoveSport 국내런칭 조사 보고서 20260922",
       "category": "tech",
