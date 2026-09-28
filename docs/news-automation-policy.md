@@ -6,13 +6,34 @@
 
 ## 실행 주체
 
-`/schedule`로 등록한 예약된 Claude 클라우드 에이전트(routine)가 실제로 기사를 조사·요약하고
-리포지토리에 직접 커밋·푸시한다. GitHub Actions는 발행 전 검증만 수행하며 조사를 수행하지 않는다.
+**2026-09-28부로 산업뉴스는 GitHub Actions 기반으로 전환했다** (`scripts/crawl_industry_news.py` +
+`.github/workflows/industry-news-crawl.yml`). 이전에는 `/schedule`로 등록한 Claude 클라우드
+루틴(`trig_01GdSPEYSSuDRX9vkoYC617t`, "KLAB 산업뉴스 자동발행")이 실행마다 WebSearch로 기사를
+찾았는데, 그 실행 샌드박스가 WebFetch를 모든 외부 도메인에 차단하는 바람에 원문을 직접 열 수
+없었고, WebSearch 교차검증만으로는 당일~수일 이내 기사를 확인할 수 없어 항상 며칠~1주일 지난
+기사만 게시되는 신선도 문제가 있었다(2026-09-28 leejh77 보고, 상세 내역은 아래 '실행 상태' 참고).
 
-| 대상 | 데이터 | 주기 | cron(UTC) | KST |
-| --- | --- | --- | --- | --- |
-| 글로벌·국내 산업뉴스 | `data/industry-news.json` | 주 2회 | `0 23 * * 0,3` | 매주 월·목 08:00 |
-| 메일링 브리프 | `data/mailing-brief.json` | 주 1회 | `0 23 * * 0` | 매주 월 08:00 |
+새 구조:
+1. **수집(GitHub Actions, egress 제한 없음)** — `scripts/crawl_industry_news.py`가
+   `data/news-sources.json`의 `status: active` 17개 출처를 RSS 또는 실제 기사 페이지 직접 fetch로
+   조사해 진짜 발행일이 확인된 후보를 모은다(무신사 크롤러 `crawl_musinsa.py`와 같은 방식 — 이
+   워크플로우 실행 환경은 애초에 egress 제한이 없다는 것이 이미 확인돼 있다).
+2. **분류·요약(Claude API 단발 호출 1회)** — 수집된 후보 전체를 한 번의 배치 API 호출로 넘겨
+   선정·region/category 분류·issueKey 병합·한국어 번역요약만 수행한다. url/date는 모델이 절대
+   새로 만들거나 바꿀 수 없고, 수집 단계에서 이미 확보한 값을 그대로 재사용한다 — 이 호출은
+   "리서치"가 아니라 "이미 검증된 후보 중에서 편집 판단"만 한다.
+3. **검증·반영** — 기존과 동일하게 `node --test scripts/news-policy.test.cjs` +
+   `node scripts/validate-news.cjs`를 통과한 경우에만 `data/industry-news.json`을 갱신하고,
+   워크플로우가 변경분을 커밋·푸시한다.
+
+메일링 브리프는 Gmail 개인 구독함을 읽어야 해서(Gmail MCP 연결 필요) 계속 기존 Claude 클라우드
+루틴("KLAB 메일링 브리프 자동발행")이 담당한다 — 이건 WebFetch 문제와 무관했고 처음부터 정상
+작동해왔다.
+
+| 대상 | 실행 주체 | 데이터 | 주기 | cron(UTC) | KST |
+| --- | --- | --- | --- | --- | --- |
+| 글로벌·국내 산업뉴스 | GitHub Actions (`industry-news-crawl.yml`) | `data/industry-news.json` | 주 2회 | `0 23 * * 0,3` | 매주 월·목 08:00 |
+| 메일링 브리프 | Claude 클라우드 루틴 | `data/mailing-brief.json` | 주 1회 | `0 23 * * 0` | 매주 월 08:00 |
 
 무신사 트렌드(`data/weekly.json`/`monthly.json`/`content.json`)는 기존 `musinsa-dashboard.yml`이
 매주 월요일 08:00 KST에 실행되며, 실행마다 이전 데이터를 통째로 덮어쓰는 방식이라 별도 보관기간
@@ -47,30 +68,17 @@
 - 단순 할인, 색상 추가, 연예인 화보, 광고성 구매 가이드, 신발과 무관한 일반 소식은 제외한다.
 - 국내 적격 이슈가 목표보다 적으면 확인된 수량만 게시하고 `shortfallReason`에 사유를 기록한다.
   과거·미확인 기사로 채우지 않는다.
-- `verified: true`는 아래 중 하나의 방법으로 발행일·핵심 사실을 확인했다는 뜻이다. 어느 방법으로도
-  확인할 수 없으면 절대 `verified: true`로 기록하지 않고, 항목 자체를 추가하지 않는다.
-  1. **WebFetch로 원문을 직접 열어 확인**(가능할 때 우선 사용).
-  2. **WebFetch가 막혀 있을 때의 대체 방법** — 2026-09-23 첫 실행에서 이 클라우드 환경의 네트워크
-     egress 정책이 WebFetch를 모든 외부 도메인에 대해 차단하는 것이 확인됐다(구글·위키피디아 등
-     무관한 도메인까지 차단됨). WebFetch가 막혀 있으면 국내·해외 구분 없이 다음 방법만 쓴다:
-     - 서로 다른 독립된 WebSearch 결과 2건 이상이 같은 제목·날짜·핵심 사실에 일치할 때만 확인된
-       것으로 간주한다. 스니펫에 정확한 날짜가 없거나 결과들끼리 날짜가 어긋나면 포함하지 않는다.
-     - **주의(2026-09-28 확인)**: 이전 버전 문서는 국내 기사를 `mcp__PlayMCP__NaverSearch-search_news`
-       (네이버 뉴스 검색)로 확인하라고 적혀 있었으나, 이 계정에 연결된 PlayMCP 커넥터에는 해당
-       도구가 **존재하지 않는다**(연결된 도구는 미국주식정보·카카오톡 메모뿐). 실제 실행 로그에서도
-       `ToolSearch`로 찾다가 못 찾고 넘어간 사례가 확인됨 — 에이전트가 도구 존재를 검증하지 않고
-       이름을 지어낸 것으로 보인다. 앞으로 이 방법을 지시하지 말 것. 국내 기사도 해외와 동일하게
-       WebSearch 교차검증만 사용한다.
-     - **알려진 한계**: 당일~2-3일 이내 기사는 아직 여러 사이트에 교차 인용되지 않아 이 방법으로
-       검증하기 어렵다. 그 결과 매 실행에서 확인 가능한 기사는 대개 발행 후 며칠~1주일 지난
-       것들이며, 이는 "자동화가 안 도는 것"이 아니라 검증 방법 자체의 한계다. 더 신선한 뉴스가
-       필요하면 (a) WebFetch egress 차단이 풀리거나 (b) 실제 작동하는 뉴스 검색 API/MCP 도구를
-       새로 연결해야 한다 — 둘 다 이 문서·프롬프트만 고쳐서는 해결되지 않는다.
-     - 검색 쿼리에 `site:도메인`과 함께 구체적 날짜(예: "2026년 9월" 또는 최근 요일)를 넣어 최대한
-       신선한 결과를 우선 시도하되, 못 찾으면 4~7일 범위까지 넓혀 확인 가능한 것만 쓴다.
-  - WebFetch가 1~2회 차단되면 그 실행 안에서는 더 재시도하지 말고 즉시 대체 방법으로 전환한다.
-    여러 하위 에이전트를 병렬로 띄워 각각 같은 차단을 반복 확인하지 않는다(시간·비용 낭비).
-  - WebFetch 접근이 복구되면(다음 실행에서 성공적으로 열리면) 다시 1번 방법을 우선한다.
+- `verified: true`는 이제 "`scripts/crawl_industry_news.py`가 해당 출처(RSS 또는 기사 페이지)를
+  실제로 직접 fetch해서 얻은 날짜·URL"이라는 뜻이다 — 스크립트가 수집한 후보만 Claude API 분류
+  단계로 넘어가므로, 그 단계를 통과해 저장된 항목은 전부 `verified: true`다. 지어낸 날짜나 미확인
+  기사는 애초에 후보 목록에 들어올 수 없다.
+- **지난 이력(2026-09-23 ~ 2026-09-27, 지금은 해당 없음)**: 이전에는 claude.ai 예약 루틴이 매
+  실행마다 WebFetch/WebSearch로 실시간 리서치를 했는데, 그 샌드박스의 네트워크 egress 정책이
+  WebFetch를 모든 외부 도메인에 차단해 원문을 직접 열 수 없었다. 대체로 WebSearch 2건 이상 교차
+  검증을 썼지만, 당일~며칠 이내 기사는 교차 인용이 안 돼 확인이 안 됐고(신선도 지연의 원인), 문서에
+  한때 적혀 있던 국내 기사용 "Naver 뉴스API"(`mcp__PlayMCP__NaverSearch-search_news`)는 실제로
+  존재하지 않는 도구였다(2026-09-28 확인). 2026-09-28 GitHub Actions 기반 수집으로 전환하면서 이
+  문제 자체가 해소됐다 — 아래 '실행 상태' 참고.
 
 ## 조사 사이트
 
@@ -86,21 +94,27 @@
 - `status: excluded`(유료 봇 게이트, 로그인 필요, 403 등)인 출처는 사용하지 않는다.
 - 최근 4주간 관련 게시물이 없는 출처는 `paused`로 전환하고 사유·확인일을 `news-sources.json`에 기록한다.
 
-## 산업뉴스 실행 절차 (routine이 매 실행마다 수행)
+## 산업뉴스 실행 절차 (2026-09-28부로 `scripts/crawl_industry_news.py` + GitHub Actions가 수행)
 
-1. `data/news-sources.json`에서 `status: active`인 출처의 최신 목록만 살핀다.
-2. 직전 실행(`data/industry-news.json`의 `updatedAt`) 이후 새로 발행된 기사를 우선 조사하되,
-   놓친 기사가 없도록 최근 4~7일 범위까지 확인한다. 미래 발행일·날짜 미확인 기사는 제외한다.
-3. 중복 이슈(같은 사건)는 `issueKey`로 병합하고, 이미 저장된 `issueKey`/URL과 겹치면 건너뛴다.
-4. 위 '선정과 분류'의 `verified` 정의(WebFetch 직접 확인, 또는 막혀 있을 때 WebSearch 2건 이상
-   교차검증 — Naver 뉴스API 아님, 존재하지 않는 도구이니 시도하지 말 것)에 따라 확인한 항목만
-   `rank, region, issueKey, category, title, summary, source, url, date, verified`를
-   채워 `data/industry-news.json`의 `items`에 추가한다. (2026-09-28부로 `significance`/KLAB 관점
-   필드는 폐지 — 더 이상 채우지 않는다.)
+1. `data/news-sources.json`에서 `status: active`인 출처의 최신 목록을 읽는다.
+2. 출처별로 RSS(`RSS_SOURCES`) 또는 사이트별 HTML 스크래퍼(`SCRAPERS`)를 실제로 fetch해 최근
+   10일 이내 발행된 후보(제목·URL·날짜·짧은 발췌)를 모은다. 이미 저장된 `issueKey`/정규화 URL과
+   겹치는 후보는 이 단계에서 걸러낸다.
+3. 모인 후보 전체 + 기존 region/category별 보유 현황을 Claude API에 **한 번의 배치 호출**로 넘겨
+   선정·region/category 분류·issueKey 병합(같은 사건 병합)·한국어 번역요약만 시킨다(리서치 아님 —
+   url·date는 모델이 절대 바꿀 수 없고 수집 단계 값을 그대로 재사용, 코드에서 강제 검증함).
+4. 모델이 고른 항목만 `rank, region, issueKey, category, title, summary, source, url, date,
+   verified: true`를 채워 `data/industry-news.json`의 `items`에 추가한다. (`significance`/KLAB
+   관점 필드는 2026-09-28부로 폐지.)
 5. `date` 기준 28일이 지난 기존 항목을 삭제한다.
 6. `updatedAt`을 실행 완료 시각으로 갱신한다.
 7. `node --test scripts/news-policy.test.cjs`와 `node scripts/validate-news.cjs`를 실행해 통과를
-   확인한 뒤에만 커밋·푸시한다. 실패하면 원인을 정리해 남기고 게시하지 않는다.
+   확인한 경우에만 파일을 유지한다 — 실패하면 스크립트가 `data/industry-news.json`을 실행 전
+   상태로 되돌리고 게시하지 않는다(GitHub Actions의 "커밋/푸시" 스텝은 이후 실제 변경이 있을
+   때만 동작).
+8. `docs/news-sources.json`에 없는 활성 출처가 새로 추가되면 `scripts/crawl_industry_news.py`의
+   `RSS_SOURCES`/`SCRAPERS`에도 fetcher를 추가해야 실제로 수집된다 — 정책 문서만 고쳐서는
+   자동으로 수집되지 않는다.
 
 ## 메일링 브리프 실행 절차 (routine이 매주 월요일 수행)
 
@@ -132,3 +146,15 @@
   한계(WebFetch 차단)는 해소되지 않았으니, 최신정보 페이지의 "최신" 날짜가 실행일보다 며칠 뒤처지는
   것은 당분간 정상 동작이다 — 완전히 해결하려면 WebFetch 차단 해제 또는 실제 작동하는 뉴스 검색
   API/MCP 연결이 필요하다.
+- **2026-09-28 아키텍처 전환**: 위 신선도 한계를 근본적으로 없애기 위해 산업뉴스를 GitHub
+  Actions 기반(`scripts/crawl_industry_news.py` + `industry-news-crawl.yml`)으로 옮겼다(위 '실행
+  주체' 참고). 17개 active 출처 중 15개는 실제 fetch로 동작 확인(RSS 9개, HTML 스크래핑 6개),
+  2개는 확인 못함 — `retaildive.com`은 Cloudflare managed JS challenge로 완전히 막혀 있어 일반
+  HTTP로는 우회 불가(봇 탐지 우회는 시도하지 않음), `worldfootwear.com`은 작성 시점에 사이트 자체가
+  503으로 다운돼 있어 스크래퍼를 넣긴 했지만 미검증 상태다(사이트 복구 후 재확인 필요). 이 2개
+  출처는 당분간 산업뉴스에 반영되지 않는다.
+- **전환 완료 후 할 일(진행 중)**: 새 파이프라인이 실제로 몇 차례 정상 발행되는 것을 확인한 뒤,
+  기존 Claude 클라우드 루틴("KLAB 산업뉴스 자동발행", `trig_01GdSPEYSSuDRX9vkoYC617t`)을 비활성화해
+  중복 발행을 막아야 한다(비활성화는 사람이 확인 후 진행 — 자동으로 끄지 않았다).
+- 이 전환에는 `ANTHROPIC_API_KEY`를 GitHub 저장소 Secrets에 등록해야 한다(콘솔에서 발급, 결제수단
+  필요) — 등록 전까지는 워크플로우가 돌아도 분류 단계에서 스킵되고 데이터가 갱신되지 않는다.

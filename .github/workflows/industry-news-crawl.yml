@@ -1,0 +1,47 @@
+name: Industry News Crawl
+
+on:
+  schedule:
+    # 매주 월/목 08:00 KST == 매주 일/수 23:00 UTC (기존 Claude 루틴과 동일 스케줄)
+    - cron: "0 23 * * 0,3"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements-industry-news.txt
+
+      - name: Run crawler + classifier
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/crawl_industry_news.py
+
+      - name: Commit and push if data changed
+        run: |
+          git config user.name "industry-news-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/industry-news.json
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "chore: publish industry news ($(date -u +%Y-%m-%d))"
+            git push
+          fi
