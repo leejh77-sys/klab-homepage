@@ -91,10 +91,9 @@ def fetch_ranking(period, top_n=30):
 
 
 def fetch_content(display_n=10, pool_per_category=15):
-    """무신사 콘텐츠 API는 '인기순' 정렬 파라미터를 지원하지 않아(LATEST만 확인됨),
-    카테고리별 최근 발행 글 pool_per_category개씩 모은 뒤 조회수(viewCount) 기준으로
-    전체 상위 display_n개를 추린다. 신발·의류 소재 리서치와 관련 높은 소분류만 수집한다
-    (CONTENT_CATEGORY_CODES 참고, 뷰티 등은 제외).
+    """카테고리별 최근 발행 글 pool_per_category개씩 모은 뒤 발행일(displayStartDate)
+    기준 최신순으로 전체 상위 display_n개를 추린다. 신발·의류 소재 리서치와 관련 높은
+    소분류만 수집한다(CONTENT_CATEGORY_CODES 참고, 뷰티 등은 제외).
     """
     items_by_id = {}
     for code in CONTENT_CATEGORY_CODES:
@@ -119,7 +118,7 @@ def fetch_content(display_n=10, pool_per_category=15):
                 "commentCount": c.get("commentCount", 0),
                 "date": c.get("displayStartDate"),
             }
-    items = sorted(items_by_id.values(), key=lambda x: x["viewCount"], reverse=True)
+    items = sorted(items_by_id.values(), key=lambda x: x["date"] or "", reverse=True)
     return items[:display_n]
 
 
@@ -170,7 +169,7 @@ def main():
 
     content_payload = {
         "updatedAt": now_kst.isoformat(),
-        "sortedBy": "viewCount",
+        "sortedBy": "date",
         "items": fetch_content(display_n=10, pool_per_category=15),
     }
     with open(DATA_DIR / "content.json", "w", encoding="utf-8") as f:
