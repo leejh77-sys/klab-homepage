@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T09:18:10.556506+09:00",
+  "updatedAt": "2026-09-28T10:24:24.967430+09:00",
   "period": "WEEKLY",
   "items": [
     {
@@ -11,8 +11,8 @@
       "discountRatio": 61,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20250123/4739382/4739382_17389072020863_500.jpg",
       "url": "https://www.musinsa.com/products/4739382",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 2,
@@ -23,7 +23,7 @@
       "discountRatio": 20,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20250818/5329359/5329359_17569461399483_500.jpg",
       "url": "https://www.musinsa.com/products/5329359",
-      "rankChange": -1,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -35,7 +35,7 @@
       "discountRatio": 40,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20230504/3276429/3276429_17770163028829_500.jpg",
       "url": "https://www.musinsa.com/products/3276429",
-      "rankChange": 19,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -47,8 +47,8 @@
       "discountRatio": 44,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20250414/5023275/5023275_17446095042632_500.jpg",
       "url": "https://www.musinsa.com/products/5023275",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 5,
@@ -59,8 +59,8 @@
       "discountRatio": 16,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260127/5943431/5943431_17745057757383_500.jpg",
       "url": "https://www.musinsa.com/products/5943431",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 6,
@@ -71,7 +71,7 @@
       "discountRatio": 49,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260729/6948481/6948481_17853044768380_500.jpg",
       "url": "https://www.musinsa.com/products/6948481",
-      "rankChange": -4,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -95,8 +95,8 @@
       "discountRatio": 45,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20240610/4187469/4187469_17900415105124_500.jpg",
       "url": "https://www.musinsa.com/products/4187469",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 9,
@@ -107,8 +107,8 @@
       "discountRatio": 50,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260819/7109018/7109018_17896320171567_500.jpg",
       "url": "https://www.musinsa.com/products/7109018",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 10,
@@ -119,8 +119,8 @@
       "discountRatio": 20,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20251120/5759548/5759548_17636302731261_500.jpg",
       "url": "https://www.musinsa.com/products/5759548",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 11,
@@ -131,8 +131,8 @@
       "discountRatio": 73,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20250117/4727073/4727073_17515234818261_500.jpg",
       "url": "https://www.musinsa.com/products/4727073",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 12,
@@ -143,7 +143,7 @@
       "discountRatio": 40,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260226/6061370/6061370_17878944045413_500.jpg",
       "url": "https://www.musinsa.com/products/6061370",
-      "rankChange": -7,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -155,8 +155,8 @@
       "discountRatio": 20,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20250616/5188357/5188357_17503790286368_500.png",
       "url": "https://www.musinsa.com/products/5188357",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 14,
@@ -167,8 +167,8 @@
       "discountRatio": 31,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20191112/1220731/1220731_17816824726051_500.jpg",
       "url": "https://www.musinsa.com/products/1220731",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 15,
@@ -179,7 +179,7 @@
       "discountRatio": 48,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260819/7108774/7108774_17885055232191_500.jpg",
       "url": "https://www.musinsa.com/products/7108774",
-      "rankChange": -12,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -191,8 +191,8 @@
       "discountRatio": 39,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20230516/3298438/3298438_17871037158693_500.png",
       "url": "https://www.musinsa.com/products/3298438",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 17,
@@ -203,8 +203,8 @@
       "discountRatio": 71,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20230912/3551101/3551101_16970790961650_500.jpg",
       "url": "https://www.musinsa.com/products/3551101",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 18,
@@ -215,7 +215,7 @@
       "discountRatio": 40,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260309/6100901/6100901_17730403884837_500.jpg",
       "url": "https://www.musinsa.com/products/6100901",
-      "rankChange": 12,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -227,8 +227,8 @@
       "discountRatio": 66,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20251104/5682006/5682006_17808938363291_500.jpg",
       "url": "https://www.musinsa.com/products/5682006",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 20,
@@ -239,7 +239,7 @@
       "discountRatio": 30,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20240822/4356794/4356794_17890558965193_500.jpg",
       "url": "https://www.musinsa.com/products/4356794",
-      "rankChange": 1,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -251,7 +251,7 @@
       "discountRatio": 25,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260901/7220362/7220362_17883484507047_500.jpg",
       "url": "https://www.musinsa.com/products/7220362",
-      "rankChange": 3,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -263,7 +263,7 @@
       "discountRatio": 25,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20250602/5162178/5162178_17888650510734_500.jpg",
       "url": "https://www.musinsa.com/products/5162178",
-      "rankChange": -13,
+      "rankChange": 0,
       "isNew": false
     },
     {
@@ -275,8 +275,8 @@
       "discountRatio": 15,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20240923/4454243/4454243_17280182796756_500.jpg",
       "url": "https://www.musinsa.com/products/4454243",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 24,
@@ -287,8 +287,8 @@
       "discountRatio": 44,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260211/6014700/6014700_17775279342903_500.jpg",
       "url": "https://www.musinsa.com/products/6014700",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 25,
@@ -299,8 +299,8 @@
       "discountRatio": 44,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260311/6111436/6111436_17737263574879_500.jpg",
       "url": "https://www.musinsa.com/products/6111436",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 26,
@@ -311,8 +311,8 @@
       "discountRatio": 20,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20260825/7155954/7155954_17881615840083_500.jpg",
       "url": "https://www.musinsa.com/products/7155954",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 27,
@@ -323,8 +323,8 @@
       "discountRatio": 46,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20251020/5614815/5614815_17694826603380_500.jpg",
       "url": "https://www.musinsa.com/products/5614815",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 28,
@@ -335,8 +335,8 @@
       "discountRatio": 45,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20241126/4637856/4637856_17326095268364_500.jpg",
       "url": "https://www.musinsa.com/products/4637856",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 29,
@@ -347,8 +347,8 @@
       "discountRatio": 70,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20240503/4104562/4104562_17155884168887_500.jpg",
       "url": "https://www.musinsa.com/products/4104562",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     },
     {
       "rank": 30,
@@ -359,8 +359,8 @@
       "discountRatio": 74,
       "imageUrl": "https://image.msscdn.net/images/goods_img/20250627/5211714/5211714_17876240079901_500.jpeg",
       "url": "https://www.musinsa.com/products/5211714",
-      "rankChange": null,
-      "isNew": true
+      "rankChange": 0,
+      "isNew": false
     }
   ]
 }
