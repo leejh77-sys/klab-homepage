@@ -638,7 +638,13 @@ def classify_and_summarize(candidates: list[dict], category_tally: dict) -> list
             break
         except Exception as ex:
             last_err = ex
-            log(f"Anthropic API call failed (attempt {attempt}/3): {ex}")
+            cause = ex.__cause__
+            detail = f"{type(ex).__name__}: {ex}"
+            if cause is not None:
+                detail += f" | caused by {type(cause).__name__}: {cause}"
+                if cause.__cause__ is not None:
+                    detail += f" | root cause {type(cause.__cause__).__name__}: {cause.__cause__}"
+            log(f"Anthropic API call failed (attempt {attempt}/3): {detail}")
             if attempt < 3:
                 time.sleep(10 * attempt)
     if raw_text is None:
