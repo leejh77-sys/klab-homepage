@@ -153,8 +153,11 @@
   HTTP로는 우회 불가(봇 탐지 우회는 시도하지 않음), `worldfootwear.com`은 작성 시점에 사이트 자체가
   503으로 다운돼 있어 스크래퍼를 넣긴 했지만 미검증 상태다(사이트 복구 후 재확인 필요). 이 2개
   출처는 당분간 산업뉴스에 반영되지 않는다.
-- **전환 완료 후 할 일(진행 중)**: 새 파이프라인이 실제로 몇 차례 정상 발행되는 것을 확인한 뒤,
-  기존 Claude 클라우드 루틴("KLAB 산업뉴스 자동발행", `trig_01GdSPEYSSuDRX9vkoYC617t`)을 비활성화해
-  중복 발행을 막아야 한다(비활성화는 사람이 확인 후 진행 — 자동으로 끄지 않았다).
-- 이 전환에는 `ANTHROPIC_API_KEY`를 GitHub 저장소 Secrets에 등록해야 한다(콘솔에서 발급, 결제수단
-  필요) — 등록 전까지는 워크플로우가 돌아도 분류 단계에서 스킵되고 데이터가 갱신되지 않는다.
+- **2026-09-28 전환 완료**: `ANTHROPIC_API_KEY`를 GitHub Secrets에 등록한 뒤 수동 실행(workflow_dispatch)
+  으로 검증. 첫 두 번은 분류 단계에서 `Connection error`로 실패했는데, 원인은 GitHub Secret에 등록된
+  키 끝에 공백/줄바꿈이 섞여 있어 h11이 `LocalProtocolError: Illegal header value`로 요청 자체를
+  거부한 것이었다(스크립트가 `.strip()`으로 방어 처리하도록 수정, `scripts/crawl_industry_news.py`).
+  수정 후 실제 실행에서 **당일(9/28) 발행 기사 포함 9건**이 정상 발행됨 — 신선도 문제 해결 확인.
+  이어서 기존 Claude 클라우드 루틴("KLAB 산업뉴스 자동발행", `trig_01GdSPEYSSuDRX9vkoYC617t`)을
+  비활성화해 중복 발행을 막았다. 산업뉴스는 이제 전적으로 GitHub Actions
+  (`industry-news-crawl.yml`)가 담당한다.
