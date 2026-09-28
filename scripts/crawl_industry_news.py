@@ -26,6 +26,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
@@ -615,18 +616,33 @@ def classify_and_summarize(candidates: list[dict], category_tally: dict) -> list
         return []
     system, user = build_classification_prompt(candidates, category_tally)
     model = os.environ.get("ANTHROPIC_MODEL", "claude-haiku-4-5-20251001")
-    try:
-        import anthropic
-        client = anthropic.Anthropic(api_key=api_key)
-        resp = client.messages.create(
-            model=model,
-            max_tokens=4096,
-            system=system,
-            messages=[{"role": "user", "content": user}],
-        )
-        raw_text = "".join(block.text for block in resp.content if getattr(block, "type", None) == "text")
-    except Exception as ex:
-        log(f"Anthropic API call failed: {ex}")
+    import anthropic
+    client = anthropic.Anthropic(api_key=api_key, timeout=60.0, max_retries=4)
+
+    raw_text = None
+    last_err = None
+    # GitHub Actions runners occasionally hit a transient connection failure to
+    # api.anthropic.com even though general internet egress works fine (confirmed
+    # 2026-09-28 — reproducing locally with the same anthropic version connects
+    # cleanly). The SDK's own max_retries covers most of this; a small outer
+    # retry with backoff covers the rest without masking a real, persistent failure.
+    for attempt in range(1, 4):
+        try:
+            resp = client.messages.create(
+                model=model,
+                max_tokens=4096,
+                system=system,
+                messages=[{"role": "user", "content": user}],
+            )
+            raw_text = "".join(block.text for block in resp.content if getattr(block, "type", None) == "text")
+            break
+        except Exception as ex:
+            last_err = ex
+            log(f"Anthropic API call failed (attempt {attempt}/3): {ex}")
+            if attempt < 3:
+                time.sleep(10 * attempt)
+    if raw_text is None:
+        log(f"Anthropic API call failed after 3 attempts: {last_err}")
         return None
 
     try:
