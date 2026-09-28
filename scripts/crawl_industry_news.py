@@ -608,7 +608,11 @@ def build_classification_prompt(candidates: list[dict], category_tally: dict) ->
 
 
 def classify_and_summarize(candidates: list[dict], category_tally: dict) -> list[dict] | None:
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    # .strip() guards against a trailing space/newline sneaking into the GitHub
+    # secret on copy-paste — h11 rejects such a header value outright with a
+    # bare "LocalProtocolError: Illegal header value", which is otherwise a
+    # very confusing way to discover a whitespace typo (found 2026-09-28).
+    api_key = (os.environ.get("ANTHROPIC_API_KEY") or "").strip()
     if not api_key:
         log("ANTHROPIC_API_KEY not set — skipping classification step (no items will be added).")
         return None
