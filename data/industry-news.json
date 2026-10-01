@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T13:33:18+09:00",
+  "updatedAt": "2026-10-01T10:45:50+09:00",
   "period": "ROLLING",
   "windowDays": 28,
   "timeZone": "Asia/Seoul",
@@ -483,6 +483,126 @@
       "source": "footwearbiz.com",
       "url": "https://footwearbiz.com/news/176335/dr-martens-launches-new-brand-platform",
       "date": "2026-09-25",
+      "verified": true
+    },
+    {
+      "rank": 1,
+      "region": "global",
+      "issueKey": "on-soccer-market-entry",
+      "category": "신모델",
+      "title": "온(On), 2027년 첫 축구 스파이크 출시…음바페·앙리와 협력",
+      "summary": "스위스 스포츠 브랜드 온(On)이 축구 시장에 본격 진출하며 2027년 첫 축구 스파이크를 선보일 예정이다. 킬리안 음바페와 계약하고 티에리 앙리를 축구 디렉터로 영입해 프리미엄 축구화 라인업을 강화한다.",
+      "source": "shoespost.jp",
+      "url": "https://shoespost.jp/company/46345/",
+      "date": "2026-09-30",
+      "verified": true
+    },
+    {
+      "rank": 1,
+      "region": "domestic",
+      "issueKey": "descente-movesports-korea-expansion",
+      "category": "국내비즈니스",
+      "title": "데상트, '무브스포츠' 한국 전개 시작…연내 약 20개점 목표",
+      "summary": "데상트가 자회사 DESCENTE KOREA를 통해 스포츠웨어 브랜드 '무브스포츠'의 한국 시장 진출을 공식 시작했다. 2026년 내 약 20개 점포 개설을 목표로 한다.",
+      "source": "shoespost.jp",
+      "url": "https://shoespost.jp/company/46341/",
+      "date": "2026-09-29",
+      "verified": true
+    },
+    {
+      "rank": 2,
+      "region": "domestic",
+      "issueKey": "musinsa-matenkimm-sapporo-5th-store",
+      "category": "국내비즈니스",
+      "title": "무신사, 일본 홋카이도에 '마뗑킴' 5호점 오픈…지방 확장 가속화",
+      "summary": "무신사가 운영하는 K-패션 플랫폼 '마뗑킴'이 홋카이도 삿포로 파르코에 5번째 정식 매장을 10월 23일 오픈한다. 일본 지방 상권 확보를 통해 해외 영토 확장을 이어간다.",
+      "source": "tnnews.co.kr",
+      "url": "https://tnnews.co.kr/archives/295013",
+      "date": "2026-10-01",
+      "verified": true
+    },
+    {
+      "rank": 2,
+      "region": "global",
+      "issueKey": "carbios-textile-recycling-validation",
+      "category": "신소재",
+      "title": "카르비오스, 복합 섬유 재활용 기술 검증 완료…파타고니아·푸마·살로몬과 협력",
+      "summary": "프랑스 재활용 기업 카르비오스가 파타고니아, 푸마, 살로몬과 함께 효소 기반 섬유-섬유 재활용 기술의 각 단계를 검증했다. 복잡한 혼합 섬유 제품의 순환 경제 실현 가능성을 입증했다.",
+      "source": "sportstextiles.com",
+      "url": "https://sportstextiles.com/News/176381",
+      "date": "2026-09-30",
+      "verified": true
+    },
+    {
+      "rank": 3,
+      "region": "global",
+      "issueKey": "primark-circ-textile-recycling-partnership",
+      "category": "신소재",
+      "title": "프라이마크-서크, 장기 섬유 재활용 공급 계약…2029년부터 상용화",
+      "summary": "섬유-섬유 재활용 기업 서크(Circ)가 프라이마크와 다년간 파트너십을 체결했다. 섬유 폐기물에서 생산한 재활용 폴리에스터를 2029년부터 프라이마크 제품에 도입한다.",
+      "source": "sportstextiles.com",
+      "url": "https://sportstextiles.com/News/176370",
+      "date": "2026-09-30",
+      "verified": true
+    },
+    {
+      "rank": 4,
+      "region": "global",
+      "issueKey": "mariva-materials-biofiber-launch",
+      "category": "신소재",
+      "title": "마리바 머터리얼즈, 바이오 기반 폴리에스터 시장 진출…고성능 섬유 첫 배치",
+      "summary": "네덜란드 텍스타일 혁신 기업 마리바 머터리얼즈가 개발한 바이오 기반 고용융점·고강도 성능 섬유의 첫 배치를 시장에 선보일 준비를 마쳤다.",
+      "source": "sportstextiles.com",
+      "url": "https://sportstextiles.com/News/176355",
+      "date": "2026-09-28",
+      "verified": true
+    },
+    {
+      "rank": 5,
+      "region": "global",
+      "issueKey": "otta-monitoring-shoes-launch",
+      "category": "신모델",
+      "title": "오타, 시니어 대상 스마트 보안 신발 출시…GPS 기술로 '신발 신으면 안심'",
+      "summary": "스마트 모니터링 플랫폼 개발사 오타(otta)가 노인 보호용 스마트 신발 판매를 결정했다. 신발을 신는 것만으로 위치 추적과 보안 모니터링이 가능하다.",
+      "source": "shoespost.jp",
+      "url": "https://shoespost.jp/company/46322/",
+      "date": "2026-09-29",
+      "verified": true
+    },
+    {
+      "rank": 6,
+      "region": "global",
+      "issueKey": "dr-martens-global-brand-platform",
+      "category": "글로벌비즈니스",
+      "title": "닥터마틴, 글로벌 브랜드 플랫폼 론칭…국제 시장 통합 전략",
+      "summary": "닥터마틴이 새로운 글로벌 브랜드 플랫폼을 출시했다. 국제 시장에서 브랜드 일관성을 강화하고 소비자 경험을 통합하는 전략이다.",
+      "source": "worldfootwear.com",
+      "url": "https://www.worldfootwear.com/news/dr-martens-launches-new-global-brand-platform/11798.html",
+      "date": "2026-09-30",
+      "verified": true
+    },
+    {
+      "rank": 7,
+      "region": "global",
+      "issueKey": "ykk-india-third-plant-construction",
+      "category": "생산기술",
+      "title": "YKK, 인도 남부에 3번째 공장 건설 착수…아시아 생산 강화",
+      "summary": "지퍼·금속 부품 제조업체 YKK가 인도 남부에 새 공장 건설을 시작했다. 아시아 지역 생산 역량 확대를 통해 신발·의류 공급망 최적화를 추진한다.",
+      "source": "sportstextiles.com",
+      "url": "https://sportstextiles.com/News/176356",
+      "date": "2026-09-28",
+      "verified": true
+    },
+    {
+      "rank": 8,
+      "region": "global",
+      "issueKey": "fta-renoa-fiber-classification",
+      "category": "신소재",
+      "title": "미국 FTC, 신규 섬유 '레노아' 승인…25년만의 신규 분류",
+      "summary": "미국 연방거래위원회(FTC)가 재생 섬유 '레노아'를 신규 의류 섬유로 승인했다. 2002년 PLA 승인 이후 25년 만의 첫 신규 섬유 분류다.",
+      "source": "sportstextiles.com",
+      "url": "https://sportstextiles.com/News/176276",
+      "date": "2026-09-21",
       "verified": true
     }
   ]
